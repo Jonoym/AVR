@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 3.0.0 commit date:2021-12-02, commit time:18:35, hash:f1cca3055776</authoring_tool>
+    </contributor>
+    <created>2021-12-19T14:50:04</created>
+    <modified>2021-12-19T14:50:04</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera-camera" name="Camera">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov sid="xfov">39.59775</xfov>
+            <aspect_ratio>1.777778</aspect_ratio>
+            <znear sid="znear">0.1</znear>
+            <zfar sid="zfar">100</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="blender">
+          <shiftx sid="shiftx" type="float">0</shiftx>
+          <shifty sid="shifty" type="float">0</shifty>
+          <dof_distance sid="dof_distance" type="float">10</dof_distance>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_lights>
+    <light id="Light-light" name="Light">
+      <technique_common>
+        <point>
+          <color sid="color">1000 1000 1000</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0.00111109</quadratic_attenuation>
+        </point>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <type sid="type" type="int">0</type>
+          <flag sid="flag" type="int">0</flag>
+          <mode sid="mode" type="int">1</mode>
+          <gamma sid="blender_gamma" type="float">1</gamma>
+          <red sid="red" type="float">1</red>
+          <green sid="green" type="float">1</green>
+          <blue sid="blue" type="float">1</blue>
+          <shadow_r sid="blender_shadow_r" type="float">0</shadow_r>
+          <shadow_g sid="blender_shadow_g" type="float">0</shadow_g>
+          <shadow_b sid="blender_shadow_b" type="float">0</shadow_b>
+          <energy sid="blender_energy" type="float">1000</energy>
+          <dist sid="blender_dist" type="float">29.99998</dist>
+          <spotsize sid="spotsize" type="float">75</spotsize>
+          <spotblend sid="spotblend" type="float">0.15</spotblend>
+          <att1 sid="att1" type="float">0</att1>
+          <att2 sid="att2" type="float">1</att2>
+          <falloff_type sid="falloff_type" type="int">2</falloff_type>
+          <clipsta sid="clipsta" type="float">0.04999995</clipsta>
+          <clipend sid="clipend" type="float">30.002</clipend>
+          <bias sid="bias" type="float">1</bias>
+          <soft sid="soft" type="float">3</soft>
+          <bufsize sid="bufsize" type="int">2880</bufsize>
+          <samp sid="samp" type="int">3</samp>
+          <buffers sid="buffers" type="int">1</buffers>
+          <area_shape sid="area_shape" type="int">1</area_shape>
+          <area_size sid="area_size" type="float">0.1</area_size>
+          <area_sizey sid="area_sizey" type="float">0.1</area_sizey>
+          <area_sizez sid="area_sizez" type="float">1</area_sizez>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_effects>
+    <effect id="Material-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="Material-material" name="Material">
+      <instance_effect url="#Material-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="GlassPane_cell_005-mesh" name="GlassPane_cell.005">
+      <mesh>
+        <source id="GlassPane_cell_005-mesh-positions">
+          <float_array id="GlassPane_cell_005-mesh-positions-array" count="93">0.02390414 -0.3075007 -0.2457574 -0.0260958 -0.2189218 -0.117711 0.02390414 -0.003612339 0.251799 0.02390414 -0.1263933 0.05918151 -0.0260958 0.02558457 0.2658682 0.02390414 0.003713667 0.2515311 -0.0260958 0.04017382 0.2653346 -0.0260958 -0.3004516 -0.2457574 -0.008562982 -0.3075007 -0.2457574 0.02390414 -0.3075007 -0.2252563 0.02390414 0.06243008 0.2473724 -0.0260958 0.07152473 0.2612901 -0.0260958 0.3285791 -0.09797716 0.02390414 0.1912317 0.06735509 -0.0260958 0.4340157 -0.2457574 0.02390414 0.4146278 -0.2457574 0.02390414 -0.003612339 0.251799 0.02390414 0.003713667 0.2515311 -0.0260958 -0.2189218 -0.117711 -0.0260958 -0.3004516 -0.2457574 -0.008562982 -0.3075007 -0.2457574 0.02390414 -0.3075007 -0.2252563 -0.0260958 0.07152473 0.2612901 -0.0260958 0.3285791 -0.09797716 0.02390414 0.06243008 0.2473724 0.02390414 0.1912317 0.06735509 -0.0260958 0.4340157 -0.2457574 0.02390414 0.4146278 -0.2457574 -0.0260958 0.02558457 0.2658682 0.02390414 -0.1263933 0.05918151 -0.0260958 0.04017382 0.2653346</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_005-mesh-positions-array" count="31" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_005-mesh-normals">
+          <float_array id="GlassPane_cell_005-mesh-normals-array" count="78">-0.322887 -0.7980858 0.5087271 0.2895762 0.03498071 0.9565156 -0.3211736 -0.7988358 0.5086346 0.286767 0.1225726 0.9501267 0.296011 0.7768208 0.5558121 0.3010136 0.7762923 0.5538603 0 -1 0 -1 0 0 7.86175e-7 0 -1 1 0 0 -0.3228866 -0.7980858 0.5087272 0.2895758 0.03498327 0.9565156 -0.3211733 -0.7988347 0.5086365 -0.321173 -0.7988356 0.508635 0.3107184 0.06715244 0.948127 0.2960111 0.7768207 0.5558122 0.3010133 0.7762923 0.5538604 -1 0 0 -1 0 0 -1 0 0 -1 3.44209e-7 0 -3.86907e-7 0 -1 0 0 -1 1 0 0 1 0 0 1 -1.88126e-7 0</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_005-mesh-normals-array" count="26" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_005-mesh-map-0">
+          <float_array id="GlassPane_cell_005-mesh-map-0-array" count="168">0.6652916 0 1 0.6696572 0.3334603 0 0.334963 0 0.6696572 0.6696572 0.3362739 0.3362739 0.4419311 0.3342143 1 0.6665396 0.748772 0.6663172 1 0.3329536 0.3339918 0 0.6665602 0 0.3352651 0 0.665035 0.665035 0.3332276 0.3332276 1 0.3308988 0.3736652 0.04092222 0.7043877 0.03647685 0.375 0.9123359 0.375 0.75 0.3801253 0.75 0.5017619 0.09475636 0.4119451 0.15902 0.4070116 0.02214467 0.125 0.7482377 0.125 0.5646209 0.375 0.5694679 0.4512348 0.7047231 0.375 0.75 0.4532781 0.6253169 0.6652916 0 1 0.3362739 1 0.6696572 0.334963 0 0.6670465 0 0.6696572 0.6696572 0.748772 0.6663172 0.6270717 0.5498507 0.4419311 0.3342143 0.4419311 0.3342143 1 0.3347084 1 0.6665396 1 0.3329536 1 0.665037 0.3339918 0 0.3352651 0 0.6691012 0 0.665035 0.665035 1 0.3308988 1 0.664735 0.3736652 0.04092222 0.375 0.00176227 0.4070116 0.02214467 0.4119451 0.15902 0.4070116 0.02214467 0.5029064 0.08327132 0.5017619 0.09475636 0.375 0.00176227 0.4119451 0.15902 0.375 0.1853791 0.5029064 0.08327132 0.5027731 0.08691865 0.5017619 0.09475636 0.375 0.5694679 0.375 0.75 0.125 0.7482377 0.375 0.75 0.212664 0.75 0.125 0.7482377 0.4532781 0.6253169 0.4986106 0.6578441 0.4512348 0.7047231 0.4986106 0.6578441 0.4993221 0.6721964 0.4512348 0.7047231 0.4993221 0.6721964 0.4993891 0.6740279 0.4512348 0.7047231 0.4512348 0.7047231 0.3801253 0.75 0.375 0.75 0.375 0.75 0.375 0.5694679 0.4532781 0.6253169</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_005-mesh-map-0-array" count="84" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="GlassPane_cell_005-mesh-vertices">
+          <input semantic="POSITION" source="#GlassPane_cell_005-mesh-positions"/>
+        </vertices>
+        <triangles material="Material-material" count="28">
+          <input semantic="VERTEX" source="#GlassPane_cell_005-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#GlassPane_cell_005-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#GlassPane_cell_005-mesh-map-0" offset="2" set="0"/>
+          <p>29 0 0 28 0 1 18 0 2 17 1 3 28 1 4 16 1 5 21 2 6 18 2 7 19 2 8 30 3 9 24 3 10 22 3 11 25 4 12 22 4 13 24 4 14 23 5 15 27 5 16 26 5 17 8 6 18 0 6 19 9 6 20 11 7 21 12 7 22 1 7 23 7 8 24 14 8 25 15 8 26 3 9 27 0 9 28 13 9 29 29 10 30 16 10 31 28 10 32 17 11 33 30 11 34 28 11 35 19 12 36 20 12 37 21 12 38 21 13 39 29 13 40 18 13 41 30 14 42 17 14 43 24 14 44 25 15 45 23 15 46 22 15 47 23 16 48 25 16 49 27 16 50 7 17 51 1 17 52 12 17 53 1 18 54 4 18 55 11 18 56 7 19 57 12 19 58 14 19 59 4 20 60 6 20 61 11 20 62 15 21 63 0 21 64 7 21 65 0 22 66 8 22 67 7 22 68 13 23 69 10 23 70 3 23 71 10 24 72 5 24 73 3 24 74 5 24 75 2 24 76 3 24 77 3 25 78 9 25 79 0 25 80 0 24 81 15 24 82 13 24 83</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="GlassPane_cell_004-mesh" name="GlassPane_cell.004">
+      <mesh>
+        <source id="GlassPane_cell_004-mesh-positions">
+          <float_array id="GlassPane_cell_004-mesh-positions-array" count="33">-0.00509411 -0.01686507 0.1513526 -0.00509411 -0.01686507 -0.1596421 -0.004190385 -0.01686507 -0.1503049 -0.00509411 -0.01201194 -0.1441106 -0.00509411 0.07947242 0.1513526 0.02456694 -0.01686507 0.1513526 -0.00509411 -0.01686507 -0.1596421 -0.004190385 -0.01686507 -0.1503049 -0.00509411 -0.01201194 -0.1441106 -0.00509411 0.07947242 0.1513526 0.02456694 -0.01686507 0.1513526</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_004-mesh-positions-array" count="11" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_004-mesh-normals">
+          <float_array id="GlassPane_cell_004-mesh-normals-array" count="24">0.9511692 0.2946216 -0.09206122 0.9517843 0.2930426 -0.09073466 0 0 1 0 -1 0 -1 0 0 0.9517844 0.2930422 -0.09073472 0 -1 0 -1 0 0</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_004-mesh-normals-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_004-mesh-map-0">
+          <float_array id="GlassPane_cell_004-mesh-map-0-array" count="48">1 0.846763 0.9652562 0.83183 1 0.831838 0.831838 0.831838 0.8458172 0.1204887 0.8467631 0.8467631 0.875 0.7259156 0.875 0.75 0.7266946 0.75 0.625 1 0.5495857 0.9954814 0.625 0.8516946 0.625 0 0.5511342 0.001213252 0.5472514 0 0.831838 0.831838 0.5499329 0.120256 0.8458172 0.1204887 0.625 1 0.5472514 1 0.5495857 0.9954814 0.625 0 0.625 0.02408438 0.5511342 0.001213252</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_004-mesh-map-0-array" count="24" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="GlassPane_cell_004-mesh-vertices">
+          <input semantic="POSITION" source="#GlassPane_cell_004-mesh-positions"/>
+        </vertices>
+        <triangles material="Material-material" count="8">
+          <input semantic="VERTEX" source="#GlassPane_cell_004-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#GlassPane_cell_004-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#GlassPane_cell_004-mesh-map-0" offset="2" set="0"/>
+          <p>7 0 0 1 0 1 8 0 2 8 1 3 10 1 4 7 1 5 4 2 6 0 2 7 5 2 8 0 3 9 2 3 10 5 3 11 0 4 12 3 4 13 6 4 14 8 5 15 9 5 16 10 5 17 0 6 18 6 6 19 2 6 20 0 7 21 4 7 22 3 7 23</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="GlassPane_cell_003-mesh" name="GlassPane_cell.003">
+      <mesh>
+        <source id="GlassPane_cell_003-mesh-positions">
+          <float_array id="GlassPane_cell_003-mesh-positions-array" count="42">0.02500003 0.06165593 -0.01204866 -0.02499997 0.06165593 -0.01204866 -0.02499997 -0.09279704 -0.01204866 -0.02499997 -0.07258749 -0.007778167 0.02500003 -0.1005948 -0.01204866 0.02500003 0.01935547 0.01329785 -0.02499997 0.06165593 0.02047473 0.02500003 0.06165593 0.02220046 -0.02499997 -0.09279704 -0.01204866 -0.02499997 -0.07258749 -0.007778167 0.02500003 -0.1005948 -0.01204866 0.02500003 0.01935547 0.01329785 -0.02499997 0.06165593 0.02047473 0.02500003 0.06165593 0.02220046</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_003-mesh-positions-array" count="14" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_003-mesh-normals">
+          <float_array id="GlassPane_cell_003-mesh-normals-array" count="30">-0.03222596 -0.2066366 0.977887 -0.03375494 -0.2058315 0.9780051 -1 0 0 0 0 -1 1 0 0 0 1 0 -0.03222566 -0.206636 0.977887 -0.03375482 -0.2058315 0.9780052 0 0 -1 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_003-mesh-normals-array" count="10" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_003-mesh-map-0">
+          <float_array id="GlassPane_cell_003-mesh-map-0-array" count="72">0.6344938 0.3340464 1 0.6690824 0.9384185 0.6688254 0.6681378 0.1820414 0.3355709 0.3355709 0.3352732 0.182103 0.375 0.25 0.3760676 0.2164391 0.3831309 0.25 0.125 0.5386133 0.375 0.5 0.375 0.5405627 0.375 0.5 0.3813366 0.5105751 0.375 0.5405627 0.375 0.5 0.3831309 0.25 0.3835623 0.5 0.6344938 0.3340464 1 0.3355709 1 0.6690824 0.6681378 0.1820414 0.6690824 0.6690824 0.3355709 0.3355709 0.375 0.25 0.375 0.2113867 0.3760676 0.2164391 0.125 0.5386133 0.125 0.5 0.375 0.5 0.375 0.5 0.3835623 0.5 0.3813366 0.5105751 0.375 0.5 0.375 0.25 0.3831309 0.25</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_003-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="GlassPane_cell_003-mesh-vertices">
+          <input semantic="POSITION" source="#GlassPane_cell_003-mesh-positions"/>
+        </vertices>
+        <triangles material="Material-material" count="12">
+          <input semantic="VERTEX" source="#GlassPane_cell_003-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#GlassPane_cell_003-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#GlassPane_cell_003-mesh-map-0" offset="2" set="0"/>
+          <p>10 0 0 9 0 1 2 0 2 12 1 3 11 1 4 13 1 5 1 2 6 3 2 7 6 2 8 8 3 9 0 3 10 4 3 11 0 4 12 5 4 13 4 4 14 0 5 15 6 5 16 7 5 17 10 6 18 11 6 19 9 6 20 12 7 21 9 7 22 11 7 23 1 2 24 8 2 25 3 2 26 8 8 27 1 8 28 0 8 29 0 9 30 7 9 31 5 9 32 0 5 33 1 5 34 6 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="GlassPane_cell_002-mesh" name="GlassPane_cell.002">
+      <mesh>
+        <source id="GlassPane_cell_002-mesh-positions">
+          <float_array id="GlassPane_cell_002-mesh-positions-array" count="69">-0.02187734 -0.0945791 -0.3772383 0.0281226 0.2069039 0.1209836 -0.02187734 0.2361184 0.1349832 -0.009349048 -0.0945791 -0.3772383 -0.02187734 -0.08947634 -0.3772383 0.0281226 -0.0945791 -0.3532357 -0.02187734 -0.0945791 0.2437964 -0.02187734 -0.01955562 0.2193539 0.0281226 -0.08213901 0.2161962 0.0281226 -0.0945791 0.2202491 -0.02187734 0.08810842 0.1839387 0.0281226 0.1329357 0.1454492 -0.02187734 -0.01955562 0.2193539 -0.02187734 0.08810842 0.1839387 -0.02187734 0.2361184 0.1349832 -0.02187734 -0.08947634 -0.3772383 0.0281226 0.2069039 0.1209836 0.0281226 -0.0945791 -0.3532357 0.0281226 -0.08213901 0.2161962 0.0281226 -0.0945791 0.2202491 -0.02187734 -0.0945791 0.2437964 -0.009349048 -0.0945791 -0.3772383 0.0281226 0.1329357 0.1454492</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_002-mesh-positions-array" count="23" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_002-mesh-normals">
+          <float_array id="GlassPane_cell_002-mesh-normals-array" count="48">0.4086794 0.2827216 0.8677844 0.4111989 0.2848311 0.8659024 0.4098417 0.2864419 0.8660144 0 -1 0 -1 0 0 0 0 -1 1 0 0 0.3250387 0.7980346 -0.5074354 0.4086787 0.2827231 0.8677843 0.4111989 0.2848311 0.8659024 0.4098412 0.2864416 0.8660147 -1 0 0 1 5.22174e-7 0 1 0 0 0.3243597 0.798305 -0.5074445 0.3250157 0.7980812 -0.5073771</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_002-mesh-normals-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_002-mesh-map-0">
+          <float_array id="GlassPane_cell_002-mesh-map-0-array" count="120">0.3316318 0 0.9343788 0.667194 0.3762292 0.1106314 0.6654221 0.6654221 1 0.3328511 1 0.6660326 0.6659187 0 0.3328511 0.3328511 0.3327941 0 0.375 1 0.375 0.9373585 0.3810006 0.75 0.5152943 0.04567188 0.5030554 0.08267438 0.375 0.001275658 0.125 0.7487243 0.1876414 0.75 0.125 0.75 0.3810006 0.75 0.5056719 0.6931213 0.5233586 0.74689 0.8618532 0.1209278 0.906752 0.4535274 0.9067343 0.570771 0.3316318 0 0.6654222 0 0.9343788 0.667194 0.6654221 0.6654221 0.3316317 0.3316317 1 0.3328511 0.6659187 0 0.6660327 0.6660327 0.3328511 0.3328511 0.5243719 0.75 0.5302587 1 0.3810006 0.75 0.5302587 1 0.375 1 0.3810006 0.75 0.375 0.001275658 0.375 0 0.5241481 0.01875585 0.375 0 0.5302587 0 0.5241481 0.01875585 0.5241481 0.01875585 0.5152943 0.04567188 0.375 0.001275658 0.5233586 0.74689 0.5243719 0.75 0.3810006 0.75 0.3810006 0.75 0.4995555 0.6746292 0.5056719 0.6931213 0.3340812 0 0.6672058 0 0.9067343 0.570771 0.6672058 0 0.8618532 0.1209278 0.9067343 0.570771</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_002-mesh-map-0-array" count="60" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="GlassPane_cell_002-mesh-vertices">
+          <input semantic="POSITION" source="#GlassPane_cell_002-mesh-positions"/>
+        </vertices>
+        <triangles material="Material-material" count="20">
+          <input semantic="VERTEX" source="#GlassPane_cell_002-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#GlassPane_cell_002-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#GlassPane_cell_002-mesh-map-0" offset="2" set="0"/>
+          <p>18 0 0 20 0 1 19 0 2 12 1 3 22 1 4 13 1 5 2 2 6 22 2 7 1 2 8 0 3 9 21 3 10 17 3 11 10 4 12 14 4 13 15 4 14 15 5 15 21 5 16 0 5 17 17 6 18 11 6 19 8 6 20 5 7 21 3 7 22 4 7 23 18 8 24 12 8 25 20 8 26 12 9 27 18 9 28 22 9 29 2 10 30 13 10 31 22 10 32 9 3 33 6 3 34 17 3 35 6 3 36 0 3 37 17 3 38 15 4 39 0 4 40 7 4 41 0 11 42 6 11 43 7 11 44 7 4 45 10 4 46 15 4 47 8 12 48 9 12 49 17 12 50 17 13 51 16 13 52 11 13 53 2 14 54 1 14 55 4 14 56 1 15 57 5 15 58 4 15 59</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="GlassPane_cell_001-mesh" name="GlassPane_cell.001">
+      <mesh>
+        <source id="GlassPane_cell_001-mesh-positions">
+          <float_array id="GlassPane_cell_001-mesh-positions-array" count="141">0.02679091 -0.2316617 0.3039239 0.002060055 -0.2316617 0.2366347 0.008538722 -0.2316617 0.3039239 -0.02320903 -0.1843219 0.1257551 -0.02320903 -0.1286754 0.3039239 -0.02320903 -0.2316617 -0.02939069 -0.02320903 0.2113278 -0.005396485 0.02679091 0.3002561 0.3039239 0.02679091 0.2748239 0.1742056 -0.02320903 0.2719724 0.3039239 -0.02320903 -0.1539441 -0.09775936 -0.02320903 -0.04593765 -0.1334494 0.02679091 -0.2173997 -0.1006824 0.02679091 -0.001963615 -0.171872 -0.02320903 -0.2316617 -0.0718621 0.02679091 -0.2316617 -0.09593003 0.02679091 0.07118707 -0.1959615 -0.02320903 0.1006326 -0.1817169 -0.02320903 0.1872063 -0.1276224 0.02679091 0.2244405 -0.08109158 -0.02320903 0.1454076 -0.1843815 0.02679091 0.137134 -0.1996463 -0.02320903 0.1179798 -0.1829 0.02679091 0.07984477 -0.196552 0.002060055 -0.2316617 0.2366347 0.008538722 -0.2316617 0.3039239 -0.02320903 -0.1286754 0.3039239 -0.02320903 -0.2316617 -0.02939069 0.02679091 0.3002561 0.3039239 0.02679091 0.2748239 0.1742056 -0.02320903 0.2719724 0.3039239 -0.02320903 -0.1539441 -0.09775936 -0.02320903 -0.04593765 -0.1334494 0.02679091 -0.2173997 -0.1006824 0.02679091 -0.001963615 -0.171872 -0.02320903 -0.2316617 -0.0718621 0.02679091 -0.2316617 -0.09593003 0.02679091 0.07118707 -0.1959615 -0.02320903 0.1006326 -0.1817169 -0.02320903 0.2113278 -0.005396485 -0.02320903 0.1872063 -0.1276224 0.02679091 0.2244405 -0.08109158 -0.02320903 0.1454076 -0.1843815 -0.02320903 0.1179798 -0.1829 0.02679091 0.137134 -0.1996463 0.02679091 0.07984477 -0.196552 -0.02320903 -0.1843219 0.1257551</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_001-mesh-positions-array" count="47" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_001-mesh-normals">
+          <float_array id="GlassPane_cell_001-mesh-normals-array" count="93">-0.9516037 -0.2933528 0.09162133 -0.9509025 -0.2960172 0.09032398 -0.4853425 0.8579897 -0.1682152 -0.4131675 -0.285725 -0.8646698 -0.4154055 -0.2875664 -0.8629854 -0.413996 -0.2847247 -0.8646035 -0.4821932 0.8594872 -0.1696217 -0.0477401 0.8042988 -0.5923043 -0.2993847 -0.05146116 -0.9527437 -0.3084894 -0.06472843 -0.949023 -7.43853e-7 0 1 0 -1 0 -1 0 0 1 0 0 -0.9516038 -0.2933527 0.09162139 -0.4853423 0.8579898 -0.1682152 -0.4131669 -0.2857251 -0.8646702 -0.4154049 -0.2875658 -0.8629859 -0.4139961 -0.2847248 -0.8646035 -0.4821932 0.8594874 -0.1696212 -0.0477401 0.8042989 -0.5923042 -0.2993851 -0.05145967 -0.9527437 -0.3084883 -0.06472736 -0.9490234 0 0 1 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_001-mesh-normals-array" count="31" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_001-mesh-map-0">
+          <float_array id="GlassPane_cell_001-mesh-map-0-array" count="264">0.6035167 0.4915363 1 0.7379657 0.9135215 0.8013546 0.7379658 0.7379658 0.4910988 0.4910988 0.7402357 0.09774351 0.3422249 0 0.66945 0.5739348 0.3356684 0.2406882 1 0.6665297 0.3319237 0.3319237 1 0.3348404 0.3348405 0.3348405 0.9561614 0.2594694 0.6665297 0.6665297 0.3336552 0 1 0.3319238 1 0.6650674 1 0.3149157 0.3409299 0 0.6844642 0 0.6844643 0.6844643 1 0.3438341 1 0.6858549 0.343834 0.343834 1 0.6848886 0.6858546 0.6858546 0.6663448 0 0.3418162 0.3418162 0.3325613 0 0.625 0.6170205 0.875 0.6240915 0.875 0.7242534 0.6081777 0.8736545 0.5416714 1 0.5250365 0.75 0.5171135 0.104717 0.5029237 0.0942673 0.5032941 0.08741039 0.5000287 0.6742878 0.499881 0.6721234 0.5287461 0.6359744 0.6035167 0.4915363 1 0.4910988 1 0.7379657 0.3422249 0 0.6850842 0 0.66945 0.5739348 1 0.6665297 0.6650674 0.6650674 0.3319237 0.3319237 0.3348405 0.3348405 0.387991 0.2601405 0.9561614 0.2594694 0.3336552 0 0.6674388 0 1 0.3319238 1 0.3149157 1 0.6577751 0.3409299 0 0.6844643 0.6844643 0.3409298 0.3409298 1 0.3438341 0.343834 0.343834 1 0.3418161 1 0.6848886 0.6663448 0 0.6848886 0.6848886 0.3418162 0.3418162 0.875 0.7242534 0.7162612 0.75 0.625 0.75 0.625 0.75 0.625 0.6170205 0.875 0.7242534 0.5310536 1 0.5250365 0.75 0.5416714 1 0.5250365 0.75 0.625 0.75 0.6081777 0.8736545 0.625 0.75 0.625 0.8412611 0.6081777 0.8736545 0.5032941 0.08741039 0.5035898 0.08307355 0.5171135 0.104717 0.5035898 0.08307355 0.5156567 0.046431 0.54767 0.1107474 0.5171135 0.104717 0.5035898 0.08307355 0.54767 0.1107474 0.5156567 0.046431 0.5245792 0.01942938 0.5804579 0.01183491 0.5245792 0.01942938 0.5310536 0 0.5416714 0 0.5804579 0.01183491 0.5245792 0.01942938 0.5416714 0 0.5804579 0.01183491 0.625 0.02574658 0.54767 0.1107474 0.625 0.02574658 0.625 0.1259085 0.54767 0.1107474 0.5804579 0.01183491 0.54767 0.1107474 0.5156567 0.046431 0.499881 0.6721234 0.4991074 0.657801 0.5287461 0.6359744 0.5287461 0.6359744 0.5925705 0.6233786 0.506051 0.6925755 0.5925705 0.6233786 0.625 0.6170205 0.625 0.75 0.506051 0.6925755 0.5925705 0.6233786 0.625 0.75 0.625 0.75 0.5250365 0.75 0.5238484 0.7464345 0.506051 0.6925755 0.625 0.75 0.5238484 0.7464345 0.506051 0.6925755 0.5000287 0.6742878 0.5287461 0.6359744</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_001-mesh-map-0-array" count="132" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="GlassPane_cell_001-mesh-vertices">
+          <input semantic="POSITION" source="#GlassPane_cell_001-mesh-positions"/>
+        </vertices>
+        <triangles material="Material-material" count="44">
+          <input semantic="VERTEX" source="#GlassPane_cell_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#GlassPane_cell_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#GlassPane_cell_001-mesh-map-0" offset="2" set="0"/>
+          <p>26 0 0 24 0 1 25 0 2 24 1 3 46 1 4 27 1 5 29 2 6 30 2 7 7 2 8 31 3 9 34 3 10 33 3 11 33 4 12 35 4 13 31 4 14 38 5 15 34 5 16 32 5 17 39 6 18 41 6 19 40 6 20 40 7 21 44 7 22 42 7 23 44 8 24 43 8 25 42 8 26 38 9 27 45 9 28 37 9 29 28 10 30 9 10 31 4 10 32 1 11 33 5 11 34 15 11 35 18 12 36 20 12 37 22 12 38 16 13 39 23 13 40 19 13 41 26 14 42 46 14 43 24 14 44 29 15 45 39 15 46 30 15 47 31 16 48 32 16 49 34 16 50 33 17 51 36 17 52 35 17 53 38 18 54 37 18 55 34 18 56 39 19 57 29 19 58 41 19 59 40 20 60 41 20 61 44 20 62 44 21 63 45 21 64 43 21 65 38 22 66 43 22 67 45 22 68 4 23 69 2 23 70 0 23 71 0 23 72 28 23 73 4 23 74 14 11 75 15 11 76 5 11 77 15 11 78 0 11 79 1 11 80 0 11 81 2 11 82 1 11 83 22 12 84 17 12 85 18 12 86 17 12 87 11 12 88 6 12 89 18 12 90 17 12 91 6 12 92 11 24 93 10 24 94 3 24 95 10 25 96 14 25 97 5 25 98 3 26 99 10 26 100 5 26 101 3 12 102 4 12 103 6 12 104 4 12 105 9 12 106 6 12 107 3 27 108 6 27 109 11 27 110 23 13 111 21 13 112 19 13 113 19 28 114 8 28 115 13 28 116 8 13 117 28 13 118 0 13 119 13 29 120 8 29 121 0 29 122 0 30 123 15 30 124 12 30 125 13 13 126 0 13 127 12 13 128 13 13 129 16 13 130 19 13 131</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="GlassPane_cell_008-mesh" name="GlassPane_cell.008">
+      <mesh>
+        <source id="GlassPane_cell_008-mesh-positions">
+          <float_array id="GlassPane_cell_008-mesh-positions-array" count="96">-0.02499997 -0.2854978 0.2506012 0.02500003 -0.2486615 0.2970004 -0.02499997 -0.1100913 0.2460459 0.02500003 0.1174046 0.2874936 0.02500003 0.2936439 0.2827562 -0.02499997 0.2936439 0.2351933 -0.02499997 -0.32422 0.189879 0.02500003 -0.3337448 0.1765996 -0.02499997 -0.2049831 0.02284067 0.02500003 -0.0951485 -0.1576489 0.02500003 0.01870894 -0.316784 -0.02499997 0.03801065 -0.316784 -0.02499997 0.1308483 -0.316784 0.02500003 0.1227988 -0.316784 -0.02499997 0.2936439 -0.2826421 0.02500003 0.2936439 -0.2809829 0.02500003 -0.3337448 0.1765996 0.02500003 -0.0951485 -0.1576489 -0.02499997 -0.2854978 0.2506012 -0.02499997 -0.1100913 0.2460459 0.02500003 -0.2486615 0.2970004 0.02500003 0.1174046 0.2874936 0.02500003 0.2936439 0.2827562 -0.02499997 0.2936439 0.2351933 -0.02499997 -0.32422 0.189879 -0.02499997 -0.2049831 0.02284067 0.02500003 0.01870894 -0.316784 -0.02499997 0.03801065 -0.316784 0.02500003 0.1227988 -0.316784 0.02500003 0.2936439 -0.2809829 -0.02499997 0.1308483 -0.316784 -0.02499997 0.2936439 -0.2826421</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_008-mesh-positions-array" count="32" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_008-mesh-normals">
+          <float_array id="GlassPane_cell_008-mesh-normals-array" count="66">0.06596535 -0.8148869 0.5758543 -0.6875253 0.01885205 0.7259158 -0.689098 0.01947242 0.7244067 -0.2955343 -0.7775537 -0.5550403 -0.2995361 -0.7759334 -0.5551628 -1 0 0 0 0 -1 1 0 0 0 1 0 0.03300076 0.2049863 -0.9782084 -0.017816 -0.8430191 0.5375885 -0.6875255 0.01885199 0.7259156 -0.6890976 0.01947242 0.7244069 -0.2955341 -0.7775537 -0.5550403 -0.2995362 -0.7759333 -0.5551627 -1 0 0 -1 0 0 -1 0 0 -4.01269e-7 0 -1 1 0 0 1 0 0 0.03246158 0.2051485 -0.9781924</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_008-mesh-normals-array" count="22" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_008-mesh-map-0">
+          <float_array id="GlassPane_cell_008-mesh-map-0-array" count="168">0.3154148 0.3154148 0.6592222 0 0.6582579 0.6582579 1 0.6582578 0.6843812 0 1 0.3154149 0.3413166 0.3413166 0.6680989 0.07583057 0.6843812 0.6843812 0.3333178 0 0.6682183 0.6682183 0.3339374 0.3339374 0.6669786 0.6669786 0.9683749 0.3318426 0.9645419 0.6662874 0.5129943 0.25 0.375 0.2093011 0.4599061 0.1253432 0.125 0.5639083 0.375 0.5427113 0.375 0.5687338 0.4147837 0.5971981 0.3839502 0.5 0.5260694 0.5440598 0.5129943 0.25 0.3839503 0.5 0.3835355 0.25 0.33226 0.08674037 0.8486794 0.1808744 0.6667554 0.3914783 0.3154148 0.3154148 0.3158767 0 0.6592222 0 1 0.6582578 0.3413166 0 0.6843812 0 0.3413166 0.3413166 0.334209 0.07567095 0.6680989 0.07583057 0.3333178 0 0.6669787 0 0.6682183 0.6682183 0.6669786 0.6669786 0.3333178 0.3333178 0.9683749 0.3318426 0.4599061 0.1253432 0.5026608 0.09486186 0.5157075 0.1490662 0.5026608 0.09486186 0.5168463 0.1052145 0.5157075 0.1490662 0.5157075 0.1490662 0.5129943 0.25 0.4599061 0.1253432 0.5129943 0.25 0.3835355 0.25 0.375 0.2093011 0.375 0.2093011 0.375 0.1860917 0.4599061 0.1253432 0.125 0.5639083 0.125 0.5406989 0.375 0.5427113 0.5248851 0.5 0.5260694 0.5440598 0.3839502 0.5 0.5260694 0.5440598 0.5284461 0.6355764 0.4147837 0.5971981 0.5284461 0.6355764 0.4983459 0.6568472 0.4147837 0.5971981 0.4147837 0.5971981 0.375 0.5687338 0.375 0.5427113 0.375 0.5427113 0.3839502 0.5 0.4147837 0.5971981 0.5129943 0.25 0.5248851 0.5 0.3839503 0.5 0.33226 0.08674037 0.5147449 0.1814609 0.8486794 0.1808744</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_008-mesh-map-0-array" count="84" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="GlassPane_cell_008-mesh-vertices">
+          <input semantic="POSITION" source="#GlassPane_cell_008-mesh-positions"/>
+        </vertices>
+        <triangles material="Material-material" count="28">
+          <input semantic="VERTEX" source="#GlassPane_cell_008-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#GlassPane_cell_008-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#GlassPane_cell_008-mesh-map-0" offset="2" set="0"/>
+          <p>18 0 0 16 0 1 20 0 2 20 1 3 19 1 4 18 1 5 21 2 6 23 2 7 19 2 8 25 3 9 16 3 10 24 3 11 17 4 12 27 4 13 26 4 14 5 5 15 30 5 16 8 5 17 11 6 18 28 6 19 10 6 20 9 7 21 29 7 22 3 7 23 5 8 24 29 8 25 31 8 26 12 9 27 15 9 28 13 9 29 18 10 30 24 10 31 16 10 32 20 11 33 21 11 34 19 11 35 21 12 36 22 12 37 23 12 38 25 13 39 17 13 40 16 13 41 17 14 42 25 14 43 27 14 44 8 15 45 6 15 46 2 15 47 6 16 48 0 16 49 2 16 50 2 5 51 5 5 52 8 5 53 5 17 54 31 17 55 30 17 56 30 5 57 11 5 58 8 5 59 11 18 60 30 18 61 28 18 62 4 19 63 3 19 64 29 19 65 3 20 66 1 20 67 9 20 68 1 20 69 7 20 70 9 20 71 9 20 72 10 20 73 28 20 74 28 20 75 29 20 76 9 20 77 5 8 78 4 8 79 29 8 80 12 21 81 14 21 82 15 21 83</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="GlassPane_cell_007-mesh" name="GlassPane_cell.007">
+      <mesh>
+        <source id="GlassPane_cell_007-mesh-positions">
+          <float_array id="GlassPane_cell_007-mesh-positions-array" count="54">0.02499997 0.3091083 0.1945775 -0.02499997 0.3091083 0.1945775 -0.02499997 0.3091083 -0.251002 0.02499997 0.3091083 -0.2034593 0.02499997 -0.1978582 -0.01340436 0.02499997 -0.2308244 -0.1895328 -0.02499997 -0.2661916 -0.2361035 -0.02499997 -0.2004389 0.1151923 -0.02499997 -0.1846437 0.1945775 0.02499997 -0.1564762 0.1945775 -0.02499997 0.3091083 -0.251002 0.02499997 0.3091083 -0.2034593 0.02499997 -0.1978582 -0.01340436 0.02499997 -0.2308244 -0.1895328 -0.02499997 -0.2661916 -0.2361035 -0.02499997 -0.2004389 0.1151923 -0.02499997 -0.1846437 0.1945775 0.02499997 -0.1564762 0.1945775</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_007-mesh-positions-array" count="18" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_007-mesh-normals">
+          <float_array id="GlassPane_cell_007-mesh-normals-array" count="36">0.4640761 -0.8706755 0.1629656 0.4836112 -0.8584553 0.1708065 0 0 1 -1 0 0 1 0 0 0 1 0 0.6889541 -0.01868879 -0.724564 0.4640763 -0.8706753 0.1629655 0.4836113 -0.8584553 0.1708062 1 0 0 1 0 0 0.6885265 -0.01877439 -0.7249682</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_007-mesh-normals-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GlassPane_cell_007-mesh-map-0">
+          <float_array id="GlassPane_cell_007-mesh-map-0-array" count="96">1 0.3336318 0.3339717 0 0.666075 0 0.6654432 0.6654432 0.8713317 0.3319396 0.8706794 0.6647974 0.625 0.6163961 0.875 0.5 0.875 0.623438 0.6051537 0.1226131 0.625 0.25 0.5136051 0.25 0.625 0.5 0.5730045 0.6267416 0.5254908 0.5 0.625 0.25 0.5254908 0.5 0.5136051 0.25 0.6660749 0.6660749 0.9101207 0.243141 0.9099543 0.5761732 1 0.3336318 1 0.6654433 0.3339717 0 0.6654432 0.6654432 0.3336318 0.3336318 0.8713317 0.3319396 0.625 0.6163961 0.625 0.5 0.875 0.5 0.5136051 0.25 0.5173297 0.106175 0.6051537 0.1226131 0.6051537 0.1226131 0.625 0.1265619 0.625 0.25 0.625 0.6163962 0.5730045 0.6267416 0.625 0.5 0.5730045 0.6267416 0.5289725 0.6349832 0.5254908 0.5 0.625 0.25 0.625 0.5 0.5254908 0.5 0.6660749 0.6660749 0.3339717 0.3339717 0.9101207 0.243141</float_array>
+          <technique_common>
+            <accessor source="#GlassPane_cell_007-mesh-map-0-array" count="48" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="GlassPane_cell_007-mesh-vertices">
+          <input semantic="POSITION" source="#GlassPane_cell_007-mesh-positions"/>
+        </vertices>
+        <triangles material="Material-material" count="16">
+          <input semantic="VERTEX" source="#GlassPane_cell_007-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#GlassPane_cell_007-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#GlassPane_cell_007-mesh-map-0" offset="2" set="0"/>
+          <p>12 0 0 6 0 1 13 0 2 15 1 3 17 1 4 16 1 5 9 2 6 1 2 7 8 2 8 7 3 9 1 3 10 10 3 11 0 4 12 4 4 13 11 4 14 1 5 15 11 5 16 10 5 17 13 6 18 2 6 19 3 6 20 12 7 21 15 7 22 6 7 23 15 8 24 12 8 25 17 8 26 9 2 27 0 2 28 1 2 29 10 3 30 14 3 31 7 3 32 7 3 33 8 3 34 1 3 35 9 9 36 4 9 37 0 9 38 4 10 39 5 10 40 11 10 41 1 5 42 0 5 43 11 5 44 13 11 45 6 11 46 2 11 47</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="GlassPane_cell_006" name="GlassPane_cell.006" type="NODE">
+        <matrix sid="transform">1 0 0 0.0260958 0 1 0 -0.1924993 0 0 1 0.2457575 0 0 0 1</matrix>
+        <instance_geometry url="#GlassPane_cell_005-mesh" name="GlassPane_cell.006">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material-material" target="#Material-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="GlassPane_cell_005" name="GlassPane_cell.005" type="NODE">
+        <matrix sid="transform">1 0 0 0.005094141 0 1 0 -0.4831349 0 0 1 0.8486474 0 0 0 1</matrix>
+        <instance_geometry url="#GlassPane_cell_004-mesh" name="GlassPane_cell.005">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material-material" target="#Material-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="GlassPane_cell_004" name="GlassPane_cell.004" type="NODE">
+        <matrix sid="transform">1 0 0 0.02499998 0 1 0 0.438344 0 0 1 0.01204866 0 0 0 1</matrix>
+        <instance_geometry url="#GlassPane_cell_003-mesh" name="GlassPane_cell.004">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material-material" target="#Material-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="GlassPane_cell_003" name="GlassPane_cell.003" type="NODE">
+        <matrix sid="transform">1 0 0 0.02187736 0 1 0 -0.4054209 0 0 1 0.3772383 0 0 0 1</matrix>
+        <instance_geometry url="#GlassPane_cell_002-mesh" name="GlassPane_cell.003">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material-material" target="#Material-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="GlassPane_cell_002" name="GlassPane_cell.002" type="NODE">
+        <matrix sid="transform">1 0 0 0.02320907 0 1 0 -0.2683382 0 0 1 0.6960762 0 0 0 1</matrix>
+        <instance_geometry url="#GlassPane_cell_001-mesh" name="GlassPane_cell.002">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material-material" target="#Material-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="GlassPane_cell_001" name="GlassPane_cell.001" type="NODE">
+        <matrix sid="transform">1 0 0 0.02499998 0 1 0 0.2063561 0 0 1 0.316784 0 0 0 1</matrix>
+        <instance_geometry url="#GlassPane_cell_008-mesh" name="GlassPane_cell.001">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material-material" target="#Material-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="GlassPane_cell" name="GlassPane_cell" type="NODE">
+        <matrix sid="transform">1 0 0 0.025 0 1 0 0.1908917 0 0 1 0.8054225 0 0 0 1</matrix>
+        <instance_geometry url="#GlassPane_cell_007-mesh" name="GlassPane_cell">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material-material" target="#Material-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Camera" name="Camera" type="NODE">
+        <matrix sid="transform">0.6859207 -0.3240135 0.6515582 7.358891 0.7276763 0.3054208 -0.6141704 -6.925791 0 0.8953956 0.4452714 4.958309 0 0 0 1</matrix>
+        <instance_camera url="#Camera-camera"/>
+      </node>
+      <node id="Light" name="Light" type="NODE">
+        <matrix sid="transform">-0.2908646 -0.7711008 0.5663932 4.076245 0.9551712 -0.1998834 0.2183912 1.005454 -0.05518906 0.6045247 0.7946723 5.903862 0 0 0 1</matrix>
+        <instance_light url="#Light-light"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
