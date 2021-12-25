@@ -7,11 +7,7 @@ public class Star : MonoBehaviour
 
     public GameObject outer;
 
-    public GameObject effects;
-
-    public Material hitMaterial;
-
-    private bool hit = false;
+    public GameObject starHit;
 
     public static int numStars = 0;
 
@@ -21,15 +17,12 @@ public class Star : MonoBehaviour
         numStars++;
     }
     void OnTriggerEnter(Collider other) {
-        if (!hit) {
-            outer.GetComponent<MeshRenderer>().material = hitMaterial;
+        GameObject particles = Instantiate(starHit, transform.position, Quaternion.identity);
+        particles.transform.parent = transform.parent;
 
-            GameObject particles = Instantiate(effects, transform.position, Quaternion.identity);
-            particles.transform.parent = transform.parent;
-
-            hit = true;
-            numHit++;
-        }
+        Destroy(outer);
+        numHit++;
+        Destroy(gameObject);
     }
 
     public static bool gameWon() {

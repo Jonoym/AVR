@@ -143,7 +143,7 @@ PrefabInstance:
     - target: {fileID: 5081774725126217385, guid: 5c5cc2c9c249cc04d8e1b8dd54b0a6bc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.994
+      value: 1.423
       objectReference: {fileID: 0}
     - target: {fileID: 5081774725126217385, guid: 5c5cc2c9c249cc04d8e1b8dd54b0a6bc,
         type: 3}
@@ -153,7 +153,7 @@ PrefabInstance:
     - target: {fileID: 5081774725126217385, guid: 5c5cc2c9c249cc04d8e1b8dd54b0a6bc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3699999
+      value: 1.383
       objectReference: {fileID: 0}
     - target: {fileID: 5081774725126217385, guid: 5c5cc2c9c249cc04d8e1b8dd54b0a6bc,
         type: 3}
@@ -1771,6 +1771,7 @@ MonoBehaviour:
   firingCamera: {fileID: 1065489683}
   interiorCamera: {fileID: 733599563}
   fortress: {fileID: 1705790125}
+  fortressItem: {fileID: 1313117308}
   ammo: {fileID: 1740856485}
 --- !u!4 &954714829
 Transform:
@@ -2508,7 +2509,7 @@ PrefabInstance:
     - target: {fileID: 1455313563873869164, guid: 67f88797d675afc42b27e746484d493e,
         type: 3}
       propertyPath: damageRequired
-      value: 50000
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 3589229319193665425, guid: 67f88797d675afc42b27e746484d493e,
         type: 3}

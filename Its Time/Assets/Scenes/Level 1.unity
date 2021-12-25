@@ -1087,7 +1087,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733599563}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.9100001, y: 0, z: 0.029999971}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1290089154}
@@ -1290,6 +1290,7 @@ MonoBehaviour:
   firingCamera: {fileID: 1065489683}
   interiorCamera: {fileID: 733599563}
   fortress: {fileID: 1705790125}
+  fortressItem: {fileID: 1313117308}
   ammo: {fileID: 1740856485}
 --- !u!4 &954714829
 Transform:
@@ -2144,7 +2145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290089153}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.96, y: 1.7, z: -0.96}
+  m_LocalPosition: {x: -0.17, y: 1.7, z: -0.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 733599564}
@@ -2543,6 +2544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageRequired: 0
   cracked: {fileID: 278638128992381208, guid: 6a76bea4eea9ded40bac28a72e0f22a7, type: 3}
+  destroyableByPiece: 1
 --- !u!4 &1898285242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1701630816544090178, guid: d888c086a14da6940869ed7c46ddc660,

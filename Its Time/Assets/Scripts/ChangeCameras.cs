@@ -13,12 +13,19 @@ public class ChangeCameras : MonoBehaviour
 
     public GameObject fortress;
 
+    public GameObject fortressItem;
+
+    private LinkedList<GameObject> items;
+
     public GameObject ammo;
 
     private int currentDisplay = 0;
 
     void Start()
     {
+        items = new LinkedList<GameObject>();
+        GetChildren(fortressItem);
+        DisableRenderers();
         ChangeCamera();
     }
 
@@ -68,6 +75,8 @@ public class ChangeCameras : MonoBehaviour
         exteriorCamera.SetActive(false);
         fortress.GetComponent<RotateFortress>().enabled = false;
 
+        EnableRenderers();
+
         interiorCamera.SetActive(true);
     }
     private void SetFiringCamera()
@@ -80,7 +89,59 @@ public class ChangeCameras : MonoBehaviour
         firingCamera.transform.position = new Vector3(0, 0, -10);
         firingCamera.transform.Rotate(0, 0, 0);
 
+        DisableRenderers();
+
         // Need to enable the controls for the rotation of the object
         ammo.GetComponent<ControlObject>().enabled = true;
+    }
+
+    private void GetChildren(GameObject obj) {
+        if (obj == null) {
+            return;
+        }
+
+        foreach (Transform child in obj.transform) {
+            if (child == null) {
+                continue;
+            }
+            items.AddLast(child.gameObject);
+            GetChildren(child.gameObject);
+        }
+    }
+
+    private void DisableRenderers() {
+        foreach(GameObject item in items) {
+            if (item == null) {
+                continue;
+            }
+
+            MeshRenderer renderer = item.GetComponent<MeshRenderer>();
+            if (renderer != null) {
+                renderer.enabled = false;
+            } else {
+                ParticleSystem particle = item.GetComponent<ParticleSystem>();
+                if (particle != null) {
+                    particle.Stop();
+                }
+            }
+        }
+    }
+
+    private void EnableRenderers() {
+        foreach(GameObject item in items) {
+            if (item == null) {
+                continue;
+            }
+
+            MeshRenderer renderer = item.GetComponent<MeshRenderer>();
+            if (renderer != null) {
+                renderer.enabled = true;
+            } else {
+                ParticleSystem particle = item.GetComponent<ParticleSystem>();
+                if (particle != null) {
+                    particle.Play();
+                }
+            }
+        }
     }
 }
