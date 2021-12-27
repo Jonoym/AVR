@@ -5,8 +5,11 @@ using UnityEngine;
 public class FireBlock : MonoBehaviour
 {
 
-    public int numTurns = 3;
+    private static int currentPiece = 1;
+    
     public GameObject firingCamera;
+
+    public static GameObject[] pieces;
 
     public GameObject newPiece;
 
@@ -16,19 +19,15 @@ public class FireBlock : MonoBehaviour
 
     private Transform oldTransform;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    public GameObject cameras;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
             
-            FireObject();
-
             DisableControls();
+
+            FireObject();
 
             StartCoroutine(CheckGameEnd(5));
         }
@@ -43,16 +42,17 @@ public class FireBlock : MonoBehaviour
     }
 
     private void DisableControls() {
-        firingCamera.GetComponent<Trajectory>().drawLine = false;
         gameObject.GetComponent<FireBlock>().enabled = false;   
         gameObject.GetComponent<ControlObject>().enabled = false;
-        Debug.Log("DISABLED");
+
+        DisableTrajectory();
     }
 
     private void SpawnPiece() {
         
-        firingCamera.GetComponent<Trajectory>().drawLine = true;
-        GameObject piece = Instantiate(newPiece, oldTransform.position + new Vector3(0, 0, 4), Quaternion.identity);
+        GameObject piece = Instantiate(pieces[currentPiece++], oldTransform.position + new Vector3(0, 0, 4), Quaternion.identity);
+
+        EnableTrajectory();
 
         piece.transform.parent = oldTransform;
         piece.transform.Rotate(new Vector3(0, 45, 0));
@@ -68,14 +68,13 @@ public class FireBlock : MonoBehaviour
         }
         piece.GetComponent<MeshRenderer>().enabled = true;
         rb.useGravity = false;
-        numTurns--;
     }
 
     IEnumerator CheckGameEnd(float time) {
         yield return new WaitForSeconds(time);
 
         if (!Star.gameWon()){
-            if (numTurns >= 1) {
+            if (currentPiece >= pieces.Length) {
                 SpawnPiece();
             } else {
                 Debug.Log("LEVEL FAILED");
@@ -84,5 +83,27 @@ public class FireBlock : MonoBehaviour
             Debug.Log("LEVEL COMPLETE");
         }
 
+    }
+
+    private void DisableTrajectory() {
+        for (int i = 0; i < transform.parent.childCount; i++) {
+            Transform child = transform.parent.GetChild(i);
+            Shadow shadow = child.GetComponent<Shadow>();
+            if (shadow != null) {
+                shadow.GetComponent<MeshRenderer>().enabled = false;
+            }
+        }
+        cameras.GetComponent<LineRenderer>().enabled = false;
+    }
+
+    private void EnableTrajectory() {
+        for (int i = 0; i < transform.parent.childCount; i++) {
+            Transform child = transform.parent.GetChild(i);
+            Shadow shadow = child.GetComponent<Shadow>();
+            if (shadow != null) {
+                shadow.GetComponent<MeshRenderer>().enabled = true;
+            }
+        }
+        cameras.GetComponent<LineRenderer>().enabled = true;
     }
 }

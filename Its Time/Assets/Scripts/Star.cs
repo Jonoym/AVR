@@ -20,8 +20,9 @@ public class Star : MonoBehaviour
         GameObject particles = Instantiate(starHit, transform.position, Quaternion.identity);
         particles.transform.parent = transform.parent;
 
-        Destroy(outer);
         numHit++;
+        Debug.Log("Hit");
+        Destroy(outer);
         Destroy(gameObject);
     }
 

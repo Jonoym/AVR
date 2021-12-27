@@ -37,11 +37,12 @@ public class DestroyCollider : MonoBehaviour
             if (LayerMask.NameToLayer("Piece") == nearbyObject.gameObject.layer)
             {
                 continue;
-            }
-            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.AddExplosionForce(-force * 0.1f, transform.position, 10);
+            } else {
+                Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.AddExplosionForce(-force * 0.6f, transform.position, 10);
+                }
             }
         }
     }
@@ -55,7 +56,6 @@ public class DestroyCollider : MonoBehaviour
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                rb.AddExplosionForce(-force * 0.5f, transform.position, radius);
                 if (LayerMask.NameToLayer("Piece") != nearbyObject.gameObject.layer)
                 {
                     rb.useGravity = false;

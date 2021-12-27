@@ -16,10 +16,15 @@ public class Trajectory : MonoBehaviour
 
     public bool drawLine = true;
 
+    public GameObject shadow;
+
+    private ChangeCameras cameras;
+
     // Start is called before the first frame update
     void Start()
     {
         line = GetComponent<LineRenderer>();
+        cameras = transform.GetComponent<ChangeCameras>();
     }
 
     // Update is called once per frame  
@@ -39,9 +44,15 @@ public class Trajectory : MonoBehaviour
             newPoint.y = startingPosition.y + startingVelocity.y * t + Physics.gravity.y / 2f * t * t;
             points.Add(newPoint);
 
-            if (Physics.OverlapSphere(newPoint, 0.1f, layers).Length > 0)
+            if (Physics.OverlapSphere(newPoint, 2f, layers).Length > 0)
             {
                 line.positionCount = points.Count;
+                shadow.transform.position = newPoint;
+                if (cameras.GetFiringPiece() != null) {
+                    Transform ammoTransform = cameras.GetFiringPiece().transform;
+                    shadow.transform.rotation = ammoTransform.rotation;
+
+                }
                 break;
             }
         }

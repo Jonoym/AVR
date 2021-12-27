@@ -57,7 +57,7 @@ public class Crack : MonoBehaviour
                 if (damage > damageRequired)
                 {
                     CrackObject();
-                }
+                }   
             } else {
                 if (LayerMask.NameToLayer("Piece") != other.gameObject.layer) {
                     if (damage > damageRequired)

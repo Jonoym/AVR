@@ -63,7 +63,8 @@ public class ChangeCameras : MonoBehaviour
 
         // Need to disable the controls for the rotation of the object
         firingCamera.SetActive(false);
-        ammo.GetComponent<ControlObject>().enabled = false;
+        // ammo.GetComponent<ControlObject>().enabled = false;
+        AlterPieceControl(false);
 
         interiorCamera.SetActive(false);
     }
@@ -92,7 +93,8 @@ public class ChangeCameras : MonoBehaviour
         DisableRenderers();
 
         // Need to enable the controls for the rotation of the object
-        ammo.GetComponent<ControlObject>().enabled = true;
+        // ammo.GetComponent<ControlObject>().enabled = true;
+        AlterPieceControl(true);
     }
 
     private void GetChildren(GameObject obj) {
@@ -143,5 +145,26 @@ public class ChangeCameras : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void AlterPieceControl(bool set) {
+        for (int i = 0; i < firingCamera.transform.childCount; i++) {
+            Transform child = firingCamera.transform.GetChild(i);
+            ControlObject control = child.GetComponent<ControlObject>();
+            if (control != null) {
+                control.enabled = set;
+            }
+        }
+    }
+
+    public GameObject GetFiringPiece() {
+        for (int i = 0; i < firingCamera.transform.childCount; i++) {
+            Transform child = firingCamera.transform.GetChild(i);
+            ControlObject control = child.GetComponent<ControlObject>();
+            if (control != null) {
+                return child.gameObject;
+            }
+        }
+        return null;
     }
 }
