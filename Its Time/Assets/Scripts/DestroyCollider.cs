@@ -19,8 +19,8 @@ public class DestroyCollider : MonoBehaviour
     {
         if (other.tag == "BlackHoleForce")
         {
+            FindObjectOfType<AudioManager>().Play("BlackHole3");
             Destroy(other.gameObject);
-
         }
     }
 

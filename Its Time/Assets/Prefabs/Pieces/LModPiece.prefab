@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8299948256816844125}
   - component: {fileID: 8299948256816844124}
   - component: {fileID: 8299948256816844115}
+  - component: {fileID: 5230559420365543790}
   m_Layer: 14
   m_Name: LModPiece
   m_TagString: Untagged
@@ -100,8 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d84f9a4c0ec56438968faeb56caccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingCamera: {fileID: 0}
-  fortress: {fileID: 0}
   throwForce: 20
 --- !u!114 &8299948256816844120
 MonoBehaviour:
@@ -115,7 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a66204ee712474d9df1a291fb459d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingCamera: {fileID: 0}
   rotationSpeed: 90
 --- !u!54 &8299948256816844127
 Rigidbody:
@@ -185,3 +183,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6666, y: 2, z: 2}
   m_Center: {x: -1, y: 2, z: 1}
+--- !u!114 &5230559420365543790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8299948256816844114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e323119b7b5f0fb4a8025907482a0903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

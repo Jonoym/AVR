@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class Touchable : MonoBehaviour
 {
+
+    private bool touched = false;
     void OnCollisionEnter(Collision other)
     {
-        if (1 << LayerMask.NameToLayer("Piece") == 1 << other.gameObject.layer)
+        if (LayerMask.NameToLayer("Piece") == other.gameObject.layer)
         {
             SetTouched();
         }
-        else if (1 << LayerMask.NameToLayer("TouchedStructure") == 1 << other.gameObject.layer)
+        else if (LayerMask.NameToLayer("TouchedStructure") == other.gameObject.layer)
         {
             SetTouched();
         }
     }
 
     private void SetTouched() {
-        gameObject.layer = LayerMask.NameToLayer("TouchedStructure");
+        if (!touched) {
+            Debug.Log("Touched");
+            FindObjectOfType<AudioManager>().Play("Stone 1");
+            touched = true;
+            gameObject.layer = LayerMask.NameToLayer("TouchedStructure");
+        }
     }
 }

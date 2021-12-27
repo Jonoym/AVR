@@ -14,22 +14,31 @@ public class Crack : MonoBehaviour
 
     public bool destroyableByPiece = true;
 
+    AudioManager manager;
+
+    void Start() {
+        manager = FindObjectOfType<AudioManager>();
+    }
+
     void OnCollisionEnter(Collision other)
     {
         CheckCollisions(other);
     }
 
-    // void OnCollisionStay(Collision other) {
-    //     CheckCollisions(other);
-    // }
-
     private void CheckCollisions(Collision other) {
         if (LayerMask.NameToLayer("Piece") == other.gameObject.layer)
         {
+            if (other.impulse.sqrMagnitude > 20) {
+                manager.Play("PieceThump");
+                manager.Play("StoneCollisions");
+            }
             SetTouched();
         }
         else if (LayerMask.NameToLayer("TouchedStructure") == other.gameObject.layer)
         {
+            if (other.impulse.sqrMagnitude > 20) {
+                manager.Play("StoneCollisions");
+            }
             SetTouched();
         }
 
@@ -74,6 +83,8 @@ public class Crack : MonoBehaviour
         collided = true;
 
         TurnOffCollision();
+
+        PlayRandomCrack();
         
         GameObject newChild = Instantiate(cracked, transform.position, Quaternion.identity);
         newChild.transform.parent = gameObject.transform.parent.transform;
@@ -94,5 +105,13 @@ public class Crack : MonoBehaviour
 
     private void SetTouched() {
         gameObject.layer = LayerMask.NameToLayer("TouchedStructure");
+    }
+    
+    private void PlayRandomCrack() {
+        Debug.Log("here");
+        int random = Random.Range(1, 6);
+
+        Debug.Log(random);
+        manager.Play("StoneCrack" + random);
     }
 }

@@ -112,6 +112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 2
   force: 100
+  destroySound: {fileID: 7601145936422129552, guid: 1bdffdfd39fd3974495f8c54a81da19a,
+    type: 3}
 --- !u!1 &7682083583630691933
 GameObject:
   m_ObjectHideFlags: 0

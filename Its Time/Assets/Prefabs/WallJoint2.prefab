@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8844584778184143591}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WallJoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,6 +120,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmoothBlockTall
       objectReference: {fileID: 0}
+    - target: {fileID: 8816809708810641543, guid: 1bf2b1f042f276c42a99d74eee9c33ac,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1591565984829451947, guid: 1bf2b1f042f276c42a99d74eee9c33ac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1bf2b1f042f276c42a99d74eee9c33ac, type: 3}
@@ -216,6 +221,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880626819138446854, guid: b26c9c879e1f33d479233cce34560bb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b26c9c879e1f33d479233cce34560bb4, type: 3}
