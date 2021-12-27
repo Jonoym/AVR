@@ -17,8 +17,6 @@ public class ChangeCameras : MonoBehaviour
 
     private LinkedList<GameObject> items;
 
-    public GameObject ammo;
-
     private int currentDisplay = 0;
 
     void Start()

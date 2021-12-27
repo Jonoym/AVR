@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4822011441172775675}
   - component: {fileID: 2053963124043081769}
   - component: {fileID: 3307941041696607045}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: LPiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,10 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d84f9a4c0ec56438968faeb56caccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingCamera: {fileID: 0}
-  newPiece: {fileID: 5741282782926918204}
-  fortress: {fileID: 0}
-  stars: {fileID: 0}
   throwForce: 20
 --- !u!114 &4822011441172775675
 MonoBehaviour:
@@ -131,7 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a66204ee712474d9df1a291fb459d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingCamera: {fileID: 0}
   rotationSpeed: 90
 --- !u!65 &2053963124043081769
 BoxCollider:

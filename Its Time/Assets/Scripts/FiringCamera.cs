@@ -10,6 +10,8 @@ public class FiringCamera : MonoBehaviour
     
     public float sensitivityY;
 
+    public Transform player;
+
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -20,8 +22,13 @@ public class FiringCamera : MonoBehaviour
 
     void Update()
     {
+        // float rotationY = Input.GetAxis("Mouse Y") * sensitivityX;
+        // Angles = new Vector3(Mathf.MoveTowards(Angles.x, 90, -rotationY), 0);
+        // transform.localEulerAngles = Angles;
+
         float rotationY = Input.GetAxis("Mouse Y") * sensitivityX;
-        Angles = new Vector3(Mathf.MoveTowards(Angles.x, 90, -rotationY), 0);
+        player.Rotate(0, Input.GetAxis("Mouse X") * sensitivityY, 0);
+        Angles = new Vector3(Mathf.MoveTowards(Angles.x, 90, -rotationY),0);
         transform.localEulerAngles = Angles;
     }
 }

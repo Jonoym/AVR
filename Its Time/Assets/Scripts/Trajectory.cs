@@ -8,7 +8,7 @@ public class Trajectory : MonoBehaviour
     public Transform trajectory;
     LineRenderer line;
 
-    public int numPoints = 50;
+    public int numPoints = 100;
 
     public float time = 0.005f;
 
@@ -16,7 +16,7 @@ public class Trajectory : MonoBehaviour
 
     public bool drawLine = true;
 
-    public GameObject shadow;
+    private GameObject shadow;
 
     private ChangeCameras cameras;
 
@@ -34,7 +34,7 @@ public class Trajectory : MonoBehaviour
         List<Vector3> points = new List<Vector3>();
         Vector3 startingPosition = trajectory.position;
         Vector3 startingVelocity = trajectory.forward * 20f;
-        for (float t = 0.3f; t < numPoints; t += time)
+        for (float t = 0.25f; t < numPoints; t += time)
         {
             if (!drawLine) {
                 line.positionCount = 0;
@@ -44,19 +44,26 @@ public class Trajectory : MonoBehaviour
             newPoint.y = startingPosition.y + startingVelocity.y * t + Physics.gravity.y / 2f * t * t;
             points.Add(newPoint);
 
-            if (Physics.OverlapSphere(newPoint, 2f, layers).Length > 0)
+            if (Physics.OverlapSphere(newPoint, 1.5f, layers).Length > 0)
             {
                 line.positionCount = points.Count;
-                shadow.transform.position = newPoint;
-                if (cameras.GetFiringPiece() != null) {
-                    Transform ammoTransform = cameras.GetFiringPiece().transform;
-                    shadow.transform.rotation = ammoTransform.rotation;
+                if (shadow != null)  {
+                    shadow.transform.position = newPoint;
+                    if (cameras.GetFiringPiece() != null) {
+                        Transform ammoTransform = cameras.GetFiringPiece().transform;
+                        shadow.transform.rotation = ammoTransform.rotation;
 
+                    }
                 }
                 break;
             }
         }
 
         line.SetPositions(points.ToArray());
+    }
+
+    public void SetShadow(GameObject shadow) {
+        Debug.Log(shadow);
+        this.shadow = shadow;
     }
 }

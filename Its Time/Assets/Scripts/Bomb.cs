@@ -27,6 +27,8 @@ public class Bomb : MonoBehaviour
     private void Explode() {
         Instantiate(explosion, transform.position, transform.rotation);
 
+        FindObjectOfType<AudioManager>().Play("BombExplosion");
+
         CrackNearby();
 
         ExplodeNearby();

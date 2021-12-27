@@ -2965,6 +2965,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1984848574}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1194407737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194407729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012bc21dec0544d4eb33bef252aa4d05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1267423072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8844584778184143591, guid: 543cabe14f5f1474eb971aba129cfad0,
@@ -3953,6 +3965,11 @@ PrefabInstance:
       objectReference: {fileID: 1065489683}
     - target: {fileID: 5149791395153140573, guid: 8d104d0101ae37441b08f8641eb5be92,
         type: 3}
+      propertyPath: cameras
+      value: 
+      objectReference: {fileID: 954714827}
+    - target: {fileID: 5149791395153140573, guid: 8d104d0101ae37441b08f8641eb5be92,
+        type: 3}
       propertyPath: fortress
       value: 
       objectReference: {fileID: 1705790125}
@@ -3961,6 +3978,11 @@ PrefabInstance:
       propertyPath: firingCamera
       value: 
       objectReference: {fileID: 1065489683}
+    - target: {fileID: 5149791395153140573, guid: 8d104d0101ae37441b08f8641eb5be92,
+        type: 3}
+      propertyPath: pieces.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d104d0101ae37441b08f8641eb5be92, type: 3}
 --- !u!4 &5360318569021953796 stripped

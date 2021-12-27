@@ -26,6 +26,9 @@ public class BlackholeSpawner : MonoBehaviour
     {
         Instantiate(explosion, transform.position, transform.rotation);
 
+        FindObjectOfType<AudioManager>().Play("BlackHole");
+        FindObjectOfType<AudioManager>().Play("BlackHole2");
+
         CrackNearby();
 
         TagNearby();

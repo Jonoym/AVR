@@ -5,7 +5,7 @@ using UnityEngine;
 public class ControlObject : MonoBehaviour
 {
 
-    public GameObject firingCamera;
+    private GameObject firingCamera;
 
     public float rotationSpeed = 90;
 
@@ -16,9 +16,8 @@ public class ControlObject : MonoBehaviour
     private bool zAxis;
 
     // Start is called before the first frame update
-    void Start()
-    {
-
+    void Start() {
+        firingCamera = FindObjectOfType<FiringCamera>().gameObject;
     }
 
     // Update is called once per frame
