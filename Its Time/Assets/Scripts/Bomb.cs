@@ -22,6 +22,7 @@ public class Bomb : MonoBehaviour
         {
             Explode();
         }
+        Explode();
     }
 
     private void Explode() {
