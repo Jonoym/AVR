@@ -17,14 +17,14 @@ public class FireBlock : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        // if (Input.GetKeyDown(KeyCode.Space)) {
             
-            DisableControls();
+        //     DisableControls();
 
-            FireObject();
+        //     FireObject();
 
-            StartCoroutine(FindObjectOfType<PieceSpawner>().CheckGameEnd(5));
-        }
+        //     StartCoroutine(FindObjectOfType<PieceSpawner>().CheckGameEnd(5));
+        // }
     }
 
     private void FireObject() {

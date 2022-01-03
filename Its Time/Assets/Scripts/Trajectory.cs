@@ -18,13 +18,19 @@ public class Trajectory : MonoBehaviour
 
     private GameObject shadow;
 
-    private ChangeCameras cameras;
+    private Controller cameras;
 
     // Start is called before the first frame update
     void Start()
     {
         line = GetComponent<LineRenderer>();
-        cameras = transform.GetComponent<ChangeCameras>();
+        if (transform.GetComponent<ChangeCameras>() == null) {
+            cameras = transform.GetComponent<Controller>();
+        }
+        // else 
+        // {
+        //     cameras = transform.GetComponent<ChangeCameras>();
+        // }
     }
 
     // Update is called once per frame  

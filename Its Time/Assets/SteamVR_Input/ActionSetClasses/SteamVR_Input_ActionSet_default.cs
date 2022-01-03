@@ -97,11 +97,19 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean SnapTurnRight
+        public virtual SteamVR_Action_Boolean HomeButton
         {
             get
             {
-                return SteamVR_Actions.default_SnapTurnRight;
+                return SteamVR_Actions.default_HomeButton;
+            }
+        }
+        
+        public virtual SteamVR_Action_Vector2 TrackPadRotation
+        {
+            get
+            {
+                return SteamVR_Actions.default_TrackPadRotation;
             }
         }
         

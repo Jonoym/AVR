@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class RotateFortress : MonoBehaviour
 {
-
-    public GameObject exteriorCamera;
+    
+    public SteamVR_Action_Vector2 input;
     
     public float rotationSpeed = 120;
 
@@ -13,24 +14,12 @@ public class RotateFortress : MonoBehaviour
 
     private bool right;
 
-    void Update ()
-    {
-            left = Input.GetKey(KeyCode.Q);
-            right = Input.GetKey(KeyCode.E);
-    }
-
     void Awake() {
         Cursor.lockState = CursorLockMode.Confined;
     }
 
     void FixedUpdate()
     {
-        if (left) {
-            transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
-        }
-
-        if (right) {
-            transform.Rotate(0, -rotationSpeed * Time.deltaTime, 0);
-        }
+        transform.Rotate(0, rotationSpeed * Time.deltaTime * input.axis.x, 0);
     }
 }

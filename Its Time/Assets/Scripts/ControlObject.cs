@@ -17,33 +17,33 @@ public class ControlObject : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
-        firingCamera = FindObjectOfType<FiringCamera>().gameObject;
+        //firingCamera = FindObjectOfType<FiringCamera>().gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (firingCamera.activeSelf)
-        {
-            xAxis = Input.GetKey(KeyCode.Q);
-            yAxis = Input.GetKey(KeyCode.W);
-            zAxis = Input.GetKey(KeyCode.E);
-        }
+        // if (firingCamera.activeSelf)
+        // {
+        //     xAxis = Input.GetKey(KeyCode.Q);
+        //     yAxis = Input.GetKey(KeyCode.W);
+        //     zAxis = Input.GetKey(KeyCode.E);
+        // }
     }
 
     void FixedUpdate()
     {
-        if (xAxis)
-        {
-            transform.Rotate(rotationSpeed * Time.deltaTime, 0, 0);
-        }
-        if (yAxis)
-        {
-            transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
-        }
-        if (zAxis)
-        {
-            transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
-        }
+        // if (xAxis)
+        // {
+        //     transform.Rotate(rotationSpeed * Time.deltaTime, 0, 0);
+        // }
+        // if (yAxis)
+        // {
+        //     transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
+        // }
+        // if (zAxis)
+        // {
+        //     transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+        // }
     }
 }

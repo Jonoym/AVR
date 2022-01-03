@@ -108,10 +108,8 @@ public class Crack : MonoBehaviour
     }
     
     private void PlayRandomCrack() {
-        Debug.Log("here");
         int random = Random.Range(1, 6);
 
-        Debug.Log(random);
         manager.Play("StoneCrack" + random);
     }
 }
