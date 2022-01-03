@@ -12,8 +12,8 @@ public class FireBlock : MonoBehaviour
     public float throwForce = 20f;
 
     void Start() {
-        firingCamera = FindObjectOfType<FiringCamera>().gameObject;
-        fortress = FindObjectOfType<RotateFortress>().gameObject;
+        //firingCamera = FindObjectOfType<FiringCamera>().gameObject;
+        //fortress = FindObjectOfType<RotateFortress>().gameObject;
     }
     void Update()
     {

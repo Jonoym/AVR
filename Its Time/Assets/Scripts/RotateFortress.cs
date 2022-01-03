@@ -8,7 +8,7 @@ public class RotateFortress : MonoBehaviour
     
     public SteamVR_Action_Vector2 input;
     
-    public float rotationSpeed = 120;
+    public float rotationSpeed = 30;
 
     private bool left;
 

@@ -13,7 +13,7 @@ public class Controller : MonoBehaviour
 
     public GameObject firingPlayer;
 
-    public GameObject fortress;
+    private GameObject exteriorRotationPoint;
 
     public GameObject fortressItem;
 
@@ -25,11 +25,11 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
-        // items = new LinkedList<GameObject>();
+        items = new LinkedList<GameObject>();
 
-        // GetChildren(fortressItem);
-        // DisableRenderers();
-        // SwitchView();
+        GetChildren(fortressItem);
+
+        exteriorRotationPoint = FindObjectOfType<RotateFortress>().gameObject;
     }
     void Update()
     {
@@ -65,8 +65,8 @@ public class Controller : MonoBehaviour
         Debug.Log("Exterior");
         // Need to enable the controls for the rotation of the fortress
         exteriorPlayer.SetActive(true);
-        //fortress.GetComponent<RotateFortress>().enabled = true;
 
+        exteriorRotationPoint.GetComponent<RotateFortress>().enabled = true;
         // Need to disable the controls for the rotation of the object
         firingPlayer.SetActive(false);
         // ammo.GetComponent<ControlObject>().enabled = false;
@@ -80,7 +80,7 @@ public class Controller : MonoBehaviour
         Debug.Log("Interior");
         // Need to disable the controls for the rotation of the fortress
         exteriorPlayer.SetActive(false);
-        //fortress.GetComponent<RotateFortress>().enabled = false;
+        exteriorRotationPoint.GetComponent<RotateFortress>().enabled = false;
 
         EnableRenderers();
 
@@ -93,8 +93,6 @@ public class Controller : MonoBehaviour
 
         // Position the firing camera correctly 
         firingPlayer.SetActive(true);
-        firingPlayer.transform.position = new Vector3(0, 0, -10);
-        firingPlayer.transform.Rotate(0, 0, 0);
 
         DisableRenderers();
 
