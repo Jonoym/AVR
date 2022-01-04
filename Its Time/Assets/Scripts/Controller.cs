@@ -69,7 +69,7 @@ public class Controller : MonoBehaviour
         exteriorRotationPoint.GetComponent<RotateFortress>().enabled = true;
         // Need to disable the controls for the rotation of the object
         firingPlayer.SetActive(false);
-        // ammo.GetComponent<ControlObject>().enabled = false;
+
         AlterPieceControl(false);
 
         interiorPlayer.SetActive(false);
@@ -97,7 +97,6 @@ public class Controller : MonoBehaviour
         DisableRenderers();
 
         // Need to enable the controls for the rotation of the object
-        // ammo.GetComponent<ControlObject>().enabled = true;
         AlterPieceControl(true);
     }
 

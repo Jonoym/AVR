@@ -17,6 +17,7 @@ public class FireBlock : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log("Piece " + transform.rotation);
         // if (Input.GetKeyDown(KeyCode.Space)) {
             
         //     DisableControls();

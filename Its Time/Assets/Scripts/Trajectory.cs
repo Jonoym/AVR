@@ -5,7 +5,7 @@ using UnityEngine;
 public class Trajectory : MonoBehaviour
 {
 
-    public Transform trajectory;
+    public Transform trajectoryPoint;
     LineRenderer line;
 
     public int numPoints = 100;
@@ -38,8 +38,8 @@ public class Trajectory : MonoBehaviour
     {
         line.positionCount = numPoints;
         List<Vector3> points = new List<Vector3>();
-        Vector3 startingPosition = trajectory.position;
-        Vector3 startingVelocity = trajectory.forward * 20f;
+        Vector3 startingPosition = trajectoryPoint.position;
+        Vector3 startingVelocity = trajectoryPoint.forward * 20f;
         for (float t = 0.25f; t < numPoints; t += time)
         {
             if (!drawLine) {
@@ -55,11 +55,11 @@ public class Trajectory : MonoBehaviour
                 line.positionCount = points.Count;
                 if (shadow != null)  {
                     shadow.transform.position = newPoint;
-                    if (cameras.GetFiringPiece() != null) {
-                        Transform ammoTransform = cameras.GetFiringPiece().transform;
-                        shadow.transform.rotation = ammoTransform.rotation;
+                    // if (cameras.GetFiringPiece() != null) {
+                    //     Transform ammoTransform = cameras.GetFiringPiece().transform;
+                    //     shadow.transform.rotation = ammoTransform.rotation;
 
-                    }
+                    // }
                 }
                 break;
             }

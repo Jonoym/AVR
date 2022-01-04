@@ -17,12 +17,13 @@ public class ControlObject : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
-        //firingCamera = FindObjectOfType<FiringCamera>().gameObject;
+        firingCamera = FindObjectOfType<FiringCamera>().gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
+        transform.parent = firingCamera.transform;
         // if (firingCamera.activeSelf)
         // {
         //     xAxis = Input.GetKey(KeyCode.Q);
