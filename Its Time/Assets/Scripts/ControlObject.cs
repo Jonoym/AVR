@@ -7,44 +7,23 @@ public class ControlObject : MonoBehaviour
 
     private GameObject firingCamera;
 
-    public float rotationSpeed = 90;
-
-    private bool xAxis;
-
-    private bool yAxis;
-
-    private bool zAxis;
+    private Controller controller;
 
     // Start is called before the first frame update
     void Start() {
         firingCamera = FindObjectOfType<FiringCamera>().gameObject;
+        controller = FindObjectOfType<Controller>();
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.parent = firingCamera.transform;
-        // if (firingCamera.activeSelf)
-        // {
-        //     xAxis = Input.GetKey(KeyCode.Q);
-        //     yAxis = Input.GetKey(KeyCode.W);
-        //     zAxis = Input.GetKey(KeyCode.E);
-        // }
+
+        GameObject piece = controller.GetFiringPiece();
+        if (piece != null) {
+            piece.transform.rotation = transform.rotation;
+        }
     }
 
-    void FixedUpdate()
-    {
-        // if (xAxis)
-        // {
-        //     transform.Rotate(rotationSpeed * Time.deltaTime, 0, 0);
-        // }
-        // if (yAxis)
-        // {
-        //     transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
-        // }
-        // if (zAxis)
-        // {
-        //     transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
-        // }
-    }
 }

@@ -10,16 +10,8 @@ public class RotateFortress : MonoBehaviour
     
     public float rotationSpeed = 30;
 
-    private bool left;
-
-    private bool right;
-
-    void Awake() {
-        Cursor.lockState = CursorLockMode.Confined;
-    }
-
     void FixedUpdate()
     {
-        transform.Rotate(0, rotationSpeed * Time.deltaTime * input.axis.x, 0);
+        transform.Rotate(0, rotationSpeed * Time.deltaTime * -input.axis.x, 0);
     }
 }

@@ -113,6 +113,14 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Boolean FirePiece
+        {
+            get
+            {
+                return SteamVR_Actions.default_FirePiece;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get

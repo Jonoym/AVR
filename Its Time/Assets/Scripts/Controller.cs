@@ -192,7 +192,7 @@ public class Controller : MonoBehaviour
         for (int i = 0; i < firingPlayer.transform.childCount; i++)
         {
             Transform child = firingPlayer.transform.GetChild(i);
-            ControlObject control = child.GetComponent<ControlObject>();
+            FireBlock control = child.GetComponent<FireBlock>();
             if (control != null)
             {
                 return child.gameObject;

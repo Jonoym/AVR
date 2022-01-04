@@ -211,6 +211,9 @@
             },
             {
                "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/firepiece"
+                  },
                   "position" : {
                      "output" : "/actions/default/in/trackpadrotation"
                   }

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8299948256816844123}
   - component: {fileID: 8299948256816844122}
   - component: {fileID: 8299948256816844121}
-  - component: {fileID: 8299948256816844120}
   - component: {fileID: 8299948256816844127}
   - component: {fileID: 8299948256816844126}
   - component: {fileID: 8299948256816844125}
@@ -101,20 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d84f9a4c0ec56438968faeb56caccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger:
+    actionPath: 
+    needsReinit: 0
   throwForce: 20
---- !u!114 &8299948256816844120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8299948256816844114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72a66204ee712474d9df1a291fb459d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 90
 --- !u!54 &8299948256816844127
 Rigidbody:
   m_ObjectHideFlags: 0

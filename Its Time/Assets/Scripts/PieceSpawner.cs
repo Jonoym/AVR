@@ -6,6 +6,8 @@ public class PieceSpawner : MonoBehaviour
 {
     private int currentPiece = 0;
 
+    public GameObject[] controllerPieces;
+
     public GameObject[] pieces;
 
     public GameObject[] shadows;
@@ -32,14 +34,15 @@ public class PieceSpawner : MonoBehaviour
     private void NextTurn() {
         SpawnPiece();
 
+        SpawnControlPiece();
+
         SpawnShadow();
 
         currentPiece++;
     }
 
     private void SpawnPiece() {
-        
-        GameObject piece = Instantiate(pieces[currentPiece], transform.position + new Vector3(0, 0, 0), Quaternion.identity);
+        GameObject piece = Instantiate(pieces[currentPiece], transform.position + new Vector3(0, 0, 4), Quaternion.identity);
 
         Debug.Log("NEW PIECE HAS BEEN SPAWNED");
         piece.SetActive(true);
@@ -51,7 +54,6 @@ public class PieceSpawner : MonoBehaviour
 
         
         piece.GetComponent<FireBlock>().enabled = true;   
-        piece.GetComponent<ControlObject>().enabled = true;
 
         Rigidbody rb = piece.GetComponent<Rigidbody>();
         if (piece.GetComponent<BoxCollider>() != null) {
@@ -60,6 +62,19 @@ public class PieceSpawner : MonoBehaviour
             piece.GetComponent<MeshCollider>().enabled = true;
         }
         piece.GetComponent<MeshRenderer>().enabled = true;
+        rb.useGravity = false;
+    }
+
+    private void SpawnControlPiece() { 
+        GameObject piece = Instantiate(controllerPieces[currentPiece], transform.position + new Vector3(0, 1, 1), Quaternion.identity);
+
+        Debug.Log("NEW CONTROL PIECE HAS BEEN SPAWNED");
+        piece.SetActive(true);
+
+        piece.transform.parent = transform.parent;
+        piece.transform.Rotate(new Vector3(0, 45, 0));
+
+        Rigidbody rb = piece.GetComponent<Rigidbody>();
         rb.useGravity = false;
     }
 
