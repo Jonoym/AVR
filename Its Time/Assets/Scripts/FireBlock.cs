@@ -16,9 +16,12 @@ public class FireBlock : MonoBehaviour
 
     public float throwForce = 20f;
 
+    private Transform leftHand;
+
     void Start() {
         firingCamera = FindObjectOfType<FiringCamera>().gameObject;
         fortress = FindObjectOfType<Fortress>().gameObject;
+        leftHand = FindObjectOfType<LeftHand>().gameObject.transform;
     }
     void Update()
     {
@@ -36,7 +39,7 @@ public class FireBlock : MonoBehaviour
 
     private void FireObject() {
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-        rb.AddForce(firingCamera.transform.forward * throwForce, ForceMode.VelocityChange);
+        rb.AddForce(leftHand.forward * throwForce, ForceMode.VelocityChange);
         rb.useGravity = true;
         transform.parent = fortress.transform;
     }
