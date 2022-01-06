@@ -25,6 +25,11 @@ public class FireBlock : MonoBehaviour
     }
     void Update()
     {
+        InitiateFire();
+    }
+
+
+    public void InitiateFire() {
         if (trigger.lastState && !fired) {
             
             fired = true;
@@ -33,11 +38,15 @@ public class FireBlock : MonoBehaviour
 
             FireObject();
 
-            StartCoroutine(FindObjectOfType<PieceSpawner>().CheckGameEnd(5));
+            if (FindObjectOfType<PieceSpawner>() != null) {
+                StartCoroutine(FindObjectOfType<PieceSpawner>().CheckGameEnd(5));
+            } else {
+                StartCoroutine(FindObjectOfType<StartSpawner>().GetNextPiece(1));
+            }
         }
     }
 
-    private void FireObject() {
+    public void FireObject() {
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         rb.AddForce(leftHand.forward * throwForce, ForceMode.VelocityChange);
         rb.useGravity = true;

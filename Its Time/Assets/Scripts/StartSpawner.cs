@@ -2,35 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PieceSpawner : MonoBehaviour
+public class StartSpawner : MonoBehaviour
 {
     private int currentPiece = 0;
 
-    public GameObject[] controllerPieces;
+    public GameObject controllerPiece;
 
-    public GameObject[] pieces;
+    public GameObject pieceSelect;
 
-    public GameObject[] shadows;
+    public GameObject shadowSelect;
 
     public void Start() {
         NextTurn();
     }
 
-    public IEnumerator CheckGameEnd(float time) {
+    public IEnumerator GetNextPiece(float time) {
         yield return new WaitForSeconds(time);
 
-        if (!Star.gameWon()){
-            if (pieces.Length > currentPiece) {
-                NextTurn();
-            } else {
-                Debug.Log("LEVEL FAILED");
-                FindObjectOfType<SceneChanger>().ChangeScene("Start");
-            }
-        } else {
-            Debug.Log("LEVEL COMPLETE");
-            FindObjectOfType<SceneChanger>().ChangeScene("Start");
-        }
-
+        NextTurn();
     }
 
     private void NextTurn() {
@@ -44,7 +33,7 @@ public class PieceSpawner : MonoBehaviour
     }
 
     private void SpawnPiece() {
-        GameObject piece = Instantiate(pieces[currentPiece], transform.position + new Vector3(0, 0, 4), Quaternion.identity);
+        GameObject piece = Instantiate(pieceSelect, transform.position + new Vector3(0, 0f, 2f), Quaternion.identity);
 
         Debug.Log("NEW PIECE HAS BEEN SPAWNED");
         piece.SetActive(true);
@@ -68,7 +57,7 @@ public class PieceSpawner : MonoBehaviour
     }
 
     private void SpawnControlPiece() { 
-        GameObject piece = Instantiate(controllerPieces[currentPiece], transform.position + new Vector3(0, 1, 0.7f), Quaternion.identity);
+        GameObject piece = Instantiate(controllerPiece, transform.position + new Vector3(0, 1f, 0.7f), Quaternion.identity);
 
         Debug.Log("NEW CONTROL PIECE HAS BEEN SPAWNED");
         piece.SetActive(true);
@@ -81,7 +70,7 @@ public class PieceSpawner : MonoBehaviour
     }
 
     private void SpawnShadow() {
-        GameObject shadow = Instantiate(shadows[currentPiece], transform.position + new Vector3(0, 0, 4), Quaternion.identity);
+        GameObject shadow = Instantiate(shadowSelect, transform.position + new Vector3(0, 0f, 3f), Quaternion.identity);
 
         Debug.Log("NEW SHADOW HAS BEEN SPAWNED");
         shadow.SetActive(true);

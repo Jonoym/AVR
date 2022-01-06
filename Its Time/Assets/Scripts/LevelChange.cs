@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Bomb : MonoBehaviour
+public class LevelChange : MonoBehaviour
 {
 
     public GameObject explosion;
@@ -12,6 +11,8 @@ public class Bomb : MonoBehaviour
     public float force;
     
     public bool isPiece = false;
+    
+    public string levelName;
 
     void OnCollisionEnter(Collision other) {
         Explode();
@@ -26,7 +27,7 @@ public class Bomb : MonoBehaviour
 
         ExplodeNearby();
 
-        Destroy(gameObject);
+        StartCoroutine(ChangeSceneDelay(1));
     }
 
     private void CrackNearby() {
@@ -50,4 +51,10 @@ public class Bomb : MonoBehaviour
         } 
     }
 
+    public IEnumerator ChangeSceneDelay(float time) {
+        yield return new WaitForSeconds(time);
+
+        FindObjectOfType<SceneChanger>().ChangeScene(levelName);
+
+    }
 }
