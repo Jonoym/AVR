@@ -19,7 +19,7 @@ public class Controller : MonoBehaviour
 
     private LinkedList<GameObject> items;
 
-    private int currentPlayer = 0;
+    private int currentPlayer = 1;
 
     private bool released = true;
 
@@ -46,16 +46,26 @@ public class Controller : MonoBehaviour
 
     void SwitchView()
     {
+
+        if (FindObjectOfType<PieceSpawner>() != null)
+        {
+            if (!FindObjectOfType<PieceSpawner>().controlsEnabled)
+            {
+                return;
+            }
+        }
+
         if (currentPlayer % 3 == 0)
         {
-            SetExteriorPlayer();
+            SetFiringPlayer();
         }
         else if (currentPlayer % 3 == 1)
         {
             SetInteriorPlayer();
-        } else
+        }
+        else
         {
-            SetFiringPlayer();
+            SetExteriorPlayer();
         }
         currentPlayer = (currentPlayer + 1) % 3;
     }
@@ -64,13 +74,16 @@ public class Controller : MonoBehaviour
     {
         Debug.Log("Exterior");
         // Need to enable the controls for the rotation of the fortress
-        exteriorPlayer.SetActive(true);
 
         exteriorRotationPoint.GetComponent<RotateFortress>().enabled = true;
         // Need to disable the controls for the rotation of the object
         firingPlayer.SetActive(false);
+        interiorPlayer.SetActive(false);
+
+        exteriorPlayer.SetActive(true);
 
         AlterPieceControl(false);
+        DisableRenderers();
 
         interiorPlayer.SetActive(false);
     }
@@ -80,8 +93,11 @@ public class Controller : MonoBehaviour
         Debug.Log("Interior");
         // Need to disable the controls for the rotation of the fortress
         exteriorPlayer.SetActive(false);
+        firingPlayer.SetActive(false);
         exteriorRotationPoint.GetComponent<RotateFortress>().enabled = false;
 
+
+        AlterPieceControl(false);
         EnableRenderers();
 
         interiorPlayer.SetActive(true);
@@ -90,6 +106,9 @@ public class Controller : MonoBehaviour
     {
         Debug.Log("Firing");
         interiorPlayer.SetActive(false);
+        exteriorPlayer.SetActive(false);
+        exteriorRotationPoint.GetComponent<RotateFortress>().enabled = false;
+
 
         // Position the firing camera correctly 
         firingPlayer.SetActive(true);
@@ -120,7 +139,8 @@ public class Controller : MonoBehaviour
 
     private void DisableRenderers()
     {
-        if (items == null) {
+        if (items == null)
+        {
             return;
         }
         foreach (GameObject item in items)
@@ -148,7 +168,8 @@ public class Controller : MonoBehaviour
 
     private void EnableRenderers()
     {
-        if (items == null) {
+        if (items == null)
+        {
             return;
         }
         foreach (GameObject item in items)

@@ -12,12 +12,23 @@ public class PieceSpawner : MonoBehaviour
 
     public GameObject[] shadows;
 
+    public GameObject trajectory;
+
+    public GameObject controllerSpawn;
+
+    public bool controlsEnabled = true;
+
     public void Start() {
         NextTurn();
     }
 
     public IEnumerator CheckGameEnd(float time) {
+
+        controlsEnabled = false;
+
         yield return new WaitForSeconds(time);
+
+        controlsEnabled = true;
 
         if (!Star.gameWon()){
             if (pieces.Length > currentPiece) {
@@ -44,7 +55,7 @@ public class PieceSpawner : MonoBehaviour
     }
 
     private void SpawnPiece() {
-        GameObject piece = Instantiate(pieces[currentPiece], transform.position + new Vector3(0, 0, 4), Quaternion.identity);
+        GameObject piece = Instantiate(pieces[currentPiece], trajectory.transform.position, Quaternion.identity);
 
         Debug.Log("NEW PIECE HAS BEEN SPAWNED");
         piece.SetActive(true);
@@ -53,7 +64,6 @@ public class PieceSpawner : MonoBehaviour
 
         piece.transform.parent = transform.parent;
         piece.transform.Rotate(new Vector3(0, 45, 0));
-
         
         piece.GetComponent<FireBlock>().enabled = true;   
 
@@ -68,7 +78,7 @@ public class PieceSpawner : MonoBehaviour
     }
 
     private void SpawnControlPiece() { 
-        GameObject piece = Instantiate(controllerPieces[currentPiece], transform.position + new Vector3(0, 1, 0.7f), Quaternion.identity);
+        GameObject piece = Instantiate(controllerPieces[currentPiece], controllerSpawn.transform.position, Quaternion.identity);
 
         Debug.Log("NEW CONTROL PIECE HAS BEEN SPAWNED");
         piece.SetActive(true);
@@ -81,13 +91,12 @@ public class PieceSpawner : MonoBehaviour
     }
 
     private void SpawnShadow() {
-        GameObject shadow = Instantiate(shadows[currentPiece], transform.position + new Vector3(0, 0, 4), Quaternion.identity);
+        GameObject shadow = Instantiate(shadows[currentPiece], trajectory.transform.position, Quaternion.identity);
 
         Debug.Log("NEW SHADOW HAS BEEN SPAWNED");
         shadow.SetActive(true);
 
         shadow.transform.parent = transform.parent;
-
         FindObjectOfType<Trajectory>().SetShadow(shadow);
     }
 
