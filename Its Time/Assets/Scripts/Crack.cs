@@ -10,6 +10,8 @@ public class Crack : MonoBehaviour
 
     public GameObject cracked;
 
+    public GameObject smoke;
+
     private bool collided = false;
 
     public bool destroyableByPiece = true;
@@ -85,6 +87,9 @@ public class Crack : MonoBehaviour
         TurnOffCollision();
 
         PlayRandomCrack();
+        if (smoke != null) {
+            GameObject smokeEffect = Instantiate(smoke, transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)), Quaternion.identity);
+        }
         
         GameObject newChild = Instantiate(cracked, transform.position, Quaternion.identity);
         newChild.transform.parent = gameObject.transform.parent.transform;

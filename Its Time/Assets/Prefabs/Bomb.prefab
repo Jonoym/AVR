@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2085861718532174823}
   - component: {fileID: 1983039725120103687}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 5081774725126217385}
   - component: {fileID: 4728224470816128751}
   - component: {fileID: 2107776792100227192}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 5081774725150904806}
   - component: {fileID: 5081774725150904807}
   - component: {fileID: 5081774725150904728}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Shard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 5081774725551992210}
   - component: {fileID: 5081774725551992211}
   - component: {fileID: 5081774725551992212}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Shard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 5081774725930051154}
   - component: {fileID: 5081774725930051167}
   - component: {fileID: 5081774725930051152}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 5081774726199356416}
   - component: {fileID: 5081774726199356417}
   - component: {fileID: 5081774726199356418}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Shard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,6 +609,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lightning
       objectReference: {fileID: 0}
+    - target: {fileID: 4461906612626035678, guid: a76590d5d50d57f48b74b80802827693,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a76590d5d50d57f48b74b80802827693, type: 3}
 --- !u!4 &8890192663593787019 stripped
@@ -703,6 +708,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Island
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8324d9abaa5ab9e40bc4e85b495342e7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8324d9abaa5ab9e40bc4e85b495342e7, type: 3}

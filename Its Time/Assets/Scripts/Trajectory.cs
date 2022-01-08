@@ -57,7 +57,7 @@ public class Trajectory : MonoBehaviour
                 newPoint.y = startingPosition.y + startingVelocity.y * t + Physics.gravity.y / 2f * t * t;
                 points.Add(newPoint);
 
-                if (Physics.OverlapSphere(newPoint, 1.5f, layers).Length > 0)
+                if (Physics.OverlapSphere(newPoint, 0.8f, layers).Length > 0)
                 {
                     line.positionCount = points.Count;
                     if (shadow != null)  {
