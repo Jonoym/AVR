@@ -252,10 +252,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620cfd7eb170cef498843a613ec7001b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
+  explosion: {fileID: 1329845292236604, guid: 9bba9cf244c53c5439505dfc96fdd11c, type: 3}
   radius: 2
   force: 10000
   isPiece: 0
+  levelName: 
 --- !u!1 &7468205002973790463
 GameObject:
   m_ObjectHideFlags: 0

@@ -121,6 +121,30 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Boolean SnapTurnRight
+        {
+            get
+            {
+                return SteamVR_Actions.default_SnapTurnRight;
+            }
+        }
+        
+        public virtual SteamVR_Action_Vector2 FireForce
+        {
+            get
+            {
+                return SteamVR_Actions.default_FireForce;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean FireForceTouch
+        {
+            get
+            {
+                return SteamVR_Actions.default_FireForceTouch;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get

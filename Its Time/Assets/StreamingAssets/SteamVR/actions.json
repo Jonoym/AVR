@@ -58,6 +58,18 @@
       "type": "boolean"
     },
     {
+      "name": "/actions/default/in/SnapTurnRight",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/FireForce",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/default/in/FireForceTouch",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
@@ -179,7 +191,10 @@
       "/actions/default/in/SnapTurnLeft": "Snap Turn (Left)",
       "/actions/default/in/HomeButton": "HomeButton",
       "/actions/default/in/TrackPadRotation": "TrackPadRotation",
-      "/actions/default/in/FirePiece": "FirePiece"
+      "/actions/default/in/FirePiece": "FirePiece",
+      "/actions/default/in/SnapTurnRight": "Snap Turn (Right)",
+      "/actions/default/in/FireForce": "FireForce",
+      "/actions/default/in/FireForceTouch": "FireForceTouch"
     }
   ]
 }

@@ -6,6 +6,8 @@ using Valve.VR;
 public class FireBlock : MonoBehaviour
 {
 
+    public SteamVR_Action_Vector2 fireForce;
+
     public SteamVR_Action_Boolean trigger;
 
     private bool fired = false;
@@ -26,6 +28,14 @@ public class FireBlock : MonoBehaviour
     void Update()
     {
         InitiateFire();
+
+        UpdateForce();
+    }
+
+    private void UpdateForce() {
+        if (fireForce.axis.x != 0 && fireForce.axis.y != 0) {
+            throwForce = fireForce.axis.y * 10 + 20f;
+        }
     }
 
 

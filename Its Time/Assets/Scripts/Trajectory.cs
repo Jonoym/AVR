@@ -46,7 +46,11 @@ public class Trajectory : MonoBehaviour
             line.positionCount = numPoints;
             List<Vector3> points = new List<Vector3>();
             Vector3 startingPosition = trajectoryPoint.position;
-            Vector3 startingVelocity = leftHand.forward * 20f;
+            FireBlock fireBlock = FindObjectOfType<FireBlock>();
+            if (fireBlock == null) {
+                return;
+            }
+            Vector3 startingVelocity = leftHand.forward * fireBlock.throwForce;
             for (float t = 0.25f; t < numPoints; t += time)
             {
                 if (!drawLine) {

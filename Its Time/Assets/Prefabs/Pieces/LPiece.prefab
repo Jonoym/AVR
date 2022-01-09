@@ -114,8 +114,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d84f9a4c0ec56438968faeb56caccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireForce:
+    actionPath: /actions/default/in/FireForce
+    needsReinit: 0
   trigger:
     actionPath: /actions/default/in/FirePiece
+    needsReinit: 0
+  fireForceTouch:
+    actionPath: /actions/default/in/FireForceTouch
     needsReinit: 0
   throwForce: 20
 --- !u!65 &2053963124043081769

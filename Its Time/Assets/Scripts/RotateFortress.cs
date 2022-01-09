@@ -6,12 +6,12 @@ using Valve.VR;
 public class RotateFortress : MonoBehaviour
 {
     
-    public SteamVR_Action_Vector2 input;
+    public SteamVR_Action_Vector2 fortressRotation;
     
     public float rotationSpeed = 30;
 
     void FixedUpdate()
     {
-        transform.Rotate(0, rotationSpeed * Time.deltaTime * -input.axis.x, 0);
+        transform.Rotate(0, rotationSpeed * Time.deltaTime * -fortressRotation.axis.x, 0);
     }
 }

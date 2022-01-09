@@ -88,7 +88,7 @@ public class Crack : MonoBehaviour
 
         PlayRandomCrack();
         if (smoke != null) {
-            GameObject smokeEffect = Instantiate(smoke, transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)), Quaternion.identity);
+            GameObject smokeEffect = Instantiate(smoke, transform.position + new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f)), Quaternion.identity);
         }
         
         GameObject newChild = Instantiate(cracked, transform.position, Quaternion.identity);
