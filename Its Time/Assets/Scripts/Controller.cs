@@ -151,17 +151,19 @@ public class Controller : MonoBehaviour
             }
 
             MeshRenderer renderer = item.GetComponent<MeshRenderer>();
+            ParticleSystem particle = item.GetComponent<ParticleSystem>();
+            Light light = item.GetComponent<Light>();
             if (renderer != null)
             {
                 renderer.enabled = false;
             }
-            else
+            else if (particle != null)
             {
-                ParticleSystem particle = item.GetComponent<ParticleSystem>();
-                if (particle != null)
-                {
-                    particle.Stop();
-                }
+                particle.Stop();
+            }
+            else if (light != null) 
+            {
+                light.enabled = false;
             }
         }
     }
@@ -180,17 +182,19 @@ public class Controller : MonoBehaviour
             }
 
             MeshRenderer renderer = item.GetComponent<MeshRenderer>();
+            ParticleSystem particle = item.GetComponent<ParticleSystem>();
+            Light light = item.GetComponent<Light>();
             if (renderer != null)
             {
                 renderer.enabled = true;
             }
-            else
+            else if (particle != null)
             {
-                ParticleSystem particle = item.GetComponent<ParticleSystem>();
-                if (particle != null)
-                {
-                    particle.Play();
-                }
+                particle.Play();
+            }
+            else if (light != null) 
+            {
+                light.enabled = true;
             }
         }
     }
