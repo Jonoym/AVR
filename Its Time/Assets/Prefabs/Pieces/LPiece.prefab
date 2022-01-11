@@ -120,9 +120,6 @@ MonoBehaviour:
   trigger:
     actionPath: /actions/default/in/FirePiece
     needsReinit: 0
-  fireForceTouch:
-    actionPath: /actions/default/in/FireForceTouch
-    needsReinit: 0
   throwForce: 20
 --- !u!65 &2053963124043081769
 BoxCollider:

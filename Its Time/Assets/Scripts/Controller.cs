@@ -19,7 +19,7 @@ public class Controller : MonoBehaviour
 
     private LinkedList<GameObject> items;
 
-    private int currentPlayer = 1;
+    private int currentPlayer = 2;
 
     private bool released = true;
 
@@ -46,7 +46,6 @@ public class Controller : MonoBehaviour
 
     void SwitchView()
     {
-
         if (FindObjectOfType<PieceSpawner>() != null)
         {
             if (!FindObjectOfType<PieceSpawner>().controlsEnabled)

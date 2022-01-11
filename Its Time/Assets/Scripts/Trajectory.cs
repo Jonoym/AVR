@@ -22,6 +22,8 @@ public class Trajectory : MonoBehaviour
 
     private Transform leftHand;
 
+    private bool shadowSpawned = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,7 @@ public class Trajectory : MonoBehaviour
     // Update is called once per frame  
     void Update()
     {
+        shadowSpawned = false;
         if (leftHand == null) {
             if (FindObjectOfType<LeftHand>().gameObject.transform != null) {
                 leftHand = FindObjectOfType<LeftHand>().gameObject.transform;
@@ -51,7 +54,7 @@ public class Trajectory : MonoBehaviour
                 return;
             }
             Vector3 startingVelocity = leftHand.forward * fireBlock.throwForce;
-            for (float t = 0.25f; t < numPoints; t += time)
+            for (float t = 0.05f; t < numPoints; t += time)
             {
                 if (!drawLine) {
                     line.positionCount = 0;
@@ -61,18 +64,20 @@ public class Trajectory : MonoBehaviour
                 newPoint.y = startingPosition.y + startingVelocity.y * t + Physics.gravity.y / 2f * t * t;
                 points.Add(newPoint);
 
-                if (Physics.OverlapSphere(newPoint, 0.8f, layers).Length > 0)
+                if (Physics.OverlapSphere(newPoint, 0.5f, layers).Length > 0)
                 {
+                    shadowSpawned = true;
                     line.positionCount = points.Count;
                     if (shadow != null)  {
                         shadow.transform.position = newPoint;
-                        // if (cameras.GetFiringPiece() != null) {
-                        //     Transform ammoTransform = cameras.GetFiringPiece().transform;
-                        //     shadow.transform.rotation = ammoTransform.rotation;
-
-                        // }
+                        shadow.GetComponent<MeshRenderer>().enabled = true;
                     }
                     break;
+                }
+            }
+            if (!shadowSpawned) {
+                if (shadow != null)  {
+                    shadow.GetComponent<MeshRenderer>().enabled = false;
                 }
             }
 
@@ -82,7 +87,6 @@ public class Trajectory : MonoBehaviour
     }
 
     public void SetShadow(GameObject shadow) {
-        Debug.Log(shadow);
         this.shadow = shadow;
     }
 }

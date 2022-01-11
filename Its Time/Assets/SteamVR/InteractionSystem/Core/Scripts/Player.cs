@@ -404,6 +404,8 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void ActivateRig( GameObject rig )
 		{
+			_instance = this;
+
 			rigSteamVR.SetActive( rig == rigSteamVR );
 			rig2DFallback.SetActive( rig == rig2DFallback );
 

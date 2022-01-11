@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class FireBlock : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class FireBlock : MonoBehaviour
 
     private Transform leftHand;
 
+    private static bool fireAttempted = false;
+
+    private static bool forceChangeAttemped = false;
+
     void Start() {
         firingCamera = FindObjectOfType<FiringCamera>().gameObject;
         fortress = FindObjectOfType<Fortress>().gameObject;
@@ -27,14 +32,33 @@ public class FireBlock : MonoBehaviour
     }
     void Update()
     {
+        if (!fireAttempted) {
+            ControllerButtonHints.ShowButtonHint(Player.instance.rightHand, trigger);
+            ControllerButtonHints.ShowTextHint(Player.instance.rightHand, trigger, "Fire");
+        }
+        if (!forceChangeAttemped) {
+            ControllerButtonHints.ShowButtonHint(Player.instance.leftHand, fireForce);
+            ControllerButtonHints.ShowTextHint(Player.instance.leftHand, fireForce, "Adjust Force");
+        }
+
         InitiateFire();
 
         UpdateForce();
     }
 
+    private void HideHints() {
+        ControllerButtonHints.HideButtonHint(Player.instance.rightHand, trigger);
+        ControllerButtonHints.HideTextHint(Player.instance.rightHand, trigger);
+        ControllerButtonHints.HideButtonHint(Player.instance.leftHand, fireForce);
+        ControllerButtonHints.HideTextHint(Player.instance.leftHand, fireForce);
+    }
+
     private void UpdateForce() {
         if (fireForce.axis.x != 0 && fireForce.axis.y != 0) {
             throwForce = fireForce.axis.y * 10 + 20f;
+            forceChangeAttemped = true;
+            ControllerButtonHints.HideButtonHint(Player.instance.leftHand, fireForce);
+            ControllerButtonHints.HideTextHint(Player.instance.leftHand, fireForce);
         }
     }
 
@@ -43,6 +67,8 @@ public class FireBlock : MonoBehaviour
         if (trigger.lastState && !fired) {
             
             fired = true;
+
+            fireAttempted = true;
             
             DisableControls();
 
@@ -53,6 +79,8 @@ public class FireBlock : MonoBehaviour
             } else {
                 StartCoroutine(FindObjectOfType<StartSpawner>().GetNextPiece(1));
             }
+
+            HideHints();
         }
     }
 
