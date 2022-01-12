@@ -13,7 +13,7 @@ public class FireBlock : MonoBehaviour
 
     private bool fired = false;
 
-    private GameObject firingCamera;
+    private GameObject firingPlayer;
 
     private GameObject fortress;
 
@@ -26,7 +26,7 @@ public class FireBlock : MonoBehaviour
     private static bool forceChangeAttemped = false;
 
     void Start() {
-        firingCamera = FindObjectOfType<FiringCamera>().gameObject;
+        firingPlayer = FindObjectOfType<FiringPlayer>().gameObject;
         fortress = FindObjectOfType<Fortress>().gameObject;
         leftHand = FindObjectOfType<LeftHand>().gameObject.transform;
     }
@@ -70,9 +70,11 @@ public class FireBlock : MonoBehaviour
 
             fireAttempted = true;
             
-            DisableControls();
+            DisablePieceControls();
 
             FireObject();
+
+            PrintFireInfo();
 
             if (FindObjectOfType<PieceSpawner>() != null) {
                 StartCoroutine(FindObjectOfType<PieceSpawner>().CheckGameEnd(5));
@@ -91,7 +93,7 @@ public class FireBlock : MonoBehaviour
         transform.parent = fortress.transform;
     }
 
-    private void DisableControls() {
+    private void DisablePieceControls() {
         gameObject.GetComponent<FireBlock>().enabled = false;   
 
         DisableTrajectory();
@@ -119,5 +121,13 @@ public class FireBlock : MonoBehaviour
                 Destroy(child.gameObject);
             }
         }
+    }
+
+    private void PrintFireInfo() {
+        Debug.Log("Current Piece has been fired");
+        Debug.Log("Rotation of (" + transform.localEulerAngles + ")");
+        Debug.Log("Direction of (" + leftHand.forward + ")");
+        Debug.Log("Throw force of " + throwForce);
+        Debug.Log("Exterior angle of (" + FindObjectOfType<RotateFortress>().gameObject.transform.localEulerAngles + ")");
     }
 }

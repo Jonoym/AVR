@@ -68,7 +68,7 @@ namespace Valve.VR.InteractionSystem
                 if (FindObjectOfType<LeftHand>().gameObject.transform != null) {
                     leftHand = FindObjectOfType<LeftHand>().gameObject.transform;
                 }
-            } else if (FindObjectOfType<FiringCamera>() != null && FindObjectOfType<FiringCamera>().enabled)  {
+            } else if (FindObjectOfType<FiringPlayer>() != null && FindObjectOfType<FiringPlayer>().enabled)  {
                 //scale arc to match player scale
                 scale = Player.instance.transform.lossyScale.x;
                 if (thickness != prevThickness || segmentCount != prevSegmentCount)

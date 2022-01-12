@@ -45,7 +45,7 @@ public class Trajectory : MonoBehaviour
             if (FindObjectOfType<LeftHand>().gameObject.transform != null) {
                 leftHand = FindObjectOfType<LeftHand>().gameObject.transform;
             }
-        } else if (FindObjectOfType<FiringCamera>().enabled) {
+        } else if (FindObjectOfType<FiringPlayer>().enabled) {
             line.positionCount = numPoints;
             List<Vector3> points = new List<Vector3>();
             Vector3 startingPosition = trajectoryPoint.position;

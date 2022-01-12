@@ -30,15 +30,17 @@ public class PieceSpawner : MonoBehaviour
 
         controlsEnabled = true;
 
+        FindObjectOfType<ScoreManager>().PrintScoreInfo();
+
         if (!FindObjectOfType<ScoreManager>().gameWon()){
             if (pieces.Length > currentPiece) {
                 NextTurn();
             } else {
-                Debug.Log("LEVEL FAILED");
+                Debug.Log("Level Failed");
                 FindObjectOfType<SceneChanger>().ChangeScene("Start");
             }
         } else {
-            Debug.Log("LEVEL COMPLETE");
+            Debug.Log("Level Completed");
             FindObjectOfType<SceneChanger>().ChangeScene("Start");
         }
 
@@ -51,9 +53,10 @@ public class PieceSpawner : MonoBehaviour
 
         SpawnShadow();
 
-        Debug.Log("Piece Spawned");
-
         currentPiece++;
+
+        Debug.Log("New Piece has Spawned");
+        Debug.Log("Current Piece Number is " + currentPiece);
     }
 
     private void SpawnPiece() {

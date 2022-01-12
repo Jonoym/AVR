@@ -13,7 +13,7 @@ public class ControlObject : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
-        firingCamera = FindObjectOfType<FiringCamera>().gameObject;
+        firingCamera = FindObjectOfType<FiringPlayer>().gameObject;
         controller = FindObjectOfType<Controller>();
     }
 

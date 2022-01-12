@@ -38,4 +38,9 @@ public class ScoreManager : MonoBehaviour
     public bool gameWon() {
         return stars == starsHit;
     }
+
+    public void PrintScoreInfo() {
+        Debug.Log("Total of " + starsHit + " stars hit out of " + stars);
+        Debug.Log("Current score of " + score); 
+    }
 }

@@ -71,7 +71,7 @@ public class Controller : MonoBehaviour
 
     private void SetExteriorPlayer()
     {
-        Debug.Log("Exterior");
+        Debug.Log("Camera Change to Exterior");
         // Need to enable the controls for the rotation of the fortress
 
         exteriorRotationPoint.GetComponent<RotateFortress>().enabled = true;
@@ -89,7 +89,7 @@ public class Controller : MonoBehaviour
 
     private void SetInteriorPlayer()
     {
-        Debug.Log("Interior");
+        Debug.Log("Camera Change to Interior");
         // Need to disable the controls for the rotation of the fortress
         exteriorPlayer.SetActive(false);
         firingPlayer.SetActive(false);
@@ -103,7 +103,7 @@ public class Controller : MonoBehaviour
     }
     private void SetFiringPlayer()
     {
-        Debug.Log("Firing");
+        Debug.Log("Camera Change to Firing");
         interiorPlayer.SetActive(false);
         exteriorPlayer.SetActive(false);
         exteriorRotationPoint.GetComponent<RotateFortress>().enabled = false;

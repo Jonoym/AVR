@@ -14,7 +14,6 @@ public class Star : MonoBehaviour
     void Start() {
         scoreManager = FindObjectOfType<ScoreManager>();
         scoreManager.IncrementStarCount();
-        Debug.Log(scoreManager.getTotalStars());
     }
 
     void OnTriggerEnter(Collider other) {
