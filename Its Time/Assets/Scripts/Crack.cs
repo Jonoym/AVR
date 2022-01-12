@@ -16,10 +16,13 @@ public class Crack : MonoBehaviour
 
     public bool destroyableByPiece = true;
 
-    AudioManager manager;
+    AudioManager audioManager;
+
+    ScoreManager scoreManager;
 
     void Start() {
-        manager = FindObjectOfType<AudioManager>();
+        audioManager = FindObjectOfType<AudioManager>();
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     void OnCollisionEnter(Collision other)
@@ -31,15 +34,15 @@ public class Crack : MonoBehaviour
         if (LayerMask.NameToLayer("Piece") == other.gameObject.layer)
         {
             if (other.impulse.sqrMagnitude > 20) {
-                manager.Play("PieceThump");
-                manager.Play("StoneCollisions");
+                audioManager.Play("PieceThump");
+                audioManager.Play("StoneCollisions");
             }
             SetTouched();
         }
         else if (LayerMask.NameToLayer("TouchedStructure") == other.gameObject.layer)
         {
             if (other.impulse.sqrMagnitude > 20) {
-                manager.Play("StoneCollisions");
+                audioManager.Play("StoneCollisions");
             }
             SetTouched();
         }
@@ -86,6 +89,10 @@ public class Crack : MonoBehaviour
 
         TurnOffCollision();
 
+        if (scoreManager != null) {
+            scoreManager.addCrackScore();
+        }
+
         PlayRandomCrack();
         if (smoke != null) {
             GameObject smokeEffect = Instantiate(smoke, transform.position + new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f)), Quaternion.identity);
@@ -115,6 +122,6 @@ public class Crack : MonoBehaviour
     private void PlayRandomCrack() {
         int random = Random.Range(1, 6);
 
-        manager.Play("StoneCrack" + random);
+        audioManager.Play("StoneCrack" + random);
     }
 }

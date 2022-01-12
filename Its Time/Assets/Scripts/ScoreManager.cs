@@ -4,20 +4,38 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    private int stars;
+    private int stars = 0;
 
-    private int starsHit;
+    private int starsHit = 0;
 
-    void Start() {
-        stars = 0;
-        starsHit = 0;
-    }
+    private int score = 0;
     
     public void IncrementStarCount() {
-
+        stars++;
     }
 
     public void IncrementStarsHit() {
+        starsHit++;
+        score += 5000;
+    }
 
+    public int getStarsHit() {
+        return starsHit;
+    }
+
+    public int getTotalStars() {
+        return stars;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void addCrackScore() {
+        score += 100;
+    }
+
+    public bool gameWon() {
+        return stars == starsHit;
     }
 }

@@ -30,7 +30,7 @@ public class PieceSpawner : MonoBehaviour
 
         controlsEnabled = true;
 
-        if (!Star.gameWon()){
+        if (!FindObjectOfType<ScoreManager>().gameWon()){
             if (pieces.Length > currentPiece) {
                 NextTurn();
             } else {
