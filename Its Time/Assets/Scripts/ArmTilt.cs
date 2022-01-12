@@ -7,10 +7,10 @@ public class ArmTilt : MonoBehaviour
 
     public GameObject armCanvas;
 
-    // Update is called once per frame
     void Update()
     {   
-        if (transform.rotation.z < 0f) {
+        float angle = transform.localEulerAngles.z;
+        if (angle < 320f && angle > 240f) {
             armCanvas.SetActive(true);
         } else {
             armCanvas.SetActive(false);
