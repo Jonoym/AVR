@@ -7,7 +7,6 @@ using Valve.VR.InteractionSystem;
 public class ControlObject : MonoBehaviour
 {
 
-    private Interactable interactable;
     private GameObject firingCamera;
 
     private Controller controller;
@@ -26,20 +25,6 @@ public class ControlObject : MonoBehaviour
         GameObject piece = controller.GetFiringPiece();
         if (piece != null) {
             piece.transform.rotation = transform.rotation;
-        }
-    }
-
-    private void OnHandHoverBegin(Hand hand) {
-        hand.ShowGrabHint();
-    }
-    private void OnHandHoverEnd(Hand hand) {
-        hand.HideGrabHint();
-    }
-    private void HandHoverUpdate(Hand hand) {
-        GrabTypes grabType = hand.GetGrabStarting();
-        bool isGrabEnding = hand.IsGrabEnding(gameObject);
-        if (interactable.attachedToHand == null && grabType != GrabTypes.None ) {
-            hand.HideGrabHint();
         }
     }
 }

@@ -70,6 +70,10 @@
       "type": "boolean"
     },
     {
+      "name": "/actions/default/in/MenuTrigger",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
@@ -194,7 +198,8 @@
       "/actions/default/in/FirePiece": "FirePiece",
       "/actions/default/in/SnapTurnRight": "Snap Turn (Right)",
       "/actions/default/in/FireForce": "FireForce",
-      "/actions/default/in/FireForceTouch": "FireForceTouch"
+      "/actions/default/in/FireForceTouch": "FireForceTouch",
+      "/actions/default/in/MenuTrigger": "MenuTrigger"
     }
   ]
 }

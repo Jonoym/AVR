@@ -21,6 +21,10 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene(levelName, LoadSceneMode.Single);
     }
 
+    public void RestartScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+    }
+
     public void Exit() {
         Application.Quit();
     }

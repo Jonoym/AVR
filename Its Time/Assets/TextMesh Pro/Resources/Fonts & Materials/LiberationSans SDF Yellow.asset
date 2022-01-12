@@ -103,7 +103,7 @@ Material:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
-    - _FaceColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
+    - _FaceColor: {r: 0.19474821, g: 0.19474821, b: 0.19474821, a: 1}
     - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _MaskEdgeColor: {r: 1, g: 1, b: 1, a: 1}
@@ -171,11 +171,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: LiberationSans SDF
+  m_Name: LiberationSans SDF Yellow
   m_EditorClassIdentifier: 
-  hashCode: 231247347
+  hashCode: 885600279
   material: {fileID: 2180264}
-  materialHashCode: 198912371
+  materialHashCode: -1954311593
   m_Version: 1.1.0
   m_SourceFontFileGUID: 
   m_SourceFontFile_EditorRef: {fileID: 0}
