@@ -35,7 +35,6 @@ public class StartSpawner : MonoBehaviour
     private void SpawnPiece() {
         GameObject piece = Instantiate(pieceSelect, transform.position + new Vector3(0, 0f, 2f), Quaternion.identity);
 
-        Debug.Log("NEW PIECE HAS BEEN SPAWNED");
         piece.SetActive(true);
 
         EnableTrajectory();
@@ -59,7 +58,6 @@ public class StartSpawner : MonoBehaviour
     private void SpawnControlPiece() { 
         GameObject piece = Instantiate(controllerPiece, transform.position + new Vector3(0, 1f, 0.7f), Quaternion.identity);
 
-        Debug.Log("NEW CONTROL PIECE HAS BEEN SPAWNED");
         piece.SetActive(true);
 
         piece.transform.parent = transform.parent;
@@ -72,7 +70,6 @@ public class StartSpawner : MonoBehaviour
     private void SpawnShadow() {
         GameObject shadow = Instantiate(shadowSelect, transform.position + new Vector3(0, 0f, 3f), Quaternion.identity);
 
-        Debug.Log("NEW SHADOW HAS BEEN SPAWNED");
         shadow.SetActive(true);
 
         shadow.transform.parent = transform.parent;

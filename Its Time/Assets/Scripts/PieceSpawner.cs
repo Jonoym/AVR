@@ -18,7 +18,7 @@ public class PieceSpawner : MonoBehaviour
 
     public bool controlsEnabled = true;
 
-    public void Start() {
+    public void Awake() {
         NextTurn();
     }
 

@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
     private int starsHit = 0;
 
     private int score = 0;
+
+    private float scoreMultiplier = 1;
     
     public void IncrementStarCount() {
         stars++;
@@ -37,6 +39,10 @@ public class ScoreManager : MonoBehaviour
 
     public bool gameWon() {
         return stars == starsHit;
+    }
+
+    public void AlterMultiplier(float multiplierChange) {
+        scoreMultiplier *= multiplierChange;
     }
 
     public void PrintScoreInfo() {

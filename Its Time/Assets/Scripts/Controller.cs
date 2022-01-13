@@ -30,6 +30,10 @@ public class Controller : MonoBehaviour
         GetChildren(fortressItem);
 
         exteriorRotationPoint = FindObjectOfType<RotateFortress>().gameObject;
+
+        SwitchView();
+        SwitchView();
+        SwitchView();
     }
     void Update()
     {

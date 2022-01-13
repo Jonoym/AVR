@@ -5,28 +5,21 @@ using UnityEngine;
 public class TimeDisplay : MonoBehaviour
 {
 
-    private bool timing = true;
-
-    private float timeElapsed = 0;
+    public bool timing = true;
 
     private TMPro.TMP_Text timeText;
 
+    private TimeManager timeManager;
+
     void Start() {
         timeText = GetComponent<TMPro.TMP_Text>();
-    }
-
-    public void enableTimer() {
-        timing = true;
-    }
-
-    public void disableTimer() {
-        timing = false;
+        timeManager = FindObjectOfType<TimeManager>();
     }
 
     void Update() {
         if (timing) {
-            timeElapsed += Time.deltaTime;
-            timeText.text = "" + ((int)timeElapsed / 60) + ":" + (((int)timeElapsed / 10) % 6) + ((int)timeElapsed % 10);
+            timeManager.AddTime(Time.deltaTime);
         }
+        timeText.text = timeManager.GetTimeFormatted();
     }
 }

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
-using Valve.VR.InteractionSystem;
 
 public class RestartButton : MonoBehaviour
 {
@@ -17,10 +16,12 @@ public class RestartButton : MonoBehaviour
 
     public bool released = true;
 
-    void OnTriggerEnter() {
-        Debug.Log("Restart Button Hovered");
-        GetComponent<MeshRenderer>().material = hover;
-        hovering = true;
+    void OnTriggerEnter(Collider other) {
+        if (LayerMask.NameToLayer("Lighting") == other.gameObject.layer)
+        {
+            GetComponent<MeshRenderer>().material = hover;
+            hovering = true;
+        }
     }
 
     void OnTriggerExit() {
