@@ -125,7 +125,9 @@ public class FireBlock : MonoBehaviour
 
     private void PrintFireInfo() {
         TimeManager timer = FindObjectOfType<TimeManager>();
-        Debug.Log(timer);
+        if (timer == null) {
+            return;
+        }
 
         Debug.Log("Current Piece has been fired");
         Debug.Log("    Rotation: (" + transform.localEulerAngles + ")");

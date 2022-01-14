@@ -10,8 +10,12 @@ public class ArmTilt : MonoBehaviour
     void Update()
     {   
         float angle = transform.localEulerAngles.z;
-        if (angle < 320f && angle > 240f) {
-            armCanvas.SetActive(true);
+        if (FindObjectOfType<ScoreManager>().ShouldDisplayArmMenu()) {
+            if (angle < 320f && angle > 240f) {
+                armCanvas.SetActive(true);
+            } else {
+                armCanvas.SetActive(false);
+            }
         } else {
             armCanvas.SetActive(false);
         }

@@ -11,6 +11,10 @@ public class ScoreManager : MonoBehaviour
     private int score = 0;
 
     private float scoreMultiplier = 1;
+
+    public GameObject endScreenMenu;
+
+    private bool displayArmMenu = true;
     
     public void IncrementStarCount() {
         stars++;
@@ -48,5 +52,25 @@ public class ScoreManager : MonoBehaviour
     public void PrintScoreInfo() {
         Debug.Log("Total of " + starsHit + " stars hit out of " + stars);
         Debug.Log("Current score of " + score); 
+    }
+
+    public bool ShouldDisplayArmMenu() {
+        return displayArmMenu;
+    }
+
+    private void DisableArmMenu() {
+        displayArmMenu = false;
+    }
+
+    public void DisplayEndMenu() {
+        DisableArmMenu();
+        endScreenMenu.SetActive(true);
+    }
+
+    public int GetTimeBonus() {
+        float time = FindObjectOfType<TimeManager>().GetRotationTurnTimeTotal();
+
+        float multiplier = 50 / (time + 50);
+        return (int)(5000 * multiplier);
     }
 }

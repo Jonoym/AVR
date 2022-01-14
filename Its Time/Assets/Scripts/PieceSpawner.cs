@@ -31,21 +31,25 @@ public class PieceSpawner : MonoBehaviour
 
         yield return new WaitForSeconds(time);
 
-        controlsEnabled = true;
-        timer.UpdateTurn(true);
 
-        FindObjectOfType<ScoreManager>().PrintScoreInfo();
+        ScoreManager score = FindObjectOfType<ScoreManager>();
 
-        if (!FindObjectOfType<ScoreManager>().gameWon()){
+        score.PrintScoreInfo();
+
+        if (!score.gameWon()){
             if (pieces.Length > currentPiece) {
+                controlsEnabled = true;
+                timer.UpdateTurn(true);
                 NextTurn();
             } else {
                 Debug.Log("Level Failed");
-                FindObjectOfType<SceneChanger>().ChangeScene("Start");
+                score.DisplayEndMenu();
+                //FindObjectOfType<SceneChanger>().ChangeScene("Start");
             }
         } else {
             Debug.Log("Level Completed");
-            FindObjectOfType<SceneChanger>().ChangeScene("Start");
+            score.DisplayEndMenu();
+            //FindObjectOfType<SceneChanger>().ChangeScene("Start");
         }
 
     }

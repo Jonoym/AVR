@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 7442849230263403921}
   - component: {fileID: 2521219389129983119}
   m_Layer: 5
-  m_Name: Stars Hit
+  m_Name: StarsHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1216,7 +1216,7 @@ GameObject:
   - component: {fileID: 4903311836770375389}
   - component: {fileID: 2139091840941777518}
   m_Layer: 5
-  m_Name: Power Up
+  m_Name: PowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2154,7 +2154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce05402c2a888d041949568e375ce3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timing: 1
 --- !u!1 &9047601779022109025
 GameObject:
   m_ObjectHideFlags: 0

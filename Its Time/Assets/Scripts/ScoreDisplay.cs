@@ -8,6 +8,8 @@ public class ScoreDisplay : MonoBehaviour
     private TMPro.TMP_Text starText;
 
     private ScoreManager scoreManager;
+
+    public bool includeTime = false;
     void Start()
     {
         starText = GetComponent<TMPro.TMP_Text>();
@@ -16,6 +18,10 @@ public class ScoreDisplay : MonoBehaviour
 
     void Update()
     {
-        starText.text = "" + scoreManager.getScore();
+        if (includeTime) {
+            starText.text = "" + (scoreManager.getScore() + scoreManager.GetTimeBonus());
+        } else {
+            starText.text = "" + scoreManager.getScore();
+        }
     }
 }
