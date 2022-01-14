@@ -50,6 +50,6 @@ public class MenuButton : MonoBehaviour
     public IEnumerator MainMenu(float time) {
         yield return new WaitForSeconds(time);
 
-        FindObjectOfType<SceneChanger>().ChangeScene("Start");
+        FindObjectOfType<SceneChanger>().ChangeScene("Menu");
     }
 }
