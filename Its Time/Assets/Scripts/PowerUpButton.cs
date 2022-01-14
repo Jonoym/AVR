@@ -42,7 +42,7 @@ public class PowerUpButton : MonoBehaviour
             released = false;
             if (hovering) {
                 Debug.Log("Power Up Button Pressed");
-                StartCoroutine(AddPowerUp(1));
+                AddPowerUp();
             }
 
         }
@@ -52,9 +52,7 @@ public class PowerUpButton : MonoBehaviour
         }
     }
 
-    public IEnumerator AddPowerUp(float time) {
-        yield return new WaitForSeconds(time);
-
+    private void AddPowerUp(){
         if (FindObjectOfType<Controller>().GetFiringPiece() != null) {
             GameObject piece = FindObjectOfType<Controller>().GetFiringPiece();
             if (piece.GetComponent<Bomb>() == null) {
@@ -67,6 +65,5 @@ public class PowerUpButton : MonoBehaviour
                 Debug.Log("Bomb has been added to the current piece");
             }
         }
-
     }
 }

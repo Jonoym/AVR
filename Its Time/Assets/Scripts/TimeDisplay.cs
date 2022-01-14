@@ -5,8 +5,6 @@ using UnityEngine;
 public class TimeDisplay : MonoBehaviour
 {
 
-    public bool timing = true;
-
     private TMPro.TMP_Text timeText;
 
     private TimeManager timeManager;
@@ -17,9 +15,6 @@ public class TimeDisplay : MonoBehaviour
     }
 
     void Update() {
-        if (timing) {
-            timeManager.AddTime(Time.deltaTime);
-        }
-        timeText.text = timeManager.GetTimeFormatted();
+        timeText.text = timeManager.GetRotationTimeFormatted();
     }
 }

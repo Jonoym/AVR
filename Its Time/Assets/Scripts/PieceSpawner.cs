@@ -24,11 +24,15 @@ public class PieceSpawner : MonoBehaviour
 
     public IEnumerator CheckGameEnd(float time) {
 
+        TimeManager timer = FindObjectOfType<TimeManager>();
+
         controlsEnabled = false;
+        timer.UpdateTurn(false);
 
         yield return new WaitForSeconds(time);
 
         controlsEnabled = true;
+        timer.UpdateTurn(true);
 
         FindObjectOfType<ScoreManager>().PrintScoreInfo();
 

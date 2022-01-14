@@ -124,10 +124,19 @@ public class FireBlock : MonoBehaviour
     }
 
     private void PrintFireInfo() {
+        TimeManager timer = FindObjectOfType<TimeManager>();
+        Debug.Log(timer);
+
         Debug.Log("Current Piece has been fired");
-        Debug.Log("Rotation of (" + transform.localEulerAngles + ")");
-        Debug.Log("Direction of (" + leftHand.forward + ")");
-        Debug.Log("Throw force of " + throwForce);
-        Debug.Log("Exterior angle of (" + FindObjectOfType<RotateFortress>().gameObject.transform.localEulerAngles + ")");
+        Debug.Log("    Rotation: (" + transform.localEulerAngles + ")");
+        Debug.Log("    Direction: (" + leftHand.forward + ")");
+        Debug.Log("    Throw Force: " + throwForce);
+        Debug.Log("    Exterior Angle: (" + FindObjectOfType<RotateFortress>().gameObject.transform.localEulerAngles + ")");
+
+        Debug.Log("    Time taken for Current Rotation Turn: " + timer.GetRotationTurnTime());
+        timer.LogRotationTime();
+        Debug.Log("    Total Game Time: " + timer.GetTotalTimeElapsed());
+        Debug.Log("    Total Rotating Time: " + timer.GetRotationTurnTimeTotal());
+
     }
 }

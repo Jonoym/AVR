@@ -21,7 +21,7 @@ public class Star : MonoBehaviour
         particles.transform.parent = transform.parent;
 
         scoreManager.IncrementStarsHit();
-        Debug.Log("STAR HAS BEEN HIT");
+        Debug.Log("Star has been Hit");
         Destroy(outer);
         Destroy(gameObject);
     }

@@ -24,22 +24,18 @@ public class Trajectory : MonoBehaviour
 
     private bool shadowSpawned = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         line = GetComponent<LineRenderer>();
-        if (transform.GetComponent<ChangeCameras>() == null) {
-            cameras = transform.GetComponent<Controller>();
-        }
-        // else 
-        // {
-        //     cameras = transform.GetComponent<ChangeCameras>();
-        // }
+        cameras = transform.GetComponent<Controller>();
     }
 
-    // Update is called once per frame  
     void Update()
     {
+        DrawTrajectory();
+    }
+
+    private void DrawTrajectory() {
         shadowSpawned = false;
         if (leftHand == null) {
             if (FindObjectOfType<LeftHand>().gameObject.transform != null) {
@@ -83,7 +79,6 @@ public class Trajectory : MonoBehaviour
 
             line.SetPositions(points.ToArray());
         }
-
     }
 
     public void SetShadow(GameObject shadow) {

@@ -19,6 +19,8 @@ public class Controller : MonoBehaviour
 
     private LinkedList<GameObject> items;
 
+    private TimeManager timer;
+
     private int currentPlayer = 2;
 
     private bool released = true;
@@ -30,6 +32,8 @@ public class Controller : MonoBehaviour
         GetChildren(fortressItem);
 
         exteriorRotationPoint = FindObjectOfType<RotateFortress>().gameObject;
+
+        timer = FindObjectOfType<TimeManager>();
 
         SwitchView();
         SwitchView();
@@ -60,14 +64,20 @@ public class Controller : MonoBehaviour
 
         if (currentPlayer % 3 == 0)
         {
+            Debug.Log("Camera Change to Firing");
+            timer.UpdateTurn(true);
             SetFiringPlayer();
         }
         else if (currentPlayer % 3 == 1)
         {
+            Debug.Log("Camera Change to Interior");
+            timer.UpdateTurn(false);
             SetInteriorPlayer();
         }
         else
         {
+            Debug.Log("Camera Change to Exterior");
+            timer.UpdateTurn(false);
             SetExteriorPlayer();
         }
         currentPlayer = (currentPlayer + 1) % 3;
@@ -75,7 +85,6 @@ public class Controller : MonoBehaviour
 
     private void SetExteriorPlayer()
     {
-        Debug.Log("Camera Change to Exterior");
         // Need to enable the controls for the rotation of the fortress
 
         exteriorRotationPoint.GetComponent<RotateFortress>().enabled = true;
@@ -93,7 +102,6 @@ public class Controller : MonoBehaviour
 
     private void SetInteriorPlayer()
     {
-        Debug.Log("Camera Change to Interior");
         // Need to disable the controls for the rotation of the fortress
         exteriorPlayer.SetActive(false);
         firingPlayer.SetActive(false);
@@ -107,7 +115,6 @@ public class Controller : MonoBehaviour
     }
     private void SetFiringPlayer()
     {
-        Debug.Log("Camera Change to Firing");
         interiorPlayer.SetActive(false);
         exteriorPlayer.SetActive(false);
         exteriorRotationPoint.GetComponent<RotateFortress>().enabled = false;

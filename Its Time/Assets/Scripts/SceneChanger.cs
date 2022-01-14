@@ -18,10 +18,16 @@ public class SceneChanger : MonoBehaviour
     }
 
     public void ChangeScene(string levelName) {
+
+        Debug.Log("Scene Changed to " + levelName);
+
         SceneManager.LoadScene(levelName, LoadSceneMode.Single);
     }
 
     public void RestartScene() {
+
+        Debug.Log("Current Scene has been Restarted");
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 

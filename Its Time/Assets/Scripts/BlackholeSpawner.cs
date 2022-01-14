@@ -36,6 +36,8 @@ public class BlackholeSpawner : MonoBehaviour
         GameObject newBlackHole = Instantiate(blackHole, transform.position, Quaternion.identity);
         newBlackHole.transform.parent = gameObject.transform.parent;
 
+        Debug.Log("Black Hole has been hit");
+
         Destroy(gameObject);
     }
 
