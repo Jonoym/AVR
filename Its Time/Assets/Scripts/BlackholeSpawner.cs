@@ -13,12 +13,17 @@ public class BlackholeSpawner : MonoBehaviour
 
     public float force;
 
+    private bool spawned = false;
+
 
     void OnCollisionEnter(Collision other)
     {
         if (LayerMask.NameToLayer("Platform") != other.gameObject.layer)
         {
-            SpawnBlackhole();
+            if (!spawned) {
+                spawned = true;
+                SpawnBlackhole();
+            }
         }
     }
 

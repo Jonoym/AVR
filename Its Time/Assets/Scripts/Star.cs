@@ -17,10 +17,11 @@ public class Star : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
+        scoreManager.IncrementStarsHit();
+        
         GameObject particles = Instantiate(starHit, transform.position, Quaternion.identity);
         particles.transform.parent = transform.parent;
 
-        scoreManager.IncrementStarsHit();
         Debug.Log("Star has been Hit");
         Destroy(outer);
         Destroy(gameObject);
