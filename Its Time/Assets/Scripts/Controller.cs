@@ -21,6 +21,8 @@ public class Controller : MonoBehaviour
 
     private TimeManager timer;
 
+    private PieceSpawner spawner;
+
     private int currentPlayer = 2;
 
     private bool released = true;
@@ -34,6 +36,8 @@ public class Controller : MonoBehaviour
         exteriorRotationPoint = FindObjectOfType<RotateFortress>().gameObject;
 
         timer = FindObjectOfType<TimeManager>();
+
+        spawner = FindObjectOfType<PieceSpawner>();
 
         SwitchView();
         SwitchView();
@@ -66,20 +70,26 @@ public class Controller : MonoBehaviour
         {
             Debug.Log("Camera Change to Firing");
             timer.UpdateTurn(true);
+            spawner.SetSpawnStatus(true);
             SetFiringPlayer();
         }
         else if (currentPlayer % 3 == 1)
         {
             Debug.Log("Camera Change to Interior");
             timer.UpdateTurn(false);
+            spawner.SetSpawnStatus(false);
             SetInteriorPlayer();
         }
         else
         {
             Debug.Log("Camera Change to Exterior");
             timer.UpdateTurn(false);
+            spawner.SetSpawnStatus(false);
             SetExteriorPlayer();
+            
         }
+        spawner.RenderQueue();
+
         currentPlayer = (currentPlayer + 1) % 3;
     }
 
@@ -227,7 +237,21 @@ public class Controller : MonoBehaviour
         for (int i = 0; i < firingPlayer.transform.childCount; i++)
         {
             Transform child = firingPlayer.transform.GetChild(i);
-            FireBlock control = child.GetComponent<FireBlock>();
+            FireBlock fireblock = child.GetComponent<FireBlock>();
+            if (fireblock != null)
+            {
+                return child.gameObject;
+            }
+        }
+        return null;
+    }
+
+    public GameObject GetControllerPiece()
+    {
+        for (int i = 0; i < firingPlayer.transform.childCount; i++)
+        {
+            Transform child = firingPlayer.transform.GetChild(i);
+            ControlObject control = child.GetComponent<ControlObject>();
             if (control != null)
             {
                 return child.gameObject;

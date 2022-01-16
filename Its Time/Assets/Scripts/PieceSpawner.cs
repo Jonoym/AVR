@@ -12,14 +12,25 @@ public class PieceSpawner : MonoBehaviour
 
     public GameObject[] shadows;
 
+    public GameObject[] queuePieces;
+
     public GameObject trajectory;
 
     public GameObject controllerSpawn;
 
-    public bool controlsEnabled = true;
+    public GameObject spawnPoint;
 
-    public void Awake() {
-        NextTurn();
+    public bool controlsEnabled = true;
+    
+    private bool spawning = false;
+
+    private bool firstTurn = false;
+
+    public void Update() {
+        if (spawning && !firstTurn) {
+            firstTurn = true;
+            NextTurn();
+        }
     }
 
     public IEnumerator CheckGameEnd(float time) {
@@ -54,7 +65,17 @@ public class PieceSpawner : MonoBehaviour
 
     }
 
+    public void SetSpawnStatus(bool status) {
+        spawning = status;
+    }
+
     private void NextTurn() {
+
+        if (!spawning) {
+            RenderQueue();
+            return;
+        }
+
         SpawnPiece();
 
         SpawnControlPiece();
@@ -65,6 +86,8 @@ public class PieceSpawner : MonoBehaviour
 
         Debug.Log("New Piece has Spawned");
         Debug.Log("Current Piece Number is " + currentPiece);
+
+        RenderQueue();
     }
 
     private void SpawnPiece() {
@@ -73,7 +96,7 @@ public class PieceSpawner : MonoBehaviour
 
         EnableTrajectory();
 
-        piece.transform.parent = transform.parent;
+        piece.transform.parent = spawnPoint.transform.parent;
         piece.transform.Rotate(new Vector3(0, 45, 0));
         
         piece.GetComponent<FireBlock>().enabled = true;   
@@ -93,7 +116,7 @@ public class PieceSpawner : MonoBehaviour
 
         piece.SetActive(true);
 
-        piece.transform.parent = transform.parent;
+        piece.transform.parent = spawnPoint.transform.parent;
         piece.transform.Rotate(new Vector3(0, 45, 0));
 
         Rigidbody rb = piece.GetComponent<Rigidbody>();
@@ -105,18 +128,26 @@ public class PieceSpawner : MonoBehaviour
 
         shadow.SetActive(true);
 
-        shadow.transform.parent = transform.parent;
+        shadow.transform.parent = spawnPoint.transform.parent;
         FindObjectOfType<Trajectory>().SetShadow(shadow);
     }
 
     private void EnableTrajectory() {
-        for (int i = 0; i < transform.parent.childCount; i++) {
-            Transform child = transform.parent.GetChild(i);
+        for (int i = 0; i < spawnPoint.transform.parent.childCount; i++) {
+            Transform child = spawnPoint.transform.parent.GetChild(i);
             Shadow shadow = child.GetComponent<Shadow>();
             if (shadow != null) {
                 shadow.GetComponent<MeshRenderer>().enabled = true;
             }
         }
         FindObjectOfType<Trajectory>().GetComponent<LineRenderer>().enabled = true;
+    }
+
+    public void RenderQueue() {
+        if (currentPiece == 0) {
+            FindObjectOfType<QueueDisplay>().UpdateQueue(queuePieces, currentPiece);
+        } else {
+            FindObjectOfType<QueueDisplay>().UpdateQueue(queuePieces, currentPiece - 1);
+        }
     }
 }
