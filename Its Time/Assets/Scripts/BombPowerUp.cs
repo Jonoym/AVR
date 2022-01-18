@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
-using Valve.VR.InteractionSystem;
 
-public class PowerUpButton : MonoBehaviour
+public class BombPowerUp : MonoBehaviour
 {
 
     public SteamVR_Action_Boolean buttonPressed;
@@ -16,6 +15,12 @@ public class PowerUpButton : MonoBehaviour
     private bool hovering = false;
 
     private bool released = true;
+
+    public GameObject explosion;
+
+    public float radius;
+
+    public float force;
 
     void OnTriggerEnter(Collider other) {
         if (LayerMask.NameToLayer("Lighting") == other.gameObject.layer)
@@ -36,8 +41,8 @@ public class PowerUpButton : MonoBehaviour
         {
             released = false;
             if (hovering) {
-                Debug.Log("Power Up Button Pressed");
-                DisplayPowerUpMenu();
+                Debug.Log("Bomb Power Up Button Pressed");
+                AddPowerUp();
             }
 
         }
@@ -47,8 +52,18 @@ public class PowerUpButton : MonoBehaviour
         }
     }
 
-    public void DisplayPowerUpMenu() {
-        OnTriggerExit();
-        FindObjectOfType<MenuDisplay>().DisplayPowerUpMenu();
+    private void AddPowerUp(){
+        if (FindObjectOfType<Controller>().GetFiringPiece() != null) {
+            GameObject piece = FindObjectOfType<Controller>().GetFiringPiece();
+            if (piece.GetComponent<Bomb>() == null) {
+                Bomb bomb = piece.AddComponent<Bomb>();
+                bomb.explosion = explosion;
+                bomb.radius = radius;
+                bomb.force = force;
+                bomb.isPiece = true;
+
+                Debug.Log("Bomb has been added to the current piece");
+            }
+        }
     }
 }

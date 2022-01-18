@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13036633, g: 0.09597023, b: 0.061800443, a: 1}
+  m_IndirectSpecularColor: {r: 0.13039896, g: 0.09599105, b: 0.06181343, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -27147,6 +27147,11 @@ PrefabInstance:
       propertyPath: queue
       value: 
       objectReference: {fileID: 1903792280}
+    - target: {fileID: 3974881999681552186, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3974881999687211496, guid: f004d8973475c6a4e97a24c351842813,
         type: 3}
       propertyPath: fortressItem
@@ -27216,6 +27221,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 'VRCameras '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974881999808903691, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974881999808903691, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974881999808903691, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
         type: 3}

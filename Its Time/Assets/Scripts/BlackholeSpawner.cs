@@ -15,15 +15,18 @@ public class BlackholeSpawner : MonoBehaviour
 
     private bool spawned = false;
 
+    public bool isPiece = false;
 
     void OnCollisionEnter(Collision other)
     {
-        if (LayerMask.NameToLayer("Platform") != other.gameObject.layer)
+        if (LayerMask.NameToLayer("Lighting") == other.gameObject.layer)
         {
-            if (!spawned) {
-                spawned = true;
-                SpawnBlackhole();
-            }
+            return;  
+        }
+
+        if (!spawned) {
+            spawned = true;
+            SpawnBlackhole();
         }
     }
 
@@ -41,12 +44,17 @@ public class BlackholeSpawner : MonoBehaviour
         GameObject newBlackHole = Instantiate(blackHole, transform.position, Quaternion.identity);
         newBlackHole.transform.parent = gameObject.transform.parent;
 
-        Debug.Log("Black Hole has been hit");
+        if (isPiece) {
+            Debug.Log("Piece Black Hole has Exploded");
+        } else {
+            Debug.Log("Black Hole has been hit");
+            Destroy(gameObject);
+        }
 
-        Destroy(gameObject);
     }
 
     private void CrackNearby() {
+        Debug.Log("HERERERERERER");
         Collider[] nearbyObjects = Physics.OverlapSphere(transform.position, radius + 1);
         foreach (Collider nearbyObject in nearbyObjects)
         {

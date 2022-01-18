@@ -4,7 +4,7 @@ using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
-public class PowerUpButton : MonoBehaviour
+public class ReturnButton : MonoBehaviour
 {
 
     public SteamVR_Action_Boolean buttonPressed;
@@ -36,7 +36,7 @@ public class PowerUpButton : MonoBehaviour
         {
             released = false;
             if (hovering) {
-                Debug.Log("Power Up Button Pressed");
+                Debug.Log("Return Button Pressed");
                 DisplayPowerUpMenu();
             }
 
@@ -49,6 +49,6 @@ public class PowerUpButton : MonoBehaviour
 
     public void DisplayPowerUpMenu() {
         OnTriggerExit();
-        FindObjectOfType<MenuDisplay>().DisplayPowerUpMenu();
+        FindObjectOfType<MenuDisplay>().DisplayDefaultMenu();
     }
 }

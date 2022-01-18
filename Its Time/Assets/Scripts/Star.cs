@@ -17,6 +17,11 @@ public class Star : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
+        if (LayerMask.NameToLayer("Lighting") == other.gameObject.layer)
+        {
+            return;  
+        }
+
         scoreManager.IncrementStarsHit();
         
         GameObject particles = Instantiate(starHit, transform.position, Quaternion.identity);
