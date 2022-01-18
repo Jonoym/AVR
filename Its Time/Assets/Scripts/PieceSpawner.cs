@@ -6,6 +6,8 @@ public class PieceSpawner : MonoBehaviour
 {
     private int currentPiece = 0;
 
+    private int addedPieces = 0;
+
     public GameObject[] controllerPieces;
 
     public GameObject[] pieces;
@@ -41,7 +43,6 @@ public class PieceSpawner : MonoBehaviour
         timer.UpdateTurn(false);
 
         yield return new WaitForSeconds(time);
-
 
         ScoreManager score = FindObjectOfType<ScoreManager>();
 
@@ -85,7 +86,7 @@ public class PieceSpawner : MonoBehaviour
         currentPiece++;
 
         Debug.Log("New Piece has Spawned");
-        Debug.Log("Current Piece Number is " + currentPiece);
+        Debug.Log("Current Piece Number is " + (currentPiece + addedPieces));
 
         RenderQueue();
     }
@@ -148,6 +149,14 @@ public class PieceSpawner : MonoBehaviour
             FindObjectOfType<QueueDisplay>().UpdateQueue(queuePieces, currentPiece);
         } else {
             FindObjectOfType<QueueDisplay>().UpdateQueue(queuePieces, currentPiece - 1);
+        }
+    }
+
+    public void ExtraMove() {
+        if (currentPiece != 0) {
+            currentPiece--;
+            addedPieces++;
+            RenderQueue();
         }
     }
 }

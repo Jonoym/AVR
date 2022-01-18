@@ -38,7 +38,7 @@ public class HintButton : MonoBehaviour
             released = false;
             if (hovering) {
                 Debug.Log("Hint Button Pressed");
-                DisplayHint();
+                CheckHints();
             }
 
         }
@@ -48,15 +48,45 @@ public class HintButton : MonoBehaviour
         }
     }
 
-    void DisplayHint() {
+    void CheckHints() {
+        for (int i = 0; i < hints.Length; i++) {
+            for (int j = 0; j < hints[i].prerequisites.Length; j++) {
+                if (!Triggered(hints[i].prerequisites[j])) {
+                    DisplayHint(hints[i]);
+                    return;
+                }
+            }
+        }
+    }
+
+    bool Triggered(GameObject target) {
+
+        if (target == null) {
+            return true;
+        }
+
+        if (target.GetComponent<Bomb>() != null) {
+            if (target.GetComponent<Bomb>().Exploded()) {
+                return true;
+            }
+        }
+
+        if (target.GetComponent<BlackholeSpawner>() != null) {
+            if (target.GetComponent<BlackholeSpawner>().Spawned()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    void DisplayHint(Hint hint) {
         if (FindObjectOfType<RotateFortress>() != null) {
-            FindObjectOfType<RotateFortress>().gameObject.transform.localEulerAngles = hints[0].fortressRotation;
+            FindObjectOfType<RotateFortress>().gameObject.transform.localEulerAngles = hint.fortressRotation;
         }
         if (FindObjectOfType<Controller>() != null) {
-            Debug.Log("here");
             if (FindObjectOfType<Controller>().GetControllerPiece() != null) {
-                Debug.Log("here2");
-                FindObjectOfType<Controller>().GetControllerPiece().transform.eulerAngles = hints[0].pieceRotation;
+                FindObjectOfType<Controller>().GetControllerPiece().transform.eulerAngles = hint.pieceRotation;
             }
         }
     }

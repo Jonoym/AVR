@@ -16,6 +16,11 @@ public class Bomb : MonoBehaviour
     private bool exploded = false;
 
     void OnCollisionEnter(Collision other) {
+        if (LayerMask.NameToLayer("Lighting") == other.gameObject.layer)
+        {
+            return;  
+        }
+
         if (!exploded) {
             exploded = true;
             Explode();
@@ -61,4 +66,7 @@ public class Bomb : MonoBehaviour
         } 
     }
 
+    public bool Exploded() {
+        return exploded;
+    }
 }

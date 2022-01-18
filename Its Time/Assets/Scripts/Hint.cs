@@ -10,5 +10,5 @@ public class Hint
     
     public Vector3 fortressRotation;
 
-    
+    public GameObject[] prerequisites;   
 }

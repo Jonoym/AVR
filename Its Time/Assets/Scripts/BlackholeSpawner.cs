@@ -54,7 +54,6 @@ public class BlackholeSpawner : MonoBehaviour
     }
 
     private void CrackNearby() {
-        Debug.Log("HERERERERERER");
         Collider[] nearbyObjects = Physics.OverlapSphere(transform.position, radius + 1);
         foreach (Collider nearbyObject in nearbyObjects)
         {
@@ -85,5 +84,9 @@ public class BlackholeSpawner : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool Spawned() {
+        return spawned;
     }
 }

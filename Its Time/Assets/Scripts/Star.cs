@@ -9,7 +9,7 @@ public class Star : MonoBehaviour
 
     public GameObject starHit;
 
-    public ScoreManager scoreManager;
+    private ScoreManager scoreManager;
 
     void Start() {
         scoreManager = FindObjectOfType<ScoreManager>();
