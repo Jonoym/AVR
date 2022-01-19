@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
-public class HintSelectButton : MonoBehaviour
+public class ShowItemsButton : MonoBehaviour
 {
 
     public SteamVR_Action_Boolean buttonPressed;
@@ -36,8 +37,8 @@ public class HintSelectButton : MonoBehaviour
         {
             released = false;
             if (hovering) {
-                Debug.Log("Hint Select Button Pressed");
-                DisplayPowerUpMenu();
+                Debug.Log("Item Hint Button Pressed");
+                DisplayItems();
             }
 
         }
@@ -47,8 +48,10 @@ public class HintSelectButton : MonoBehaviour
         }
     }
 
-    public void DisplayPowerUpMenu() {
-        FindObjectOfType<MenuDisplay>().DisplayHintMenu();
+    public void DisplayItems() {
+        FindObjectOfType<Controller>().EnableRenderers();
+
         OnTriggerExit();
+        FindObjectOfType<MenuDisplay>().DisplayDefaultMenu();
     }
 }

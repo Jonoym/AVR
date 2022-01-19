@@ -133,8 +133,6 @@ public class Controller : MonoBehaviour
         // Position the firing camera correctly 
         firingPlayer.SetActive(true);
 
-        DisableRenderers();
-
         // Need to enable the controls for the rotation of the object
         AlterPieceControl(true);
     }
@@ -188,7 +186,7 @@ public class Controller : MonoBehaviour
         }
     }
 
-    private void EnableRenderers()
+    public void EnableRenderers()
     {
         if (items == null)
         {

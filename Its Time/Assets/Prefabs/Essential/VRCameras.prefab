@@ -220,6 +220,8 @@ MonoBehaviour:
   - {fileID: 5741282782926918204, guid: 9bdb7231ce0ae1d44a424d3b99fe91aa, type: 3}
   - {fileID: 5741282782926918204, guid: 9bdb7231ce0ae1d44a424d3b99fe91aa, type: 3}
   - {fileID: 5741282782926918204, guid: 9bdb7231ce0ae1d44a424d3b99fe91aa, type: 3}
+  baseShadow: {fileID: 5797050280449587701, guid: 7f2b40e1e9530884a9ae405610487507,
+    type: 3}
   shadows:
   - {fileID: 5797050280449587701, guid: 6d8c338d555f7304bbf549191b7c6739, type: 3}
   - {fileID: 5797050280449587701, guid: 6d8c338d555f7304bbf549191b7c6739, type: 3}

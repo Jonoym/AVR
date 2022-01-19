@@ -12,6 +12,8 @@ public class PieceSpawner : MonoBehaviour
 
     public GameObject[] pieces;
 
+    public GameObject baseShadow;
+
     public GameObject[] shadows;
 
     public GameObject[] queuePieces;
@@ -21,6 +23,8 @@ public class PieceSpawner : MonoBehaviour
     public GameObject controllerSpawn;
 
     public GameObject spawnPoint;
+
+    private GameObject currentShadow;
 
     public bool controlsEnabled = true;
     
@@ -81,7 +85,7 @@ public class PieceSpawner : MonoBehaviour
 
         SpawnControlPiece();
 
-        SpawnShadow();
+        SpawnBaseShadow();
 
         currentPiece++;
 
@@ -124,13 +128,30 @@ public class PieceSpawner : MonoBehaviour
         rb.useGravity = false;
     }
 
-    private void SpawnShadow() {
+    private void SpawnBaseShadow() {
+        GameObject shadow = Instantiate(baseShadow, trajectory.transform.position, Quaternion.identity);
+
+        shadow.SetActive(true);
+
+        shadow.transform.parent = spawnPoint.transform.parent;
+        FindObjectOfType<Trajectory>().SetShadow(shadow);
+
+        currentShadow = shadow;
+    }
+
+    public void SpawnShadow() {
+
+        if (currentShadow != null) {
+            Destroy(currentShadow);
+        }
         GameObject shadow = Instantiate(shadows[currentPiece], trajectory.transform.position, Quaternion.identity);
 
         shadow.SetActive(true);
 
         shadow.transform.parent = spawnPoint.transform.parent;
         FindObjectOfType<Trajectory>().SetShadow(shadow);
+
+        currentShadow = shadow;
     }
 
     private void EnableTrajectory() {

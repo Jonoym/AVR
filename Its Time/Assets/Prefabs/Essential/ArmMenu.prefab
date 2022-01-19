@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 6937682450168987353}
   - component: {fileID: 7571277577523573397}
   - component: {fileID: 8429685272971645991}
-  - component: {fileID: 1880411338709770602}
+  - component: {fileID: 2244475471843363429}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -705,9 +705,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.5, z: 40}
+  m_Size: {x: 0.5, y: 1.5, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1880411338709770602
+--- !u!114 &2244475471843363429
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -716,7 +716,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 833074145220164141}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1673ffd165a619d43b2770cdf1083300, type: 3}
+  m_Script: {fileID: 11500000, guid: a4359c803fcf12441af32f086334e5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPressed:
@@ -824,7 +824,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.5, z: 40}
+  m_Size: {x: 0.5, y: 1.5, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2130541465740670305
 MonoBehaviour:
@@ -1043,7 +1043,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.5, z: 40}
+  m_Size: {x: 0.5, y: 1.5, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1370417272169191351
 MonoBehaviour:
@@ -1301,7 +1301,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.5, z: 40}
+  m_Size: {x: 0.5, y: 1.5, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4377873534255296493
 MonoBehaviour:
@@ -1795,7 +1795,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.5, z: 40}
+  m_Size: {x: 0.5, y: 1.5, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5388557243867121209
 MonoBehaviour:
@@ -1812,12 +1812,16 @@ MonoBehaviour:
   hints:
   - pieceRotation: {x: 310.3, y: 170, z: 113.8}
     fortressRotation: {x: 0, y: 288.4, z: 0}
+    prerequisites: []
   - pieceRotation: {x: 270.3, y: 60.5, z: 267.5}
     fortressRotation: {x: 0, y: 330.4, z: 0}
+    prerequisites: []
   - pieceRotation: {x: 10.6, y: 7.6, z: 3}
     fortressRotation: {x: 0, y: 71.3, z: 0}
+    prerequisites: []
   - pieceRotation: {x: 358.4, y: 247.1, z: 359.9}
     fortressRotation: {x: 0, y: 71.3, z: 0}
+    prerequisites: []
   buttonPressed:
     actionPath: /actions/default/in/MenuTrigger
     needsReinit: 0
@@ -2061,7 +2065,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.5, z: 40}
+  m_Size: {x: 0.5, y: 1.5, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5900271455959620161
 MonoBehaviour:
@@ -2653,7 +2657,7 @@ GameObject:
   - component: {fileID: 989593311466747534}
   - component: {fileID: 2723533721014602329}
   - component: {fileID: 1646789246126174667}
-  - component: {fileID: 6413691947729671907}
+  - component: {fileID: 3897905312202015476}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -2741,9 +2745,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.5, z: 40}
+  m_Size: {x: 0.5, y: 1.5, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6413691947729671907
+--- !u!114 &3897905312202015476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2752,17 +2756,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 2985799640355851571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 129eb5eb639b4fc47b0c078b26c6a494, type: 3}
+  m_Script: {fileID: 11500000, guid: 836d156e70279f844b3ba90a3c9f647b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hints:
-  - pieceRotation: {x: 0, y: 0, z: 0}
-    fortressRotation: {x: 0, y: 0, z: 0}
   buttonPressed:
     actionPath: /actions/default/in/MenuTrigger
     needsReinit: 0
   normal: {fileID: 2100000, guid: a79119d2ead35a947b9631a46951c64e, type: 2}
   hover: {fileID: 2100000, guid: 8c5517aa4624ebf498aeccc4b2865fd2, type: 2}
+  methods:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2985799640355851571}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!1 &3007785267774364093
 GameObject:
   m_ObjectHideFlags: 0
@@ -4088,7 +4104,6 @@ GameObject:
   - component: {fileID: 2494855886529482190}
   - component: {fileID: 8850188121171327277}
   - component: {fileID: 7754296458559321227}
-  - component: {fileID: 7836053204150012276}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -4164,19 +4179,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7836053204150012276
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4234595190499950683}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 5}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4756057813823117582
 GameObject:
   m_ObjectHideFlags: 0
@@ -4188,7 +4190,6 @@ GameObject:
   - component: {fileID: 4206760492468340014}
   - component: {fileID: 7869955286196874147}
   - component: {fileID: 9150085597351336155}
-  - component: {fileID: 5654650906836468885}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -4264,19 +4265,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5654650906836468885
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4756057813823117582}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 5}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4824878642420032052
 GameObject:
   m_ObjectHideFlags: 0
@@ -4526,7 +4514,7 @@ GameObject:
   - component: {fileID: 3644490547635713447}
   - component: {fileID: 6184981832383523297}
   m_Layer: 5
-  m_Name: Solution
+  m_Name: Show
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4580,7 +4568,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SOLUTION
+  m_text: SHOW
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3987ba19d0d69f14da7e041d44fe365b, type: 2}
   m_sharedMaterial: {fileID: 1036512995595343133, guid: 3987ba19d0d69f14da7e041d44fe365b,
@@ -5220,7 +5208,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.5, z: 40}
+  m_Size: {x: 0.5, y: 1.5, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2798301980935958769
 MonoBehaviour:
@@ -5477,7 +5465,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.5, z: 40}
+  m_Size: {x: 0.5, y: 1.5, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4642466778356306081
 MonoBehaviour:
@@ -6179,7 +6167,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.5, z: 40}
+  m_Size: {x: 0.5, y: 1.5, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5557242239259822777
 MonoBehaviour:
@@ -6298,7 +6286,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.5, z: 40}
+  m_Size: {x: 0.5, y: 1.5, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4612935656401773841
 MonoBehaviour:
@@ -7186,7 +7174,6 @@ GameObject:
   - component: {fileID: 4791618880012212202}
   - component: {fileID: 558588800395311290}
   - component: {fileID: 6100550400307662524}
-  - component: {fileID: 6592039286811677747}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -7262,19 +7249,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6592039286811677747
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8773181917947634572}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 5}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9013968110048595002
 GameObject:
   m_ObjectHideFlags: 0
@@ -7510,7 +7484,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.5, z: 40}
+  m_Size: {x: 0.5, y: 1.5, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6957299894369091326
 MonoBehaviour:

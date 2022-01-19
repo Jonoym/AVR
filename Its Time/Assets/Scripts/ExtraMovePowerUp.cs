@@ -48,5 +48,7 @@ public class ExtraMovePowerUp : MonoBehaviour
 
     private void AddPowerUp(){
         FindObjectOfType<PieceSpawner>().ExtraMove();
+        OnTriggerExit();
+        FindObjectOfType<MenuDisplay>().DisplayDefaultMenu();
     }
 }

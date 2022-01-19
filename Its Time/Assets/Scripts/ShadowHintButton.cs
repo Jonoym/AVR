@@ -4,7 +4,7 @@ using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
-public class HintSelectButton : MonoBehaviour
+public class ShadowHintButton : MonoBehaviour
 {
 
     public SteamVR_Action_Boolean buttonPressed;
@@ -36,8 +36,8 @@ public class HintSelectButton : MonoBehaviour
         {
             released = false;
             if (hovering) {
-                Debug.Log("Hint Select Button Pressed");
-                DisplayPowerUpMenu();
+                Debug.Log("Shadow Hint Button Pressed");
+                DisplayShadow();
             }
 
         }
@@ -47,8 +47,10 @@ public class HintSelectButton : MonoBehaviour
         }
     }
 
-    public void DisplayPowerUpMenu() {
-        FindObjectOfType<MenuDisplay>().DisplayHintMenu();
+    public void DisplayShadow() {
+        FindObjectOfType<PieceSpawner>().SpawnShadow();
+
         OnTriggerExit();
+        FindObjectOfType<MenuDisplay>().DisplayDefaultMenu();
     }
 }

@@ -89,5 +89,7 @@ public class HintButton : MonoBehaviour
                 FindObjectOfType<Controller>().GetControllerPiece().transform.eulerAngles = hint.pieceRotation;
             }
         }
+        OnTriggerExit();
+        FindObjectOfType<MenuDisplay>().DisplayDefaultMenu();
     }
 }

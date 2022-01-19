@@ -48,7 +48,7 @@ public class PowerUpButton : MonoBehaviour
     }
 
     public void DisplayPowerUpMenu() {
-        OnTriggerExit();
         FindObjectOfType<MenuDisplay>().DisplayPowerUpMenu();
+        OnTriggerExit();
     }
 }

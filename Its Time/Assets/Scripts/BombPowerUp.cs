@@ -65,5 +65,7 @@ public class BombPowerUp : MonoBehaviour
                 Debug.Log("Bomb has been added to the current piece");
             }
         }
+        OnTriggerExit();
+        FindObjectOfType<MenuDisplay>().DisplayDefaultMenu();
     }
 }
