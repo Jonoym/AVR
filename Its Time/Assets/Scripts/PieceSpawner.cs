@@ -50,6 +50,8 @@ public class PieceSpawner : MonoBehaviour
 
         ScoreManager score = FindObjectOfType<ScoreManager>();
 
+        FindObjectOfType<DistanceTracker>().StopTracking();
+
         score.PrintScoreInfo();
 
         if (!score.gameWon()){
@@ -65,7 +67,6 @@ public class PieceSpawner : MonoBehaviour
         } else {
             Debug.Log("Level Completed");
             score.DisplayEndMenu();
-            //FindObjectOfType<SceneChanger>().ChangeScene("Start");
         }
 
     }

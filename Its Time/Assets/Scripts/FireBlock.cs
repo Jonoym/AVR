@@ -65,11 +65,15 @@ public class FireBlock : MonoBehaviour
 
     public void InitiateFire() {
         if (trigger.lastState && !fired) {
-            
+
             fired = true;
 
             fireAttempted = true;
-            
+
+            FindObjectOfType<DistanceTracker>().Reset();
+
+            FindObjectOfType<DistanceTracker>().StartTracking();
+
             DisablePieceControls();
 
             FireObject();

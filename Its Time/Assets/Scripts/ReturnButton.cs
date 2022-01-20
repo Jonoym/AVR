@@ -51,4 +51,8 @@ public class ReturnButton : MonoBehaviour
         OnTriggerExit();
         FindObjectOfType<MenuDisplay>().DisplayDefaultMenu();
     }
+
+    public void SetReleasedFalse() {
+        released = false;
+    }
 }

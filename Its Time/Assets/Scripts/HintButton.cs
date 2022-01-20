@@ -38,13 +38,45 @@ public class HintButton : MonoBehaviour
             released = false;
             if (hovering) {
                 Debug.Log("Hint Button Pressed");
-                CheckHints();
+                CheckPreviousAttempt();
             }
 
         }
         else if (!buttonPressed.lastState)
         {
             released = true;
+        }
+    }
+
+    void CheckPreviousAttempt() {
+        GameObject targetItem;
+
+        if (FindObjectOfType<DistanceTracker>().GetClosest() != null) {
+            targetItem = FindObjectOfType<DistanceTracker>().GetClosest();
+            Debug.Log("Checked Closest");
+            Debug.Log(targetItem);
+            if (!Triggered(targetItem)) {
+                Debug.Log("3");
+                FindPrerequisite(targetItem);
+            } else {
+                Debug.Log("1");
+                CheckHints();
+            }
+        } else {
+            Debug.Log("2");
+            CheckHints();
+        }
+    }
+
+    void FindPrerequisite(GameObject targetItem) {
+        for (int i = 0; i < hints.Length; i++) {
+            for (int j = 0; j < hints[i].prerequisites.Length; j++) {
+                Debug.Log(hints[i].prerequisites[j]);
+                if (targetItem == hints[i].prerequisites[j]) {
+                    Debug.Log("4");
+                    DisplayHint(hints[i]);
+                }
+            }
         }
     }
 
@@ -90,6 +122,7 @@ public class HintButton : MonoBehaviour
             }
         }
         OnTriggerExit();
+        released = false;
         FindObjectOfType<MenuDisplay>().DisplayDefaultMenu();
     }
 }

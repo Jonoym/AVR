@@ -54,4 +54,8 @@ public class ShowItemsButton : MonoBehaviour
         OnTriggerExit();
         FindObjectOfType<MenuDisplay>().DisplayDefaultMenu();
     }
+
+    public void SetReleasedFalse() {
+        released = false;
+    }
 }

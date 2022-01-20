@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 3974881999687211502}
   - component: {fileID: 3974881999687211498}
   - component: {fileID: 3974881999687211497}
+  - component: {fileID: 4595759645731468557}
   - component: {fileID: 7908615100544196175}
   m_Layer: 0
   m_Name: VRCameras
@@ -196,6 +197,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3cd0739529467147b6d213fa3b1a2d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4595759645731468557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3974881999687211508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 352ed0cc4cff77c49ad1b5cd89f1aa58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7908615100544196175

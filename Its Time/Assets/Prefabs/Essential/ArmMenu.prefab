@@ -2764,21 +2764,6 @@ MonoBehaviour:
     needsReinit: 0
   normal: {fileID: 2100000, guid: a79119d2ead35a947b9631a46951c64e, type: 2}
   hover: {fileID: 2100000, guid: 8c5517aa4624ebf498aeccc4b2865fd2, type: 2}
-  methods:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2985799640355851571}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
 --- !u!1 &3007785267774364093
 GameObject:
   m_ObjectHideFlags: 0
@@ -4756,6 +4741,8 @@ MonoBehaviour:
   defaultMenu: {fileID: 6568510836173114215}
   powerUpMenu: {fileID: 474601970208497551}
   hintMenu: {fileID: 4064845022788027074}
+  showButton: {fileID: 2985799640355851571}
+  returnButton: {fileID: 2403095697240168433}
 --- !u!1 &5160456262009017458
 GameObject:
   m_ObjectHideFlags: 0

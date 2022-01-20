@@ -48,7 +48,7 @@ public class HintSelectButton : MonoBehaviour
     }
 
     public void DisplayPowerUpMenu() {
-        FindObjectOfType<MenuDisplay>().DisplayHintMenu();
         OnTriggerExit();
+        FindObjectOfType<MenuDisplay>().DisplayHintMenu();
     }
 }
