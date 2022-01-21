@@ -982,7 +982,7 @@ namespace Valve.VR.InteractionSystem
         //-------------------------------------------------
         protected virtual void UpdateNoSteamVRFallback()
         {
-            if (noSteamVRFallbackCamera)
+            if (false)
             {
                 Ray ray = noSteamVRFallbackCamera.ScreenPointToRay(Input.mousePosition);
 

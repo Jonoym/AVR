@@ -51,7 +51,6 @@ public class DistanceTracker : MonoBehaviour
             if ((target.transform.position - piece.transform.position).sqrMagnitude < distance) {
                 distance = (target.transform.position - piece.transform.position).sqrMagnitude;
                 closestItem = target;
-                Debug.Log(closestItem);
             }
         }
     }

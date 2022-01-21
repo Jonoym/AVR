@@ -70,9 +70,11 @@ public class FireBlock : MonoBehaviour
 
             fireAttempted = true;
 
-            FindObjectOfType<DistanceTracker>().Reset();
-
-            FindObjectOfType<DistanceTracker>().StartTracking();
+            DistanceTracker tracker = FindObjectOfType<DistanceTracker>();
+            if (tracker != null) {
+                tracker.Reset();
+                tracker.StartTracking();
+            }
 
             DisablePieceControls();
 

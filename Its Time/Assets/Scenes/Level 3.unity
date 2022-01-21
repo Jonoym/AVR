@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13037866, g: 0.09599706, b: 0.061811835, a: 1}
+  m_IndirectSpecularColor: {r: 0.13036278, g: 0.09599573, b: 0.061818793, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11525,6 +11525,122 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.3276
       objectReference: {fileID: 0}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: pieces.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: shadows.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: pieces.Array.data[0]
+      value: 
+      objectReference: {fileID: 752075268999153404, guid: cacb589504fe7d9479b3641b565e4992,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: pieces.Array.data[1]
+      value: 
+      objectReference: {fileID: 752075268999153404, guid: cacb589504fe7d9479b3641b565e4992,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: pieces.Array.data[2]
+      value: 
+      objectReference: {fileID: 752075268999153404, guid: cacb589504fe7d9479b3641b565e4992,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: pieces.Array.data[3]
+      value: 
+      objectReference: {fileID: 752075268999153404, guid: cacb589504fe7d9479b3641b565e4992,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: shadows.Array.data[0]
+      value: 
+      objectReference: {fileID: 5090254383187584215, guid: 5a2014d4a0f16f649b058aadb497fecb,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: shadows.Array.data[1]
+      value: 
+      objectReference: {fileID: 5090254383187584215, guid: 5a2014d4a0f16f649b058aadb497fecb,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: shadows.Array.data[2]
+      value: 
+      objectReference: {fileID: 5090254383187584215, guid: 5a2014d4a0f16f649b058aadb497fecb,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: shadows.Array.data[3]
+      value: 
+      objectReference: {fileID: 5090254383187584215, guid: 5a2014d4a0f16f649b058aadb497fecb,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: queuePieces.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: queuePieces.Array.data[0]
+      value: 
+      objectReference: {fileID: 7562195308321973773, guid: b6624ca04d851544fa9c3b564be56fea,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: queuePieces.Array.data[1]
+      value: 
+      objectReference: {fileID: 7562195308321973773, guid: b6624ca04d851544fa9c3b564be56fea,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: queuePieces.Array.data[2]
+      value: 
+      objectReference: {fileID: 7562195308321973773, guid: b6624ca04d851544fa9c3b564be56fea,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: queuePieces.Array.data[3]
+      value: 
+      objectReference: {fileID: 7562195308321973773, guid: b6624ca04d851544fa9c3b564be56fea,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: controllerPieces.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: controllerPieces.Array.data[0]
+      value: 
+      objectReference: {fileID: 6385774706397010400, guid: 2d9a90bac5a822a49bc752a202d1548a,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: controllerPieces.Array.data[1]
+      value: 
+      objectReference: {fileID: 6385774706397010400, guid: 2d9a90bac5a822a49bc752a202d1548a,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: controllerPieces.Array.data[2]
+      value: 
+      objectReference: {fileID: 6385774706397010400, guid: 2d9a90bac5a822a49bc752a202d1548a,
+        type: 3}
+    - target: {fileID: 7908615100544196175, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: controllerPieces.Array.data[3]
+      value: 
+      objectReference: {fileID: 6385774706397010400, guid: 2d9a90bac5a822a49bc752a202d1548a,
+        type: 3}
     - target: {fileID: 9070705248010827068, guid: f004d8973475c6a4e97a24c351842813,
         type: 3}
       propertyPath: hints.Array.data[0].pieceRotation.x

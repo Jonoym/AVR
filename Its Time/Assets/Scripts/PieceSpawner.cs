@@ -144,8 +144,10 @@ public class PieceSpawner : MonoBehaviour
 
         if (currentShadow != null) {
             Destroy(currentShadow);
+        } else {
+            return;
         }
-        GameObject shadow = Instantiate(shadows[currentPiece], trajectory.transform.position, Quaternion.identity);
+        GameObject shadow = Instantiate(shadows[currentPiece - 1], trajectory.transform.position, Quaternion.identity);
 
         shadow.SetActive(true);
 
