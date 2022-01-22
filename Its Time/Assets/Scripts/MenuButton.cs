@@ -52,4 +52,8 @@ public class MenuButton : MonoBehaviour
 
         FindObjectOfType<SceneChanger>().ChangeScene("Menu");
     }
+
+    public void SetReleasedFalse() {
+        released = false;
+    }
 }

@@ -4743,6 +4743,8 @@ MonoBehaviour:
   hintMenu: {fileID: 4064845022788027074}
   showButton: {fileID: 2985799640355851571}
   returnButton: {fileID: 2403095697240168433}
+  restartButton: {fileID: 9047601779022109025}
+  menuButton: {fileID: 6925095082640952546}
 --- !u!1 &5160456262009017458
 GameObject:
   m_ObjectHideFlags: 0
@@ -7490,5 +7492,3 @@ MonoBehaviour:
     needsReinit: 0
   normal: {fileID: 2100000, guid: a79119d2ead35a947b9631a46951c64e, type: 2}
   hover: {fileID: 2100000, guid: 8c5517aa4624ebf498aeccc4b2865fd2, type: 2}
-  hovering: 0
-  released: 1

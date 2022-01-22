@@ -1,4 +1,4 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
+//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 //
 // Purpose: The hands used by the player in the vr interaction system
 //
@@ -982,7 +982,7 @@ namespace Valve.VR.InteractionSystem
         //-------------------------------------------------
         protected virtual void UpdateNoSteamVRFallback()
         {
-            if (false)
+            if (noSteamVRFallbackCamera)
             {
                 Ray ray = noSteamVRFallbackCamera.ScreenPointToRay(Input.mousePosition);
 

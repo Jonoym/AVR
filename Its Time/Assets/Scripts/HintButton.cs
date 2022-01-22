@@ -53,7 +53,6 @@ public class HintButton : MonoBehaviour
 
         if (FindObjectOfType<DistanceTracker>().GetClosest() != null) {
             targetItem = FindObjectOfType<DistanceTracker>().GetClosest();
-            Debug.Log(targetItem);
             if (!Triggered(targetItem)) {
                 FindPrerequisite(targetItem);
             } else {
@@ -69,6 +68,7 @@ public class HintButton : MonoBehaviour
             for (int j = 0; j < hints[i].prerequisites.Length; j++) {
                 Debug.Log(hints[i].prerequisites[j]);
                 if (targetItem == hints[i].prerequisites[j]) {
+                    Debug.Log(targetItem);
                     DisplayHint(hints[i]);
                 }
             }

@@ -12,9 +12,9 @@ public class RestartButton : MonoBehaviour
     
     public Material hover;
 
-    public bool hovering = false;
+    private bool hovering = false;
 
-    public bool released = true;
+    private bool released = true;
 
     void OnTriggerEnter(Collider other) {
         if (LayerMask.NameToLayer("Lighting") == other.gameObject.layer)
@@ -51,5 +51,9 @@ public class RestartButton : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         FindObjectOfType<SceneChanger>().RestartScene();
+    }
+
+    public void SetReleasedFalse() {
+        released = false;
     }
 }

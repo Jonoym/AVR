@@ -15,6 +15,10 @@ public class MenuDisplay : MonoBehaviour
 
     public GameObject returnButton;
 
+    public GameObject restartButton;
+
+    public GameObject menuButton;
+
     void Start() {
         DisplayDefaultMenu();
     }
@@ -23,6 +27,8 @@ public class MenuDisplay : MonoBehaviour
         defaultMenu.SetActive(true);
         powerUpMenu.SetActive(false);
         hintMenu.SetActive(false);
+        menuButton.GetComponent<MenuButton>().SetReleasedFalse();
+        restartButton.GetComponent<RestartButton>().SetReleasedFalse();
     }
 
     public void DisplayPowerUpMenu() {
