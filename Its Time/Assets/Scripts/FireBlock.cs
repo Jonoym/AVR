@@ -25,6 +25,10 @@ public class FireBlock : MonoBehaviour
 
     private static bool forceChangeAttemped = false;
 
+    private bool locked;
+
+    public Vector3 direction;
+
     void Start() {
         firingPlayer = FindObjectOfType<FiringPlayer>().gameObject;
         fortress = FindObjectOfType<Fortress>().gameObject;
@@ -54,7 +58,7 @@ public class FireBlock : MonoBehaviour
     }
 
     private void UpdateForce() {
-        if (fireForce.axis.x != 0 && fireForce.axis.y != 0) {
+        if (fireForce.axis.x != 0 && fireForce.axis.y != 0 && !locked) {
             throwForce = fireForce.axis.y * 10 + 20f;
             forceChangeAttemped = true;
             ControllerButtonHints.HideButtonHint(Player.instance.leftHand, fireForce);
@@ -62,6 +66,9 @@ public class FireBlock : MonoBehaviour
         }
     }
 
+    public void SetLockStatus(bool status) {
+        locked = status;
+    }
 
     public void InitiateFire() {
         if (trigger.lastState && !fired) {
@@ -82,6 +89,8 @@ public class FireBlock : MonoBehaviour
 
             PrintFireInfo();
 
+            FindObjectOfType<LeftHand>().SetLockStatus(false);
+
             if (FindObjectOfType<PieceSpawner>() != null) {
                 StartCoroutine(FindObjectOfType<PieceSpawner>().CheckGameEnd(5));
             } else {
@@ -94,7 +103,11 @@ public class FireBlock : MonoBehaviour
 
     public void FireObject() {
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-        rb.AddForce(leftHand.forward * throwForce, ForceMode.VelocityChange);
+        if (locked && direction != null) {
+            rb.AddForce(direction * throwForce, ForceMode.VelocityChange);
+        } else {
+            rb.AddForce(leftHand.forward * throwForce, ForceMode.VelocityChange);
+        }
         rb.useGravity = true;
         transform.parent = fortress.transform;
     }
@@ -137,7 +150,12 @@ public class FireBlock : MonoBehaviour
 
         Debug.Log("Current Piece has been fired");
         Debug.Log("    Rotation: (" + transform.localEulerAngles + ")");
-        Debug.Log("    Direction: (" + leftHand.forward + ")");
+        if (FindObjectOfType<LeftHand>().IsLocked()) {
+            Vector3 lockDirection = FindObjectOfType<LeftHand>().GetDirection();
+            Debug.Log("    Direction: (" + direction.x + ", " + direction.y + ", " + direction.z + ")");
+        } else {
+            Debug.Log("    Direction: (" + leftHand.forward.x + ", " + leftHand.forward.y + ", " + leftHand.forward.z + ")");
+        }
         Debug.Log("    Throw Force: " + throwForce);
         Debug.Log("    Exterior Angle: (" + FindObjectOfType<RotateFortress>().gameObject.transform.localEulerAngles + ")");
 

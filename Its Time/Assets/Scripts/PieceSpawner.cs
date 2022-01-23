@@ -26,6 +26,8 @@ public class PieceSpawner : MonoBehaviour
 
     private GameObject currentShadow;
 
+    private bool usingBaseShadow;
+
     public bool controlsEnabled = true;
     
     private bool spawning = false;
@@ -88,6 +90,8 @@ public class PieceSpawner : MonoBehaviour
 
         SpawnBaseShadow();
 
+        FindObjectOfType<Controller>().DisableRenderers();
+
         currentPiece++;
 
         Debug.Log("New Piece has Spawned");
@@ -123,7 +127,7 @@ public class PieceSpawner : MonoBehaviour
         piece.SetActive(true);
 
         piece.transform.parent = spawnPoint.transform.parent;
-        piece.transform.Rotate(new Vector3(0, 45, 0));
+        piece.transform.localEulerAngles = new Vector3(Random.Range(-180f, 180f), Random.Range(-180f, 180f), Random.Range(-180f, 180f));
 
         Rigidbody rb = piece.GetComponent<Rigidbody>();
         rb.useGravity = false;
@@ -137,13 +141,15 @@ public class PieceSpawner : MonoBehaviour
         shadow.transform.parent = spawnPoint.transform.parent;
         FindObjectOfType<Trajectory>().SetShadow(shadow);
 
+        usingBaseShadow = true;
         currentShadow = shadow;
     }
 
     public void SpawnShadow() {
 
-        if (currentShadow != null) {
+        if (usingBaseShadow) {
             Destroy(currentShadow);
+            usingBaseShadow = false;
         } else {
             return;
         }
@@ -153,8 +159,6 @@ public class PieceSpawner : MonoBehaviour
 
         shadow.transform.parent = spawnPoint.transform.parent;
         FindObjectOfType<Trajectory>().SetShadow(shadow);
-
-        currentShadow = shadow;
     }
 
     private void EnableTrajectory() {

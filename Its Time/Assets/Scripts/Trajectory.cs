@@ -49,7 +49,14 @@ public class Trajectory : MonoBehaviour
             if (fireBlock == null) {
                 return;
             }
-            Vector3 startingVelocity = leftHand.forward * fireBlock.throwForce;
+
+            Vector3 startingVelocity;
+            if (leftHand.gameObject.GetComponent<LeftHand>().IsLocked()) {
+                startingVelocity = leftHand.gameObject.GetComponent<LeftHand>().GetDirection() * fireBlock.throwForce;
+            } else {
+                startingVelocity = leftHand.forward * fireBlock.throwForce;
+            }
+
             for (float t = 0.05f; t < numPoints; t += time)
             {
                 if (!drawLine) {

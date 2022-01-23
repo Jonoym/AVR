@@ -51,4 +51,8 @@ public class PowerUpButton : MonoBehaviour
         FindObjectOfType<MenuDisplay>().DisplayPowerUpMenu();
         OnTriggerExit();
     }
+
+    public void SetReleasedFalse() {
+        released = false;
+    }
 }

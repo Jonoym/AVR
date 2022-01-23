@@ -155,7 +155,7 @@ public class Controller : MonoBehaviour
         }
     }
 
-    private void DisableRenderers()
+    public void DisableRenderers()
     {
         if (items == null)
         {

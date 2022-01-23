@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
-public class HintButton : MonoBehaviour
+public class SolutionButton : MonoBehaviour
 {
     
     public Hint[] hints;
@@ -66,10 +66,8 @@ public class HintButton : MonoBehaviour
     void FindPrerequisite(GameObject targetItem) {
         for (int i = 0; i < hints.Length; i++) {
             for (int j = 0; j < hints[i].prerequisites.Length; j++) {
-                Debug.Log(hints[i].prerequisites[j]);
                 if (targetItem == hints[i].prerequisites[j]) {
-                    Debug.Log(targetItem);
-                    DisplayHint(hints[i]);
+                    ShowSolution(hints[i]);
                 }
             }
         }
@@ -79,7 +77,7 @@ public class HintButton : MonoBehaviour
         for (int i = 0; i < hints.Length; i++) {
             for (int j = 0; j < hints[i].prerequisites.Length; j++) {
                 if (!Triggered(hints[i].prerequisites[j])) {
-                    DisplayHint(hints[i]);
+                    ShowSolution(hints[i]);
                     return;
                 }
             }
@@ -107,17 +105,49 @@ public class HintButton : MonoBehaviour
         return false;
     }
 
-    void DisplayHint(Hint hint) {
+    void ShowSolution(Hint hint) {
         if (FindObjectOfType<RotateFortress>() != null) {
             FindObjectOfType<RotateFortress>().gameObject.transform.localEulerAngles = hint.fortressRotation;
         }
         if (FindObjectOfType<Controller>() != null) {
             if (FindObjectOfType<Controller>().GetControllerPiece() != null) {
-                FindObjectOfType<Controller>().GetControllerPiece().transform.eulerAngles = hint.pieceRotation + new Vector3(Random.Range(-15f, 15f),Random.Range(-15f, 15f),Random.Range(-15f, 15f));
+                FindObjectOfType<Controller>().GetControllerPiece().transform.eulerAngles = hint.pieceRotation;
             }
         }
+
+        ShowItems();
+
+        SpawnShadow();
+
+        SetTrajectory(hint);
+
         OnTriggerExit();
         released = false;
         FindObjectOfType<MenuDisplay>().DisplayDefaultMenu();
+    }
+
+    void SetTrajectory(Hint hint) {
+        if (FindObjectOfType<Controller>().GetFiringPiece() == null) {
+            return;
+        }
+        FireBlock piece = FindObjectOfType<Controller>().GetFiringPiece().GetComponent<FireBlock>();
+        piece.SetLockStatus(true);
+        piece.throwForce = hint.force;
+        piece.direction = hint.direction;
+
+        FindObjectOfType<LeftHand>().SetLockStatus(true);
+        FindObjectOfType<LeftHand>().SetDirection(hint.direction);
+    }
+
+    void ShowItems() {
+        FindObjectOfType<Controller>().EnableRenderers();
+    }
+
+    void SpawnShadow() {
+        FindObjectOfType<PieceSpawner>().SpawnShadow();
+    }
+
+    public void SetReleasedFalse() {
+        released = false;
     }
 }

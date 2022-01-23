@@ -51,4 +51,8 @@ public class HintSelectButton : MonoBehaviour
         OnTriggerExit();
         FindObjectOfType<MenuDisplay>().DisplayHintMenu();
     }
+    
+    public void SetReleasedFalse() {
+        released = false;
+    }
 }
