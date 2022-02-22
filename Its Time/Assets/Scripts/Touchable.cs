@@ -20,7 +20,6 @@ public class Touchable : MonoBehaviour
 
     private void SetTouched() {
         if (!touched) {
-            Debug.Log("Touched");
             FindObjectOfType<AudioManager>().Play("Stone 1");
             touched = true;
             gameObject.layer = LayerMask.NameToLayer("TouchedStructure");

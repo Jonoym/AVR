@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2108935975085025731}
   - component: {fileID: 385139724386986020}
   - component: {fileID: -869956796011204929}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Blackhole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,10 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649b067e7dc9bf046995d9b06c8e02f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
-  force: 100
-  destroySound: {fileID: 7601145936422129552, guid: 1bdffdfd39fd3974495f8c54a81da19a,
-    type: 3}
+  radius: 1.5
+  force: 150
 --- !u!1 &7682083583630691933
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +123,7 @@ GameObject:
   - component: {fileID: 7746819866388763728}
   - component: {fileID: 5255512570403496880}
   - component: {fileID: 370615803472190972}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Embers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4908,7 +4906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5385272734357370092}
   - component: {fileID: 4805339826714879296}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4349709355826790752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4349709355826790754}
+  - component: {fileID: 4349709355826790753}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4349709355826790754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4349709355826790752}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.61, y: -3.3, z: -24.45}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4349709355826790753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4349709355826790752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce9ecf61ae953964eb6c0034386dfde0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: BackgroundMusic
+    clip: {fileID: 8300000, guid: e39f69181b3274f06aa80dbe740aaa13, type: 3}
+    volume: 0.096
+    pitch: 0.8
+    loop: 1
+    source: {fileID: 0}
+  - name: PieceThump
+    clip: {fileID: 8300000, guid: 83d16a9b91c51d54b8ee326baf21a79d, type: 3}
+    volume: 0.791
+    pitch: 1.62
+    loop: 0
+    source: {fileID: 0}
+  - name: StoneCrack1
+    clip: {fileID: 8300000, guid: 3e38c91d7d13b0f4fab4bec515c6a396, type: 3}
+    volume: 0.488
+    pitch: 0.65
+    loop: 0
+    source: {fileID: 0}
+  - name: StoneCrack2
+    clip: {fileID: 8300000, guid: 6178b3b41def36d42b717a885373430d, type: 3}
+    volume: 0.324
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StoneCrack3
+    clip: {fileID: 8300000, guid: 0f6bfdf9d88dd2743a98d4d9b1f3f271, type: 3}
+    volume: 0.324
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BombExplosion
+    clip: {fileID: 8300000, guid: f9eb44b85c96be5429737d4dcadbfa3b, type: 3}
+    volume: 0.215
+    pitch: 0.9
+    loop: 0
+    source: {fileID: 0}
+  - name: BlackHole
+    clip: {fileID: 8300000, guid: 5fe4bc0609c03e24097e0cb3666a4fb5, type: 3}
+    volume: 0.215
+    pitch: 0.9
+    loop: 0
+    source: {fileID: 0}
+  - name: BlackHole2
+    clip: {fileID: 8300000, guid: 986d6b30567e30e428f3f21373fe45ca, type: 3}
+    volume: 0.215
+    pitch: 0.9
+    loop: 0
+    source: {fileID: 0}
+  - name: BlackHole3
+    clip: {fileID: 8300000, guid: 3ea26244a3a3582418f62466e189e2ae, type: 3}
+    volume: 0.107
+    pitch: 0.41
+    loop: 0
+    source: {fileID: 0}
+  - name: StoneCrack4
+    clip: {fileID: 8300000, guid: ab59d0174d81ad241a925cfdae213c61, type: 3}
+    volume: 0.146
+    pitch: 0.99
+    loop: 0
+    source: {fileID: 0}
+  - name: StoneCrack5
+    clip: {fileID: 8300000, guid: 070779cdcfbe3ff4688691fb33bc3e4e, type: 3}
+    volume: 0.173
+    pitch: 0.99
+    loop: 0
+    source: {fileID: 0}

@@ -9,26 +9,26 @@ public class Star : MonoBehaviour
 
     public GameObject starHit;
 
-    public static int numStars = 0;
-
-    public static int numHit = 0;
+    private ScoreManager scoreManager;
 
     void Start() {
-        numStars++;
+        scoreManager = FindObjectOfType<ScoreManager>();
+        scoreManager.IncrementStarCount();
     }
+
     void OnTriggerEnter(Collider other) {
+        if (LayerMask.NameToLayer("Lighting") == other.gameObject.layer)
+        {
+            return;  
+        }
+
+        scoreManager.IncrementStarsHit();
+        
         GameObject particles = Instantiate(starHit, transform.position, Quaternion.identity);
         particles.transform.parent = transform.parent;
 
-        numHit++;
-        Debug.Log("Hit");
+        Debug.Log("Star has been Hit");
         Destroy(outer);
         Destroy(gameObject);
-    }
-
-    public static bool gameWon() {
-        Debug.Log(numStars);
-        Debug.Log(numHit);
-        return numStars == numHit;
     }
 }

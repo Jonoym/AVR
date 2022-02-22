@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2085861718532174823}
   - component: {fileID: 1983039725120103687}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,15 +44,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0, g: 0.5247073, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 3
+  m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.7
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 5081774725126217385}
   - component: {fileID: 4728224470816128751}
   - component: {fileID: 2107776792100227192}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d144a52a07423844f8023f746277e5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
+  explosion: {fileID: 1329845292236604, guid: 9bba9cf244c53c5439505dfc96fdd11c, type: 3}
   radius: 2.5
   force: 10000
   isPiece: 0
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 5081774725150904806}
   - component: {fileID: 5081774725150904807}
   - component: {fileID: 5081774725150904728}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Shard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 5081774725551992210}
   - component: {fileID: 5081774725551992211}
   - component: {fileID: 5081774725551992212}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Shard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 5081774725930051154}
   - component: {fileID: 5081774725930051167}
   - component: {fileID: 5081774725930051152}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 5081774726199356416}
   - component: {fileID: 5081774726199356417}
   - component: {fileID: 5081774726199356418}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Shard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,6 +609,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lightning
       objectReference: {fileID: 0}
+    - target: {fileID: 4461906612626035678, guid: a76590d5d50d57f48b74b80802827693,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a76590d5d50d57f48b74b80802827693, type: 3}
 --- !u!4 &8890192663593787019 stripped
@@ -703,6 +708,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Island
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8324d9abaa5ab9e40bc4e85b495342e7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8324d9abaa5ab9e40bc4e85b495342e7, type: 3}

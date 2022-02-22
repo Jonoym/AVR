@@ -6,52 +6,110 @@ public class PieceSpawner : MonoBehaviour
 {
     private int currentPiece = 0;
 
+    private int addedPieces = 0;
+
+    public GameObject[] controllerPieces;
+
     public GameObject[] pieces;
+
+    public GameObject baseShadow;
 
     public GameObject[] shadows;
 
-    public void Start() {
-        NextTurn();
+    public GameObject[] queuePieces;
+
+    public GameObject trajectory;
+
+    public GameObject controllerSpawn;
+
+    public GameObject spawnPoint;
+
+    private GameObject currentShadow;
+
+    private bool usingBaseShadow;
+
+    public bool controlsEnabled = true;
+    
+    private bool spawning = false;
+
+    private bool firstTurn = false;
+
+    public void Update() {
+        if (spawning && !firstTurn) {
+            firstTurn = true;
+            NextTurn();
+        }
     }
 
     public IEnumerator CheckGameEnd(float time) {
+
+        TimeManager timer = FindObjectOfType<TimeManager>();
+
+        controlsEnabled = false;
+        timer.UpdateTurn(false);
+
         yield return new WaitForSeconds(time);
 
-        if (!Star.gameWon()){
+        ScoreManager score = FindObjectOfType<ScoreManager>();
+
+        FindObjectOfType<DistanceTracker>().StopTracking();
+
+        score.PrintScoreInfo();
+
+        if (!score.gameWon()){
             if (pieces.Length > currentPiece) {
+                controlsEnabled = true;
+                timer.UpdateTurn(true);
                 NextTurn();
             } else {
-                Debug.Log("LEVEL FAILED");
+                Debug.Log("Level Failed");
+                score.DisplayEndMenu();
+                //FindObjectOfType<SceneChanger>().ChangeScene("Start");
             }
         } else {
-            Debug.Log("LEVEL COMPLETE");
+            Debug.Log("Level Completed");
+            score.DisplayEndMenu();
         }
 
     }
 
+    public void SetSpawnStatus(bool status) {
+        spawning = status;
+    }
+
     private void NextTurn() {
+
+        if (!spawning) {
+            RenderQueue();
+            return;
+        }
+
         SpawnPiece();
 
-        SpawnShadow();
+        SpawnControlPiece();
+
+        SpawnBaseShadow();
+
+        FindObjectOfType<Controller>().DisableRenderers();
 
         currentPiece++;
+
+        Debug.Log("New Piece has Spawned");
+        Debug.Log("Current Piece Number is " + (currentPiece + addedPieces));
+
+        RenderQueue();
     }
 
     private void SpawnPiece() {
-        
-        GameObject piece = Instantiate(pieces[currentPiece], transform.position + new Vector3(0, 0, 0), Quaternion.identity);
-
-        Debug.Log("NEW PIECE HAS BEEN SPAWNED");
+        GameObject piece = Instantiate(pieces[currentPiece], trajectory.transform.position, Quaternion.identity);
         piece.SetActive(true);
 
         EnableTrajectory();
 
-        piece.transform.parent = transform.parent;
+        piece.transform.parent = spawnPoint.transform.parent;
         piece.transform.Rotate(new Vector3(0, 45, 0));
-
         
         piece.GetComponent<FireBlock>().enabled = true;   
-        piece.GetComponent<ControlObject>().enabled = true;
 
         Rigidbody rb = piece.GetComponent<Rigidbody>();
         if (piece.GetComponent<BoxCollider>() != null) {
@@ -63,25 +121,70 @@ public class PieceSpawner : MonoBehaviour
         rb.useGravity = false;
     }
 
-    private void SpawnShadow() {
-        GameObject shadow = Instantiate(shadows[currentPiece], transform.position + new Vector3(0, 0, 4), Quaternion.identity);
+    private void SpawnControlPiece() { 
+        GameObject piece = Instantiate(controllerPieces[currentPiece], controllerSpawn.transform.position, Quaternion.identity);
 
-        Debug.Log("NEW SHADOW HAS BEEN SPAWNED");
+        piece.SetActive(true);
+
+        piece.transform.parent = spawnPoint.transform.parent;
+        piece.transform.localEulerAngles = new Vector3(Random.Range(-180f, 180f), Random.Range(-180f, 180f), Random.Range(-180f, 180f));
+
+        Rigidbody rb = piece.GetComponent<Rigidbody>();
+        rb.useGravity = false;
+    }
+
+    private void SpawnBaseShadow() {
+        GameObject shadow = Instantiate(baseShadow, trajectory.transform.position, Quaternion.identity);
+
         shadow.SetActive(true);
 
-        shadow.transform.parent = transform.parent;
+        shadow.transform.parent = spawnPoint.transform.parent;
+        FindObjectOfType<Trajectory>().SetShadow(shadow);
 
+        usingBaseShadow = true;
+        currentShadow = shadow;
+    }
+
+    public void SpawnShadow() {
+
+        if (usingBaseShadow) {
+            Destroy(currentShadow);
+            usingBaseShadow = false;
+        } else {
+            return;
+        }
+        GameObject shadow = Instantiate(shadows[currentPiece - 1], trajectory.transform.position, Quaternion.identity);
+
+        shadow.SetActive(true);
+
+        shadow.transform.parent = spawnPoint.transform.parent;
         FindObjectOfType<Trajectory>().SetShadow(shadow);
     }
 
     private void EnableTrajectory() {
-        for (int i = 0; i < transform.parent.childCount; i++) {
-            Transform child = transform.parent.GetChild(i);
+        for (int i = 0; i < spawnPoint.transform.parent.childCount; i++) {
+            Transform child = spawnPoint.transform.parent.GetChild(i);
             Shadow shadow = child.GetComponent<Shadow>();
             if (shadow != null) {
                 shadow.GetComponent<MeshRenderer>().enabled = true;
             }
         }
         FindObjectOfType<Trajectory>().GetComponent<LineRenderer>().enabled = true;
+    }
+
+    public void RenderQueue() {
+        if (currentPiece == 0) {
+            FindObjectOfType<QueueDisplay>().UpdateQueue(queuePieces, currentPiece);
+        } else {
+            FindObjectOfType<QueueDisplay>().UpdateQueue(queuePieces, currentPiece - 1);
+        }
+    }
+
+    public void ExtraMove() {
+        if (currentPiece != 0) {
+            currentPiece--;
+            addedPieces++;
+            RenderQueue();
+        }
     }
 }

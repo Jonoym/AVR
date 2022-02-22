@@ -13,13 +13,16 @@ public class Bomb : MonoBehaviour
     
     public bool isPiece = false;
 
+    private bool exploded = false;
+
     void OnCollisionEnter(Collision other) {
-        if (LayerMask.NameToLayer("Piece") == other.gameObject.layer)
+        if (LayerMask.NameToLayer("Lighting") == other.gameObject.layer)
         {
-            Explode();
+            return;  
         }
-        if (LayerMask.NameToLayer("TouchedStructure") == other.gameObject.layer)
-        {
+
+        if (!exploded) {
+            exploded = true;
             Explode();
         }
     }
@@ -33,7 +36,13 @@ public class Bomb : MonoBehaviour
 
         ExplodeNearby();
 
-        Destroy(gameObject);
+        if (isPiece) {
+            Debug.Log("Piece Bomb has Exploded");
+        } else {
+            Debug.Log("Bomb has been Hit");
+            Destroy(gameObject);
+        }
+
     }
 
     private void CrackNearby() {
@@ -55,5 +64,9 @@ public class Bomb : MonoBehaviour
                 rb.AddExplosionForce(force, transform.position, radius);
             }
         } 
+    }
+
+    public bool Exploded() {
+        return exploded;
     }
 }

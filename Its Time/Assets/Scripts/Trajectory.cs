@@ -5,7 +5,7 @@ using UnityEngine;
 public class Trajectory : MonoBehaviour
 {
 
-    public Transform trajectory;
+    public Transform trajectoryPoint;
     LineRenderer line;
 
     public int numPoints = 100;
@@ -18,52 +18,77 @@ public class Trajectory : MonoBehaviour
 
     private GameObject shadow;
 
-    private ChangeCameras cameras;
+    private Controller cameras;
 
-    // Start is called before the first frame update
+    private Transform leftHand;
+
+    private bool shadowSpawned = false;
+
     void Start()
     {
         line = GetComponent<LineRenderer>();
-        cameras = transform.GetComponent<ChangeCameras>();
+        cameras = transform.GetComponent<Controller>();
     }
 
-    // Update is called once per frame  
     void Update()
     {
-        line.positionCount = numPoints;
-        List<Vector3> points = new List<Vector3>();
-        Vector3 startingPosition = trajectory.position;
-        Vector3 startingVelocity = trajectory.forward * 20f;
-        for (float t = 0.25f; t < numPoints; t += time)
-        {
-            if (!drawLine) {
-                line.positionCount = 0;
-                break;
-            }
-            Vector3 newPoint = startingPosition + t * startingVelocity;
-            newPoint.y = startingPosition.y + startingVelocity.y * t + Physics.gravity.y / 2f * t * t;
-            points.Add(newPoint);
+        DrawTrajectory();
+    }
 
-            if (Physics.OverlapSphere(newPoint, 1.5f, layers).Length > 0)
+    private void DrawTrajectory() {
+        shadowSpawned = false;
+        if (leftHand == null) {
+            if (FindObjectOfType<LeftHand>().gameObject.transform != null) {
+                leftHand = FindObjectOfType<LeftHand>().gameObject.transform;
+            }
+        } else if (FindObjectOfType<FiringPlayer>().enabled) {
+            line.positionCount = numPoints;
+            List<Vector3> points = new List<Vector3>();
+            Vector3 startingPosition = trajectoryPoint.position;
+            FireBlock fireBlock = FindObjectOfType<FireBlock>();
+            if (fireBlock == null) {
+                return;
+            }
+
+            Vector3 startingVelocity;
+            if (leftHand.gameObject.GetComponent<LeftHand>().IsLocked()) {
+                startingVelocity = leftHand.gameObject.GetComponent<LeftHand>().GetDirection() * fireBlock.throwForce;
+            } else {
+                startingVelocity = leftHand.forward * fireBlock.throwForce;
+            }
+
+            for (float t = 0.05f; t < numPoints; t += time)
             {
-                line.positionCount = points.Count;
-                if (shadow != null)  {
-                    shadow.transform.position = newPoint;
-                    if (cameras.GetFiringPiece() != null) {
-                        Transform ammoTransform = cameras.GetFiringPiece().transform;
-                        shadow.transform.rotation = ammoTransform.rotation;
-
-                    }
+                if (!drawLine) {
+                    line.positionCount = 0;
+                    break;
                 }
-                break;
-            }
-        }
+                Vector3 newPoint = startingPosition + t * startingVelocity;
+                newPoint.y = startingPosition.y + startingVelocity.y * t + Physics.gravity.y / 2f * t * t;
+                points.Add(newPoint);
 
-        line.SetPositions(points.ToArray());
+                if (Physics.OverlapSphere(newPoint, 1f, layers).Length > 0)
+                {
+                    shadowSpawned = true;
+                    line.positionCount = points.Count;
+                    if (shadow != null)  {
+                        shadow.transform.position = newPoint;
+                        shadow.GetComponent<MeshRenderer>().enabled = true;
+                    }
+                    break;
+                }
+            }
+            if (!shadowSpawned) {
+                if (shadow != null)  {
+                    shadow.GetComponent<MeshRenderer>().enabled = false;
+                }
+            }
+
+            line.SetPositions(points.ToArray());
+        }
     }
 
     public void SetShadow(GameObject shadow) {
-        Debug.Log(shadow);
         this.shadow = shadow;
     }
 }
