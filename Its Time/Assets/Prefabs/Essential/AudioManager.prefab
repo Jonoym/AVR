@@ -46,19 +46,19 @@ MonoBehaviour:
   sounds:
   - name: BackgroundMusic
     clip: {fileID: 8300000, guid: e39f69181b3274f06aa80dbe740aaa13, type: 3}
-    volume: 0
+    volume: 0.096
     pitch: 0.8
     loop: 1
     source: {fileID: 0}
   - name: PieceThump
     clip: {fileID: 8300000, guid: 83d16a9b91c51d54b8ee326baf21a79d, type: 3}
-    volume: 0.736
+    volume: 0.791
     pitch: 1.62
     loop: 0
     source: {fileID: 0}
   - name: StoneCrack1
     clip: {fileID: 8300000, guid: 3e38c91d7d13b0f4fab4bec515c6a396, type: 3}
-    volume: 0.417
+    volume: 0.488
     pitch: 0.65
     loop: 0
     source: {fileID: 0}
@@ -82,13 +82,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BlackHole
     clip: {fileID: 8300000, guid: 5fe4bc0609c03e24097e0cb3666a4fb5, type: 3}
-    volume: 0.143
+    volume: 0.215
     pitch: 0.9
     loop: 0
     source: {fileID: 0}
   - name: BlackHole2
     clip: {fileID: 8300000, guid: 986d6b30567e30e428f3f21373fe45ca, type: 3}
-    volume: 0.192
+    volume: 0.215
     pitch: 0.9
     loop: 0
     source: {fileID: 0}

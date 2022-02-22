@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
-  m_AmbientEquatorColor: {r: 0.2830189, g: 0.2457961, b: 0.17755431, a: 1}
-  m_AmbientGroundColor: {r: 0.509434, g: 0.47205412, b: 0.42532933, a: 1}
+  m_AmbientSkyColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
+  m_AmbientEquatorColor: {r: 0.3962264, g: 0.2641509, b: 0, a: 1}
+  m_AmbientGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientIntensity: 1.03
   m_AmbientMode: 1
-  m_SubtractiveShadowColor: {r: 0.48602706, g: 0.56856424, b: 0.8113208, a: 1}
+  m_SubtractiveShadowColor: {r: 0.16055535, g: 0.19870085, b: 0.31132078, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: e391f00234292cc4f935308c11cf0e54, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13039698, g: 0.09599629, b: 0.06180989, a: 1}
+  m_IndirectSpecularColor: {r: 0.033932038, g: 0.024983602, b: 0.016084218, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10680,6 +10680,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974881999682768558, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974881999682768558, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974881999682768558, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974881999682768558, guid: f004d8973475c6a4e97a24c351842813,
+        type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3974881999687211496, guid: f004d8973475c6a4e97a24c351842813,
         type: 3}
